@@ -20,3 +20,306 @@ To address this challenge, we propose WISE, the first benchmark specifically des
 To overcome the limitations of traditional CLIP metric, we introduce WiScore, a novel quantitative metric for assessing knowledge-image alignment. Through comprehensive testing of 20 models (10 dedicated T2I models and 10 unified multimodal models) using 1,000 structured prompts spanning 25 subdomains, our findings reveal significant limitations in their ability to effectively integrate and apply world knowledge during image generation, highlighting critical pathways for enhancing knowledge incorporation and application in next-generation T2I models.
 
 <img src="assets/intro.png" alt="overview" style="zoom:80%;" />
+
+## 📖WISE Eval
+<img src="assets/examples.png" alt="overview" style="zoom:80%;" />
+
+1.  **Prompt Generation:**  We meticulously crafted 1000 prompts across 25 sub-domains within Cultural Common Sense, Spatio-temporal Reasoning, and Natural Science.  
+2.  **Image Generation:** Each prompt was fed to 20 different Text-to-Image (T2I) models (10 dedicated T2I models and 10 unified multimodal models) to generate corresponding images.  
+3.  **GPT-4o Evaluation:** For each generated image, we employed **GPT-4o-2024-05-13** (with specified instructions detailed in the paper) to independently assess and score each aspect (Consistency, Realism, and Aesthetic Quality) on a scale from 0 to 2.  GPT-4o acts as a judge, providing objective and consistent scoring.
+4.  **WiScore Calculation:**  Finally, we calculated the WiScore for each image based on the GPT-4o scores and the defined weights, providing a comprehensive assessment of the model's ability to generate world knowledge-informed images.
+
+
+<img src="assets/framework.png" alt="overview" style="zoom:80%;" />
+WiScore assesses Text-to-Image models using three key components:
+
+*   **Consistency:** How accurately the image matches the prompt's content and relationships.
+*   **Realism:** How believable and photorealistic the image appears.
+*   **Aesthetic Quality:** How visually appealing and artistically well-composed the image is.
+
+**WiScore Calculation:**
+`WiScore = (0.7 * Consistency) + (0.2 * Realism) + (0.1 * Aesthetic Quality)`
+
+
+## 🏆 Leaderboard
+
+**Normalized WiScore of different models**
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Normalized WiScore of different models</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .lightyellow {
+            background-color: lightyellow;
+        }
+        .softblue {
+            background-color: lightblue;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Normalized WiScore of different models</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th colspan="8" class="lightyellow">Dedicated T2I</th>
+        </tr>
+        <tr>
+            <th>Model</th>
+            <th>Cultural</th>
+            <th>Time</th>
+            <th>Space</th>
+            <th>Biology</th>
+            <th>Physics</th>
+            <th>Chemistry</th>
+            <th><strong>Overall</strong></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>FLUX.1-dev</td>
+            <td>0.48</td>
+            <td><strong>0.58</strong></td>
+            <td><strong>0.62</strong></td>
+            <td>0.42</td>
+            <td>0.51</td>
+            <td><strong>0.35</strong></td>
+            <td><strong>0.50</strong></td>
+        </tr>
+        <tr>
+            <td>FLUX.1-schnell</td>
+            <td>0.39</td>
+            <td>0.44</td>
+            <td>0.50</td>
+            <td>0.31</td>
+            <td>0.44</td>
+            <td>0.26</td>
+            <td>0.40</td>
+        </tr>
+        <tr>
+            <td>PixArt-Alpha</td>
+            <td>0.45</td>
+            <td>0.50</td>
+            <td>0.48</td>
+            <td><strong>0.49</strong></td>
+            <td><strong>0.56</strong></td>
+            <td>0.34</td>
+            <td>0.47</td>
+        </tr>
+        <tr>
+            <td>playground-v2.5</td>
+            <td><strong>0.49</strong></td>
+            <td>0.58</td>
+            <td>0.55</td>
+            <td>0.43</td>
+            <td>0.48</td>
+            <td>0.33</td>
+            <td>0.49</td>
+        </tr>
+        <tr>
+            <td>SD-v1-5</td>
+            <td>0.34</td>
+            <td>0.35</td>
+            <td>0.32</td>
+            <td>0.28</td>
+            <td>0.29</td>
+            <td>0.21</td>
+            <td>0.32</td>
+        </tr>
+        <tr>
+            <td>SD-2-1</td>
+            <td>0.30</td>
+            <td>0.38</td>
+            <td>0.35</td>
+            <td>0.33</td>
+            <td>0.34</td>
+            <td>0.21</td>
+            <td>0.32</td>
+        </tr>
+        <tr>
+            <td>SD-XL-base-0.9</td>
+            <td>0.43</td>
+            <td>0.48</td>
+            <td>0.47</td>
+            <td>0.44</td>
+            <td>0.45</td>
+            <td>0.27</td>
+            <td>0.43</td>
+        </tr>
+        <tr>
+            <td>SD-3-medium</td>
+            <td>0.42</td>
+            <td>0.44</td>
+            <td>0.48</td>
+            <td>0.39</td>
+            <td>0.47</td>
+            <td>0.29</td>
+            <td>0.42</td>
+        </tr>
+        <tr>
+            <td>SD-3.5-medium</td>
+            <td>0.43</td>
+            <td>0.50</td>
+            <td>0.52</td>
+            <td>0.41</td>
+            <td>0.53</td>
+            <td>0.33</td>
+            <td>0.45</td>
+        </tr>
+        <tr>
+            <td>SD-3.5-large</td>
+            <td>0.44</td>
+            <td>0.50</td>
+            <td>0.58</td>
+            <td>0.44</td>
+            <td>0.52</td>
+            <td>0.31</td>
+            <td>0.46</td>
+        </tr>
+    </tbody>
+    <thead>
+        <tr>
+            <th colspan="8" class="softblue">Unify MLLM</th>
+        </tr>
+        <tr>
+            <th>Model</th>
+            <th>Cultural</th>
+            <th>Time</th>
+            <th>Space</th>
+            <th>Biology</th>
+            <th>Physics</th>
+            <th>Chemistry</th>
+            <th><strong>Overall</strong></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Emu3</td>
+            <td><strong>0.34</strong></td>
+            <td><strong>0.45</strong></td>
+            <td>0.48</td>
+            <td><strong>0.41</strong></td>
+            <td>0.45</td>
+            <td>0.27</td>
+            <td><strong>0.39</strong></td>
+        </tr>
+        <tr>
+            <td>Janus-1.3B</td>
+            <td>0.16</td>
+            <td>0.26</td>
+            <td>0.35</td>
+            <td>0.28</td>
+            <td>0.30</td>
+            <td>0.14</td>
+            <td>0.23</td>
+        </tr>
+        <tr>
+            <td>JanusFlow-1.3B</td>
+            <td>0.13</td>
+            <td>0.26</td>
+            <td>0.28</td>
+            <td>0.20</td>
+            <td>0.19</td>
+            <td>0.11</td>
+            <td>0.18</td>
+        </tr>
+        <tr>
+            <td>Janus-Pro-1B</td>
+            <td>0.20</td>
+            <td>0.28</td>
+            <td>0.45</td>
+            <td>0.24</td>
+            <td>0.32</td>
+            <td>0.16</td>
+            <td>0.26</td>
+        </tr>
+        <tr>
+            <td>Janus-Pro-7B</td>
+            <td>0.30</td>
+            <td>0.37</td>
+            <td><strong>0.49</strong></td>
+            <td>0.36</td>
+            <td>0.42</td>
+            <td>0.26</td>
+            <td>0.35</td>
+        </tr>
+        <tr>
+            <td>Orthus-7B-base</td>
+            <td>0.07</td>
+            <td>0.10</td>
+            <td>0.12</td>
+            <td>0.15</td>
+            <td>0.15</td>
+            <td>0.10</td>
+            <td>0.10</td>
+        </tr>
+        <tr>
+            <td>Orthus-7B-instruct</td>
+            <td>0.23</td>
+            <td>0.31</td>
+            <td>0.38</td>
+            <td>0.28</td>
+            <td>0.31</td>
+            <td>0.20</td>
+            <td>0.27</td>
+        </tr>
+        <tr>
+            <td>show-o-demo</td>
+            <td>0.28</td>
+            <td>0.36</td>
+            <td>0.40</td>
+            <td>0.23</td>
+            <td>0.33</td>
+            <td>0.22</td>
+            <td>0.30</td>
+        </tr>
+        <tr>
+            <td>show-o-demo-512</td>
+            <td>0.28</td>
+            <td>0.40</td>
+            <td>0.48</td>
+            <td>0.30</td>
+            <td><strong>0.46</strong></td>
+            <td><strong>0.30</strong></td>
+            <td>0.35</td>
+        </tr>
+        <tr>
+            <td>vila-u-7b-256</td>
+            <td>0.26</td>
+            <td>0.33</td>
+            <td>0.37</td>
+            <td>0.35</td>
+            <td>0.39</td>
+            <td>0.23</td>
+            <td>0.31</td>
+        </tr>
+    </tbody>
+</table>
+
+</body>
+</html>
+
+## 🚀 Quick Start
+
+
+
+
+## 📧 Contact
+If you have any questions, feel free to contact Yuwei Niu with niuyuwei04@gmail.com
+
