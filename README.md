@@ -1,7 +1,6 @@
 # WISE
 
 <p align="left">
-  <a href="#🚀-quick-start"><b>Quick Start</b></a> |
   <a href=""><b>arXiv</b></a> |
 </a>
   <a href="#🖊️-citation"><b>Citation</b></a> <br>
@@ -292,9 +291,10 @@ WiScore assesses Text-to-Image models using three key components:
 </body>
 </html>
 
-## 🚀 Quick Start
+## Citation
+```
 
-
+```
 
 
 ## 📧 Contact
