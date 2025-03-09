@@ -49,31 +49,8 @@ WiScore assesses Text-to-Image models using three key components:
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Normalized WiScore of different models</title>
-    <style>
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-        th, td {
-            border: 1px solid #ddd;
-            padding: 8px;
-            text-align: center;
-        }
-        th {
-            background-color: #f2f2f2;
-        }
-        .lightyellow {
-            background-color: lightyellow;
-        }
-        .softblue {
-            background-color: lightblue;
-        }
-    </style>
-</head>
-<body>
 
-<h2>Normalized WiScore of different models</h2>
+
 
 <table>
     <thead>
