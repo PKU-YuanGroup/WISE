@@ -1,15 +1,11 @@
 # WISE
 
-<p align="left">
-  <a href=""><b>arXiv</b></a> |
-</a>
-  <a href="#🖊️-citation"><b>Citation</b></a> <br>
-</p>
 
-This repository is the official implementation of [WISE]([https://arxiv.org/abs](https://github.com/)). 
+
+This repository is the official implementation of [WISE]([[https://arxiv.org/abs](https://arxiv.org/abs/2503.07265)]((https://arxiv.org/abs/2503.07265))). 
 
 ## 💡 News
-- 2025//: We release our paper at https://arxiv.org/abs/. We have released the codes and data.
+- 2025/3/11: We release our paper at [https://arxiv.org/abs/wise](https://arxiv.org/abs/2503.07265). We have released the codes and data.
 
   
 ## 🎩Introduction
