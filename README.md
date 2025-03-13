@@ -289,7 +289,12 @@ WiScore assesses Text-to-Image models using three key components:
 
 ## Citation
 ```
-
+@article{niu2025wise,
+  title={WISE: A World Knowledge-Informed Semantic Evaluation for Text-to-Image Generation},
+  author={Niu, Yuwei and Ning, Munan and Zheng, Mengren and Lin, Bin and Jin, Peng and Liao, Jiaqi and Ning, Kunpeng and Zhu, Bin and Yuan, Li},
+  journal={arXiv preprint arXiv:2503.07265},
+  year={2025}
+}
 ```
 
 
