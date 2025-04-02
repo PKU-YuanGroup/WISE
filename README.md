@@ -181,15 +181,25 @@ WiScore assesses Text-to-Image models using three key components:
         </tr>
     </thead>
     <tbody>
+          <tr>
+            <td>Liquid</td>
+            <td><strong>0.38</strong></td>
+            <td>0.42</td>
+            <td><strong>0.53<strong></td>
+            <td>0.36</td>
+            <td><strong>0.47<strong></td>
+            <td><strong>0.30<strong></td>
+            <td><strong>0.41</strong></td>
+        </tr>
         <tr>
             <td>Emu3</td>
-            <td><strong>0.34</strong></td>
+            <td>0.34</td>
             <td><strong>0.45</strong></td>
             <td>0.48</td>
             <td><strong>0.41</strong></td>
             <td>0.45</td>
             <td>0.27</td>
-            <td><strong>0.39</strong></td>
+            <td>0.39</td>
         </tr>
         <tr>
             <td>Janus-1.3B</td>
@@ -225,7 +235,7 @@ WiScore assesses Text-to-Image models using three key components:
             <td>Janus-Pro-7B</td>
             <td>0.30</td>
             <td>0.37</td>
-            <td><strong>0.49</strong></td>
+            <td>0.49</td>
             <td>0.36</td>
             <td>0.42</td>
             <td>0.26</td>
@@ -267,7 +277,7 @@ WiScore assesses Text-to-Image models using three key components:
             <td>0.40</td>
             <td>0.48</td>
             <td>0.30</td>
-            <td><strong>0.46</strong></td>
+            <td>0.46</td>
             <td><strong>0.30</strong></td>
             <td>0.35</td>
         </tr>
