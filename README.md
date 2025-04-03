@@ -291,6 +291,16 @@ WiScore assesses Text-to-Image models using three key components:
             <td>0.23</td>
             <td>0.31</td>
         </tr>
+        <tr>
+            <td>Harmon-1.5B</td>
+            <td>0.38</td>
+            <td>0.48</td>
+            <td>0.52</td>
+            <td>0.37</td>
+            <td>0.44</td>
+            <td>0.29</td>
+            <td>0.41</td>
+        </tr>
     </tbody>
 </table>
 
