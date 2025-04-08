@@ -194,13 +194,23 @@ WiScore assesses Text-to-Image models using three key components:
         <tr>
             <td>Emu3</td>
             <td>0.34</td>
-            <td><strong>0.45</strong></td>
+            <td>0.45</td>
             <td>0.48</td>
             <td><strong>0.41</strong></td>
             <td>0.45</td>
             <td>0.27</td>
             <td>0.39</td>
         </tr>
+        <tr>
+            <td>Harmon-1.5B</td>
+            <td>0.38</td>
+            <td><strong>0.48</strong></td>
+            <td>0.52</td>
+            <td>0.37</td>
+            <td>0.44</td>
+            <td>0.29</td>
+            <td></strong>0.41</strong></td>
+        </tr> 
         <tr>
             <td>Janus-1.3B</td>
             <td>0.16</td>
