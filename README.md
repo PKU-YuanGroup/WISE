@@ -34,8 +34,11 @@ WiScore assesses Text-to-Image models using three key components:
 *   **Aesthetic Quality:** How visually appealing and artistically well-composed the image is.
 
 **WiScore Calculation:**
+
 `WiScore = (0.7 * Consistency + 0.2 * Realism + 0.1 * Aesthetic Quality) /2`  
+
 The **Overall WiScore** is a weighted sum of six categories:  
+
 `Overall WiScore = (0.4 * Cultural + 0.167 * Time + 0.133 * Space + 0.1 * Biology + 0.1 * Physics + 0.1 * Chemistry)`
 
 ## Usage Guide
