@@ -4,8 +4,8 @@
 
 This repository is the official implementation of [WISE]([[https://arxiv.org/abs](https://arxiv.org/abs/2503.07265)]((https://arxiv.org/abs/2503.07265))).   
 
-## 💡 News
-- 2025/5/24: We've collected some common questions and will be updating our code and documentation next week to provide you with a clearer evaluation. Feel free to email niuyuwei04@gmail.com with any comments!
+## 💡 News 
+- 2025/5/24: We have collected some feedback and updated our code. If you have any questions or comments, feel free to email us at [niuyuwei04@gmail.com](mailto:niuyuwei04@gmail.com)!
 - 2025/3/11: We release our paper at [https://arxiv.org/abs/wise](https://arxiv.org/abs/2503.07265).
 - 2025/3/10: We have released the codes and data.
   
@@ -34,8 +34,23 @@ WiScore assesses Text-to-Image models using three key components:
 *   **Aesthetic Quality:** How visually appealing and artistically well-composed the image is.
 
 **WiScore Calculation:**
-`WiScore = (0.7 * Consistency) + (0.2 * Realism) + (0.1 * Aesthetic Quality)`
+`WiScore = (0.7 * Consistency + 0.2 * Realism + 0.1 * Aesthetic Quality) /2`  
+The **Overall WiScore** is a weighted sum of six categories:  
+`Overall WiScore = (0.4 * Cultural + 0.167 * Time + 0.133 * Space + 0.1 * Biology + 0.1 * Physics + 0.1 * Chemistry)`
 
+## Usage Guide
+
+Evaluate using **GPT-4o-2024-05-13**:
+
+`bash WISE/eval.sh`
+
+Calculate the individual scores:
+
+`python WISE/wise_culture.py scores_results.jsonl`
+
+`python WISE/wise_space-time.py scores_results.jsonl`
+
+`python WISE/wise_science.py scores_results.jsonl`
 
 ## 🏆 Leaderboard
 
