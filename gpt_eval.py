@@ -4,6 +4,7 @@ import base64
 import re
 import argparse
 import openai
+import concurrent.futures
 from pathlib import Path
 from typing import Dict, Any, List
 
@@ -12,19 +13,21 @@ def parse_arguments():
     parser = argparse.ArgumentParser(description='Image Quality Assessment Tool')
 
     parser.add_argument('--json_path', required=True,
-                      help='Path to the prompts JSON file')
+                        help='Path to the prompts JSON file')
     parser.add_argument('--image_dir', required=True,
-                      help='Path to the image directory')
+                        help='Path to the image directory')
     parser.add_argument('--output_dir', required=True,
-                      help='Path to the output directory')
+                        help='Path to the output directory')
     parser.add_argument('--api_key', required=True,
-                      help='OpenAI API key')
+                        help='OpenAI API key')
     parser.add_argument('--model', required=True,
-                      help='Name of the model to use')
+                        help='Name of the model to use')
     parser.add_argument('--result_full', required=True,
-                      help='Filename for the full results (JSON format)')
+                        help='Filename for the full results (JSON format)')
     parser.add_argument('--result_scores', required=True,
-                      help='Filename for the scores results (JSONL format)')
+                        help='Filename for the scores results (JSONL format)')
+    parser.add_argument('--max_workers', type=int, default=10,
+                        help='Maximum number of worker threads')
 
     return parser.parse_args()
 
@@ -39,18 +42,19 @@ def get_config(args):
         "result_files": {
             "full": args.result_full,
             "scores": args.result_scores
-        }
+        },
+        "max_workers": args.max_workers
     }
 
 
 def extract_scores(evaluation_text: str) -> Dict[str, float]:
-    score_pattern = r"\*{0,2}(Consistency|Realism|Aesthetic Quality)\*{0,2}\s*[:：]?\s*(\d)"
+    score_pattern = r"\*{0,2}(Consistency|Realism|Aesthetic Quality)\*{0,2}\s*[::]?\s*(\d)"
     matches = re.findall(score_pattern, evaluation_text, re.IGNORECASE)
 
     scores = {
-        "consistency": 9.9,
-        "realism": 9.9,
-        "aesthetic_quality": 9.9
+        "consistency": 999,
+        "realism": 999,
+        "aesthetic_quality": 999
     }
 
     for key, value in matches:
@@ -158,12 +162,13 @@ Please strictly adhere to the scoring criteria and follow the template format wh
     ]
 
 
-def evaluate_image(prompt_data: Dict, image_path: str, config: Dict) -> Dict[str, Any]:
+
+
+def evaluate_image(prompt_id: int, prompt_data: Dict, image_path: str, config: Dict) -> tuple:
     try:
+        print(f"Evaluating prompt_id: {prompt_id}...")
         base64_image = encode_image(image_path)
         messages = build_evaluation_messages(prompt_data, base64_image)
-
-        openai.api_key = config["api_key"]
 
         response = openai.ChatCompletion.create(
             model=config["model"],
@@ -175,17 +180,50 @@ def evaluate_image(prompt_data: Dict, image_path: str, config: Dict) -> Dict[str
         evaluation_text = response['choices'][0]['message']['content']
         scores = extract_scores(evaluation_text)
 
-        return {
-            "evaluation": evaluation_text,
-            **scores
+        # Print the evaluation text to the terminal in real-time
+        print(f"\n--- Evaluation for prompt_id: {prompt_id} ---")
+        print(evaluation_text)
+        print("----------------------------------------\n")
+
+        full_record = {
+            "prompt_id": prompt_id,
+            "prompt": prompt_data["Prompt"],
+            "key": prompt_data["Explanation"],
+            "image_path": image_path,
+            "evaluation": evaluation_text
         }
+
+        score_record = {
+            "prompt_id": prompt_id,
+            "Subcategory": prompt_data["Subcategory"],
+            "consistency": scores["consistency"],
+            "realism": scores["realism"],
+            "aesthetic_quality": scores["aesthetic_quality"]
+        }
+
+        print(f"Completed prompt_id: {prompt_id}")
+        return full_record, score_record
+        
     except Exception as e:
-        return {
-            "evaluation": f"Evaluation failed: {str(e)}",
-            "consistency": 9.9,
-            "realism": 9.9,
-            "aesthetic_quality": 9.9
+        print(f"Error evaluating prompt_id {prompt_id}: {str(e)}")
+        
+        full_record = {
+            "prompt_id": prompt_id,
+            "prompt": prompt_data["Prompt"],
+            "key": prompt_data["Explanation"],
+            "image_path": image_path,
+            "evaluation": f"Evaluation failed: {str(e)}"
         }
+
+        score_record = {
+            "prompt_id": prompt_id,
+            "Subcategory": prompt_data["Subcategory"],
+            "consistency": 999,
+            "realism": 999,
+            "aesthetic_quality": 999
+        }
+        
+        return full_record, score_record
 
 
 def save_results(data: List[Dict], filename: str, config: Dict):
@@ -207,41 +245,38 @@ def main():
     args = parse_arguments()
     config = get_config(args)
     Path(config["output_dir"]).mkdir(parents=True, exist_ok=True)
-
     openai.api_key = config["api_key"]
-
     prompts = load_prompts(config["json_path"])
     full_results = []
     score_results = []
-
+    
+    tasks = []
     for prompt_id, prompt_data in prompts.items():
         image_path = os.path.join(config["image_dir"], f"{prompt_id}.png")
-
+        
         if not os.path.exists(image_path):
             print(f"Warning: Image not found {image_path}")
             continue
-
-        print(f"Evaluating prompt_id: {prompt_id}...")
-        evaluation_result = evaluate_image(prompt_data, image_path, config)
-
-        full_record = {
-            "prompt_id": prompt_id,
-            "prompt": prompt_data["Prompt"],
-            "key": prompt_data["Explanation"],
-            "image_path": image_path,
-            "evaluation": evaluation_result["evaluation"]
+            
+        tasks.append((prompt_id, prompt_data, image_path))
+    
+    with concurrent.futures.ThreadPoolExecutor(max_workers=config["max_workers"]) as executor:
+        future_to_prompt = {
+            executor.submit(evaluate_image, prompt_id, prompt_data, image_path, config): prompt_id
+            for prompt_id, prompt_data, image_path in tasks
         }
-
-        score_record = {
-            "prompt_id": prompt_id,
-            "Subcategory": prompt_data["Subcategory"],
-            "consistency": evaluation_result["consistency"],
-            "realism": evaluation_result["realism"],
-            "aesthetic_quality": evaluation_result["aesthetic_quality"]
-        }
-        print(full_record)
-        full_results.append(full_record)
-        score_results.append(score_record)
+        
+        for future in concurrent.futures.as_completed(future_to_prompt):
+            prompt_id = future_to_prompt[future]
+            try:
+                full_record, score_record = future.result()
+                full_results.append(full_record)
+                score_results.append(score_record)
+            except Exception as e:
+                print(f"Error processing result for prompt_id {prompt_id}: {str(e)}")
+                
+    full_results.sort(key=lambda x: x['prompt_id'])
+    score_results.sort(key=lambda x: x['prompt_id'])
 
     save_results(full_results, config["result_files"]["full"], config)
     save_results(score_results, config["result_files"]["scores"], config)
