@@ -337,3 +337,7 @@ Calculate the individual scores:
 ## 📧 Contact
 If you have any questions, feel free to contact Yuwei Niu with niuyuwei04@gmail.com
 
+## Recommendation
+
+If you're interested in the Unify model, [Purshow/Awesome-Unified-Multimodal](https://github.com/Purshow/Awesome-Unified-Multimodal) is one of the most comprehensive resources for papers, code, and other materials related to unified multimodal models.
+
