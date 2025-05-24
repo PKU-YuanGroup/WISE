@@ -3,6 +3,7 @@
 
 
 This repository is the official implementation of [WISE]([[https://arxiv.org/abs](https://arxiv.org/abs/2503.07265)]((https://arxiv.org/abs/2503.07265))). 
+We've collected some common questions and will be updating our code and documentation next week to provide you with a clearer evaluation. Feel free to email niuyuwei04@gmail.com with any comments!
 
 ## 💡 News
 - 2025/3/11: We release our paper at [https://arxiv.org/abs/wise](https://arxiv.org/abs/2503.07265).
