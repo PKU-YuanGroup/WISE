@@ -1,77 +1,85 @@
 import json
 import os
-
-MODEL_ORDER = [
-    "FLUX.1-dev",
-    "FLUX.1-schnell",
-    "PixArt-XL-2-1024-MS",
-    "playground-v2.5-1024px-aesthetic",
-    "stable-diffusion-v1-5",
-    "stable-diffusion-2-1",
-    "stable-diffusion-3-medium-diffusers",
-    "stable-diffusion-3.5-medium",
-    "stable-diffusion-3.5-large",
-    "Emu3-Gen",
-    "Janus-1.3B",
-    "JanusFlow-1.3B",
-    "Janus-Pro-1B",
-    "Janus-Pro-7B",
-    "Orthus-7B-base",
-    "Orthus-7B-instruct",
-    "show-o-demo",
-    "show-o-demo-512",
-    "vila-u-7b-256",
-    "stable-diffusion-xl-base-0.9"
-]
+import argparse
 
 def calculate_wiscore(consistency, realism, aesthetic_quality):
-    return 0.7 * consistency + 0.2 * realism + 0.1 * aesthetic_quality
+    return (0.7 * consistency + 0.2 * realism + 0.1 * aesthetic_quality) / 2
 
 def process_jsonl_file(file_path):
     all_scores = []
     total_objects = 0
-    has_9_9 = False
+    has_error = False
     
-    with open(file_path, 'r') as file:
-        for line in file:
-            total_objects += 1
-            data = json.loads(line)
-            if 9.9 in [data['consistency'], data['realism'], data['aesthetic_quality']]:
-                has_9_9 = True
-            wiscore = calculate_wiscore(data['consistency'], data['realism'], data['aesthetic_quality'])
-            all_scores.append(wiscore)
+    if not os.path.exists(file_path):
+        print(f"Error: File '{file_path}' not found.")
+        return None
+
+    try:
+        with open(file_path, 'r', encoding='utf-8') as file:
+            for line_num, line in enumerate(file, 1):
+                total_objects += 1
+                try:
+                    data = json.loads(line)
+                    consistency = data.get('consistency')
+                    realism = data.get('realism')
+                    aesthetic_quality = data.get('aesthetic_quality')
+
+                    if not all(isinstance(val, (int, float)) for val in [consistency, realism, aesthetic_quality]):
+                        print(f"Warning: File '{file_path}', Line {line_num}: One or more score values are not numeric. Skipping this line.")
+                        continue
+
+                    if 999 in [consistency, realism, aesthetic_quality]:
+                        has_error = True
+                    wiscore = calculate_wiscore(consistency, realism, aesthetic_quality)
+                    all_scores.append(wiscore)
+                except json.JSONDecodeError:
+                    print(f"Warning: File '{file_path}', Line {line_num}: Invalid JSON format. Skipping this line.")
+                except KeyError as e:
+                    print(f"Warning: File '{file_path}', Line {line_num}: Missing expected key '{e}'. Skipping this line.")
+    except Exception as e:
+        print(f"Error reading file '{file_path}': {e}")
+        return None
     
-    if has_9_9 or total_objects < 400:
-        print(f"Skipping file {file_path}: Contains 9.9 or has less than 400 objects.")
+    if has_error:
+        print(f"Skipping file {file_path}: Contains 999 in scores.")
+        return None
+    
+    if total_objects < 400:
+        print(f"Skipping file {file_path}: Has less than 400 objects ({total_objects} found).")
         return None
     
     total_score = sum(all_scores)
-    avg_score = total_score / (len(all_scores)*2) if len(all_scores) > 0 else 0
+    avg_score = total_score / len(all_scores) if len(all_scores) > 0 else 0
     
     return {
         'total': total_score,
-        'average': avg_score
+        'average': avg_score,
+        'num_processed_samples': len(all_scores)
     }
 
-def main(directory):
-    results = {}
+def main():
+    parser = argparse.ArgumentParser(description="Evaluate a single JSONL file for model performance metrics.")
+    parser.add_argument('file_path', type=str, 
+                        help="The path to the JSONL file to be evaluated (e.g., cultural_common_sense_ModelName_scores.jsonl)")
     
-    for filename in os.listdir(directory):
-        if filename.endswith('_scores.jsonl'):
-            parts = filename.split('_')
-            if len(parts) >= 4:
-                model_name = parts[3]# "Assume the filename format is 'cultural_common_sense_ModelName_scores.jsonl'"
-                file_path = os.path.join(directory, filename)
-                scores = process_jsonl_file(file_path)
-                if scores is not None:
-                    results[model_name] = scores
+    args = parser.parse_args()
     
-    for model in MODEL_ORDER:
-        if model in results:
-            print(f"Model: {model}")
-            print(f"  Total Score: {results[model]['total']:.2f}")
-            print(f"  Average Score: {results[model]['average']:.2f}\n")
-        else:
-            print(f"Model: {model} - No valid data found.\n")
+    file_path = args.file_path
+    
+    print(f"Processing file: {file_path}")
+    scores = process_jsonl_file(file_path)
+    
+    if scores is not None:
+        model_name = os.path.basename(file_path).replace('_scores.jsonl', '')
+        if 'cultural_common_sense_' in model_name:
+            model_name = model_name.split('cultural_common_sense_', 1)[1]
 
-main('/results/cultural_common_sense')
+        print(f"\n--- Evaluation Results for {model_name} ---")
+        print(f"  Total WiScore: {scores['total']:.2f}")
+        print(f"  Average WiScore: {scores['average']:.2f}")
+        print(f"  Number of valid samples processed: {scores['num_processed_samples']}")
+    else:
+        print(f"\nCould not generate a valid report for '{file_path}'. Please check previous warnings/errors.")
+
+if __name__ == "__main__":
+    main()
