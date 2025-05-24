@@ -1,87 +1,102 @@
 import json
 import os
+import argparse 
 from collections import defaultdict
 
-MODEL_ORDER = [
-    "FLUX.1-dev",
-    "FLUX.1-schnell",
-    "PixArt-XL-2-1024-MS",
-    "playground-v2.5-1024px-aesthetic",
-    "stable-diffusion-v1-5",
-    "stable-diffusion-2-1",
-    "stable-diffusion-xl-base-0.9",
-    "stable-diffusion-3-medium-diffusers",
-    "stable-diffusion-3.5-medium",
-    "stable-diffusion-3.5-large",
-    "Emu3-Gen",
-    "Janus-1.3B",
-    "JanusFlow-1.3B",
-    "Janus-Pro-1B",
-    "Janus-Pro-7B",
-    "Orthus-7B-base",
-    "Orthus-7B-instruct",
-    "show-o-demo",
-    "show-o-demo-512",
-    "vila-u-7b-256"
-]
 
 def calculate_wiscore(consistency, realism, aesthetic_quality):
-    return 0.7 * consistency + 0.2 * realism + 0.1 * aesthetic_quality
+    return (0.7 * consistency + 0.2 * realism + 0.1 * aesthetic_quality)/2
 
 def process_jsonl_file(file_path):
     categories = defaultdict(list)
     total_objects = 0
-    has_9_9 = False
+    has_error = False
     
-    with open(file_path, 'r') as file:
-        for line in file:
-            total_objects += 1
-            data = json.loads(line)
-            if 9.9 in [data['consistency'], data['realism'], data['aesthetic_quality']]:
-                has_9_9 = True
-            
-            prompt_id = data.get('prompt_id', 0)
-            if 701 <= prompt_id <= 800:
-                category = 'Biology'
-            elif 801 <= prompt_id <= 900:
-                category = 'Physics'
-            elif 901 <= prompt_id <= 1000:
-                category = 'Chemistry'
-            else:
-                category = "?"
-            
-            wiscore = calculate_wiscore(data['consistency'], data['realism'], data['aesthetic_quality'])
-            categories[category].append(wiscore)
+    if not os.path.exists(file_path):
+        print(f"Error: File '{file_path}' not found.")
+        return None
+
+    try:
+        with open(file_path, 'r', encoding='utf-8') as file: 
+            for line_num, line in enumerate(file, 1): 
+                total_objects += 1
+                try:
+                    data = json.loads(line)
+                    
+                    if 999 in [data.get('consistency'), data.get('realism'), data.get('aesthetic_quality')]:
+                        has_error = True
+                    
+                    consistency = data.get('consistency')
+                    realism = data.get('realism')
+                    aesthetic_quality = data.get('aesthetic_quality')
+                    subcategory = data.get('Subcategory')
+
+                    if not all(isinstance(val, (int, float)) for val in [consistency, realism, aesthetic_quality]) or not isinstance(subcategory, str):
+                        print(f"Warning: File '{file_path}', Line {line_num}: Missing or invalid score/subcategory data. Skipping this line.")
+                        continue
+
+                    wiscore = calculate_wiscore(consistency, realism, aesthetic_quality)
+                    
+                    if subcategory in ['Longitudinal time', 'Horizontal time']:
+                        categories['TIME'].append(wiscore)
+                    else:
+                        categories['SPACE'].append(wiscore)
+                except json.JSONDecodeError:
+                    print(f"Warning: File '{file_path}', Line {line_num}: Invalid JSON format. Skipping this line.")
+                except KeyError as e: 
+                    print(f"Warning: File '{file_path}', Line {line_num}: Missing expected key '{e}'. Skipping this line.")
+    except Exception as e: 
+        print(f"Error reading file '{file_path}': {e}")
+        return None
     
-    if has_9_9 or total_objects < 300: 
-        print(f"Skipping file {file_path}: Contains 9.9 or has less than 300 objects.")
+    if has_error:
+        print(f"Skipping file {file_path}: Contains 999 in scores.")
+        return None
+    
+    if total_objects < 300: 
+        print(f"Skipping file {file_path}: Has less than 300 objects ({total_objects} found).")
         return None
     
     total_scores = {category: sum(scores) for category, scores in categories.items()}
-    avg_scores = {category: sum(scores) / (len(scores)*2) if len(scores) > 0 else 0 for category, scores in categories.items()}
+    avg_scores = {category: sum(scores) / len(scores) if len(scores) > 0 else 0 for category, scores in categories.items()}
     
     return {
         'total': total_scores,
-        'average': avg_scores
+        'average': avg_scores,
+        'num_samples_per_category': {category: len(scores) for category, scores in categories.items()} # Added count per category
     }
 
-def main(directory):
-    results = {}
+def main():
+    parser = argparse.ArgumentParser(description="Evaluate a single JSONL file for spatio-temporal reasoning scores.")
+    parser.add_argument('file_path', type=str, 
+                        help="The path to the JSONL file to be evaluated (e.g., spatio-temporal_reasoning_ModelName_scores.jsonl)")
     
-    for filename in os.listdir(directory):
-        if filename.endswith('_scores.jsonl'):
-            model_name = filename.split('_')[2]  # "Assume the filename format is 'natural_science_ModelName_scores.jsonl'"
-            file_path = os.path.join(directory, filename)
-            scores = process_jsonl_file(file_path)
-            if scores is not None:
-                results[model_name] = scores
+    args = parser.parse_args() 
     
-    for model in MODEL_ORDER:
-        if model in results:
-            print(f"Model: {model}")
-            for category in ['Biology', 'Physics', 'Chemistry']:
-                print(f"  {category} - Total: {results[model]['total'].get(category, 0):.2f}, Average: {results[model]['average'].get(category, 0):.2f}")
-        else:
-            print(f"Model: {model} - No valid data found.")
+    file_path = args.file_path
+    
+    print(f"Processing file: {file_path}")
+    results = process_jsonl_file(file_path)
+    
+    if results is not None:
+        model_name = os.path.basename(file_path).replace('_scores.jsonl', '')
+        if 'spatio-temporal_reasoning_' in model_name:
+            model_name = model_name.split('spatio-temporal_reasoning_', 1)[1]
 
-main('/results/natural_science')
+        print(f"\n--- Evaluation Results for Model: {model_name} ---")
+        
+        print(f"  TIME Category:")
+        print(f"    Total WiScore: {results['total'].get('TIME', 0):.2f}")
+        print(f"    Average WiScore: {results['average'].get('TIME', 0):.2f}")
+        print(f"    Number of samples: {results['num_samples_per_category'].get('TIME', 0)}\n")
+
+        print(f"  SPACE Category:")
+        print(f"    Total WiScore: {results['total'].get('SPACE', 0):.2f}")
+        print(f"    Average WiScore: {results['average'].get('SPACE', 0):.2f}")
+        print(f"    Number of samples: {results['num_samples_per_category'].get('SPACE', 0)}\n")
+
+    else:
+        print(f"\nCould not generate a valid report for '{file_path}'. Please check previous warnings/errors.")
+
+if __name__ == "__main__":
+    main()
