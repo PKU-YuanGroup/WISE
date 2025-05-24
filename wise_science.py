@@ -1,11 +1,10 @@
 import json
 import os
-import argparse 
+import argparse
 from collections import defaultdict
 
-
 def calculate_wiscore(consistency, realism, aesthetic_quality):
-    return (0.7 * consistency + 0.2 * realism + 0.1 * aesthetic_quality)/2
+    return (0.7 * consistency + 0.2 * realism + 0.1 * aesthetic_quality) / 2
 
 def process_jsonl_file(file_path):
     categories = defaultdict(list)
@@ -17,8 +16,8 @@ def process_jsonl_file(file_path):
         return None
 
     try:
-        with open(file_path, 'r', encoding='utf-8') as file: 
-            for line_num, line in enumerate(file, 1): 
+        with open(file_path, 'r', encoding='utf-8') as file:
+            for line_num, line in enumerate(file, 1):
                 total_objects += 1
                 try:
                     data = json.loads(line)
@@ -29,23 +28,28 @@ def process_jsonl_file(file_path):
                     consistency = data.get('consistency')
                     realism = data.get('realism')
                     aesthetic_quality = data.get('aesthetic_quality')
-                    subcategory = data.get('Subcategory')
 
-                    if not all(isinstance(val, (int, float)) for val in [consistency, realism, aesthetic_quality]) or not isinstance(subcategory, str):
-                        print(f"Warning: File '{file_path}', Line {line_num}: Missing or invalid score/subcategory data. Skipping this line.")
+                    if not all(isinstance(val, (int, float)) for val in [consistency, realism, aesthetic_quality]):
+                        print(f"Warning: File '{file_path}', Line {line_num}: One or more score values are not numeric. Skipping this line for category calculation.")
                         continue
 
-                    wiscore = calculate_wiscore(consistency, realism, aesthetic_quality)
+                    prompt_id = data.get('prompt_id', 0)
+                    if 701 <= prompt_id <= 800:
+                        category = 'Biology'
+                    elif 801 <= prompt_id <= 900:
+                        category = 'Physics'
+                    elif 901 <= prompt_id <= 1000:
+                        category = 'Chemistry'
+                    else: # If a prompt_id is outside the defined ranges, it's not included in the categories.
+                        continue # Skip this line if category is not recognized
                     
-                    if subcategory in ['Longitudinal time', 'Horizontal time']:
-                        categories['TIME'].append(wiscore)
-                    else:
-                        categories['SPACE'].append(wiscore)
+                    wiscore = calculate_wiscore(consistency, realism, aesthetic_quality)
+                    categories[category].append(wiscore)
                 except json.JSONDecodeError:
                     print(f"Warning: File '{file_path}', Line {line_num}: Invalid JSON format. Skipping this line.")
-                except KeyError as e: 
+                except KeyError as e:
                     print(f"Warning: File '{file_path}', Line {line_num}: Missing expected key '{e}'. Skipping this line.")
-    except Exception as e: 
+    except Exception as e:
         print(f"Error reading file '{file_path}': {e}")
         return None
     
@@ -63,15 +67,15 @@ def process_jsonl_file(file_path):
     return {
         'total': total_scores,
         'average': avg_scores,
-        'num_samples_per_category': {category: len(scores) for category, scores in categories.items()} # Added count per category
+        'category_sample_counts': {category: len(scores) for category, scores in categories.items()}
     }
 
 def main():
-    parser = argparse.ArgumentParser(description="Evaluate a single JSONL file for spatio-temporal reasoning scores.")
+    parser = argparse.ArgumentParser(description="Evaluate a single JSONL file, categorizing scores by prompt_id for Natural Science models.")
     parser.add_argument('file_path', type=str, 
-                        help="The path to the JSONL file to be evaluated (e.g., spatio-temporal_reasoning_ModelName_scores.jsonl)")
+                        help="The path to the JSONL file to be evaluated (e.g., natural_science_ModelName_scores.jsonl)")
     
-    args = parser.parse_args() 
+    args = parser.parse_args()
     
     file_path = args.file_path
     
@@ -80,21 +84,21 @@ def main():
     
     if results is not None:
         model_name = os.path.basename(file_path).replace('_scores.jsonl', '')
-        if 'spatio-temporal_reasoning_' in model_name:
-            model_name = model_name.split('spatio-temporal_reasoning_', 1)[1]
+        if 'natural_science_' in model_name:
+            model_name = model_name.split('natural_science_', 1)[1]
 
         print(f"\n--- Evaluation Results for Model: {model_name} ---")
         
-        print(f"  TIME Category:")
-        print(f"    Total WiScore: {results['total'].get('TIME', 0):.2f}")
-        print(f"    Average WiScore: {results['average'].get('TIME', 0):.2f}")
-        print(f"    Number of samples: {results['num_samples_per_category'].get('TIME', 0)}\n")
+        ordered_categories = ['Biology', 'Physics', 'Chemistry'] 
 
-        print(f"  SPACE Category:")
-        print(f"    Total WiScore: {results['total'].get('SPACE', 0):.2f}")
-        print(f"    Average WiScore: {results['average'].get('SPACE', 0):.2f}")
-        print(f"    Number of samples: {results['num_samples_per_category'].get('SPACE', 0)}\n")
-
+        for category in ordered_categories:
+            total_score = results['total'].get(category, 0)
+            avg_score = results['average'].get(category, 0)
+            sample_count = results['category_sample_counts'].get(category, 0)
+            print(f"  Category: {category}")
+            print(f"    Total WiScore: {total_score:.2f}")
+            print(f"    Average WiScore: {avg_score:.2f}")
+            print(f"    Number of samples: {sample_count}\n")
     else:
         print(f"\nCould not generate a valid report for '{file_path}'. Please check previous warnings/errors.")
 
