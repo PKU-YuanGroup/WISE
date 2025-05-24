@@ -291,7 +291,7 @@ Calculate the individual scores:
             <td>0.27</td>
         </tr>
         <tr>
-            <td>show-o-demo</td>
+            <td>show-o</td>
             <td>0.28</td>
             <td>0.36</td>
             <td>0.40</td>
@@ -301,7 +301,7 @@ Calculate the individual scores:
             <td>0.30</td>
         </tr>
         <tr>
-            <td>show-o-demo-512</td>
+            <td>show-o-512</td>
             <td>0.28</td>
             <td>0.40</td>
             <td>0.48</td>
