@@ -7,7 +7,7 @@ import openai
 import concurrent.futures
 from pathlib import Path
 from typing import Dict, Any, List
-
+import time
 
 def parse_arguments():
     parser = argparse.ArgumentParser(description='Image Quality Assessment Tool')
@@ -164,66 +164,73 @@ Please strictly adhere to the scoring criteria and follow the template format wh
 
 
 
-def evaluate_image(prompt_id: int, prompt_data: Dict, image_path: str, config: Dict) -> tuple:
-    try:
-        print(f"Evaluating prompt_id: {prompt_id}...")
-        base64_image = encode_image(image_path)
-        messages = build_evaluation_messages(prompt_data, base64_image)
+def evaluate_image(prompt_id: int, prompt_data: Dict, image_path: str, config: Dict, retries: int = 10, delay: int = 5) -> tuple:
+    attempt = 0
+    while attempt < retries:
+        try:
+            print(f"Evaluating prompt_id: {prompt_id}, Attempt {attempt + 1}...")
+            base64_image = encode_image(image_path)
+            messages = build_evaluation_messages(prompt_data, base64_image)
 
-        response = openai.ChatCompletion.create(
-            model=config["model"],
-            messages=messages,
-            temperature=0.0,
-            max_tokens=2000
-        )
+            response = openai.ChatCompletion.create(
+                model=config["model"],
+                messages=messages,
+                temperature=0.0,
+                max_tokens=2000
+            )
 
-        evaluation_text = response['choices'][0]['message']['content']
-        scores = extract_scores(evaluation_text)
+            evaluation_text = response['choices'][0]['message']['content']
+            scores = extract_scores(evaluation_text)
 
-        # Print the evaluation text to the terminal in real-time
-        print(f"\n--- Evaluation for prompt_id: {prompt_id} ---")
-        print(evaluation_text)
-        print("----------------------------------------\n")
+            # Print the evaluation text to the terminal in real-time
+            print(f"\n--- Evaluation for prompt_id: {prompt_id} ---")
+            print(evaluation_text)
+            print("----------------------------------------\n")
 
-        full_record = {
-            "prompt_id": prompt_id,
-            "prompt": prompt_data["Prompt"],
-            "key": prompt_data["Explanation"],
-            "image_path": image_path,
-            "evaluation": evaluation_text
-        }
+            full_record = {
+                "prompt_id": prompt_id,
+                "prompt": prompt_data["Prompt"],
+                "key": prompt_data["Explanation"],
+                "image_path": image_path,
+                "evaluation": evaluation_text
+            }
 
-        score_record = {
-            "prompt_id": prompt_id,
-            "Subcategory": prompt_data["Subcategory"],
-            "consistency": scores["consistency"],
-            "realism": scores["realism"],
-            "aesthetic_quality": scores["aesthetic_quality"]
-        }
+            score_record = {
+                "prompt_id": prompt_id,
+                "Subcategory": prompt_data["Subcategory"],
+                "consistency": scores["consistency"],
+                "realism": scores["realism"],
+                "aesthetic_quality": scores["aesthetic_quality"]
+            }
 
-        print(f"Completed prompt_id: {prompt_id}")
-        return full_record, score_record
-        
-    except Exception as e:
-        print(f"Error evaluating prompt_id {prompt_id}: {str(e)}")
-        
-        full_record = {
-            "prompt_id": prompt_id,
-            "prompt": prompt_data["Prompt"],
-            "key": prompt_data["Explanation"],
-            "image_path": image_path,
-            "evaluation": f"Evaluation failed: {str(e)}"
-        }
+            print(f"Completed prompt_id: {prompt_id}")
+            return full_record, score_record
 
-        score_record = {
-            "prompt_id": prompt_id,
-            "Subcategory": prompt_data["Subcategory"],
-            "consistency": 999,
-            "realism": 999,
-            "aesthetic_quality": 999
-        }
-        
-        return full_record, score_record
+        except Exception as e:
+            print(f"Error evaluating prompt_id {prompt_id}: {str(e)}")
+            attempt += 1
+            if attempt < retries:
+                print(f"Retrying in {delay} seconds...")
+                time.sleep(delay)
+            else:
+                print(f"Max retry attempts reached for prompt_id {prompt_id}. Skipping...")
+                full_record = {
+                    "prompt_id": prompt_id,
+                    "prompt": prompt_data["Prompt"],
+                    "key": prompt_data["Explanation"],
+                    "image_path": image_path,
+                    "evaluation": f"Evaluation failed after {retries} attempts: {str(e)}"
+                }
+
+                score_record = {
+                    "prompt_id": prompt_id,
+                    "Subcategory": prompt_data["Subcategory"],
+                    "consistency": 999,
+                    "realism": 999,
+                    "aesthetic_quality": 999
+                }
+
+                return full_record, score_record
 
 
 def save_results(data: List[Dict], filename: str, config: Dict):
