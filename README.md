@@ -5,9 +5,10 @@
 This repository is the official implementation of [WISE]([[https://arxiv.org/abs](https://arxiv.org/abs/2503.07265)]((https://arxiv.org/abs/2503.07265))).   
 
 ## 💡 News 
-- 2025/5/24: We have collected some feedback and updated our code. If you have any questions or comments, feel free to email us at [niuyuwei04@gmail.com](mailto:niuyuwei04@gmail.com)!
-- 2025/3/11: We release our paper at [https://arxiv.org/abs/wise](https://arxiv.org/abs/2503.07265).
-- 2025/3/10: We have released the codes and data.
+- 2025/06/03: We have updated our code again to provide clearer, simpler, and easier evaluation! 😊
+- 2025/05/24: We have collected some feedback and updated our code. If you have any questions or comments, feel free to email us at [niuyuwei04@gmail.com](mailto:niuyuwei04@gmail.com)!
+- 2025/03/11: We release our paper at [https://arxiv.org/abs/wise](https://arxiv.org/abs/2503.07265).
+- 2025/03/10: We have released the codes and data.
   
 ## 🎩Introduction
 
@@ -43,17 +44,74 @@ The **Overall WiScore** is a weighted sum of six categories:
 
 ## Usage Guide
 
-Evaluate using **GPT-4o-2024-05-13**:
+---
 
-`bash WISE/eval.sh`
+To evaluate using **GPT-4o-2024-05-13**, follow these steps:
 
-Calculate the individual scores:
+### 1. Evaluate with GPT-4o-2024-05-13
 
-`python WISE/wise_culture.py scores_results.jsonl`
+First, set the `IMAGE_DIR` variable to the directory where your model's generated images are saved. The image names should be in the format `1-1000.png`.
 
-`python WISE/wise_space-time.py scores_results.jsonl`
+```bash
+IMAGE_DIR="/mnt/data/lb/Remake/FlowWorld/eval_output_t5/stage3_ema_resume_run2_12k/wise" # Directory where model-generated images are saved, e.g., 1-1000.png
+```
 
-`python WISE/wise_science.py scores_results.jsonl`
+Then, run the `gpt_eval.py` script for each category. Remember to replace `""` with your actual API key.
+
+```bash
+python gpt_eval.py \
+    --json_path data/cultural_common_sense.json \
+    --output_dir ${IMAGE_DIR}/Results/cultural_common_sense \
+    --image_dir ${IMAGE_DIR} \
+    --api_key "" \
+    --model "gpt-4o-2024-05-13" \
+    --result_full ${IMAGE_DIR}/Results/cultural_common_sense_full_results.json \
+    --result_scores ${IMAGE_DIR}/Results/cultural_common_sense_scores_results.jsonl \
+    --max_workers 96
+
+python gpt_eval.py \
+    --json_path data/spatio-temporal_reasoning.json \
+    --output_dir ${IMAGE_DIR}/Results/spatio-temporal_reasoning \
+    --image_dir ${IMAGE_DIR} \
+    --api_key "" \
+    --model "gpt-4o-2024-05-13" \
+    --result_full ${IMAGE_DIR}/Results/spatio-temporal_reasoning_results.json \
+    --result_scores ${IMAGE_DIR}/Results/spatio-temporal_reasoning_results.jsonl \
+    --max_workers 96
+
+python gpt_eval.py \
+    --json_path data/natural_science.json \
+    --output_dir ${IMAGE_DIR}/Results/natural_science \
+    --image_dir ${IMAGE_DIR} \
+    --api_key "" \
+    --model "gpt-4o-2024-05-13" \
+    --result_full ${IMAGE_DIR}/Results/natural_science_full_results.json \
+    --result_scores ${IMAGE_DIR}/Results/natural_science_scores_results.jsonl \
+    --max_workers 96
+```
+
+### 2. Calculate Scores
+
+After running the evaluations, use `Calculate.py` to compute the scores.
+
+```bash
+python Calculate.py \
+    "${IMAGE_DIR}/Results/cultural_common_sense_scores_results.jsonl" \
+    "${IMAGE_DIR}/Results/natural_science_scores_results.jsonl" \
+    "${IMAGE_DIR}/Results/spatio-temporal_reasoning_results.jsonl" \
+    --category all
+```
+
+---
+
+### Important Notes!
+
+* **GPT Version**: Please ensure you use **`gpt-4o-2024-05-13`** for evaluation.
+* **Breakpoint Retesting**: Our `gpt_eval.py` supports resuming from breakpoints. If your evaluation encounters an error midway, simply **re-run the script**.
+* **Categorized Score Calculation**: `Calculate.py` supports calculating scores by category. You can change the `--category` parameter to specify which categories to calculate (e.g., `--category culture` or `--category all`).
+
+---
+
 
 ## 🏆 Leaderboard
 
