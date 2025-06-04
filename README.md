@@ -53,7 +53,7 @@ To evaluate using **GPT-4o-2024-05-13**, follow these steps:
 First, set the `IMAGE_DIR` variable to the directory where your model's generated images are saved. The image names should be in the format `1-1000.png`.
 
 ```bash
-IMAGE_DIR="/mnt/data/lb/Remake/FlowWorld/eval_output_t5/stage3_ema_resume_run2_12k/wise" # Directory where model-generated images are saved, e.g., 1-1000.png
+IMAGE_DIR="path/to/your_image_output_dir" # Directory where model-generated images are saved, e.g., 1-1000.png
 ```
 
 Then, run the `gpt_eval.py` script for each category. Remember to replace `""` with your actual API key.
