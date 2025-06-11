@@ -258,15 +258,35 @@ python Calculate.py \
         </tr>
     </thead>
     <tbody>
-          <tr>
+        <tr>
+            <td>GPT4o</td>
+            <td><strong>0.81</strong></td>
+            <td><strong>0.71</strong></td>
+            <td><strong>0.89</strong></td>
+            <td><strong>0.83</strong></td>
+            <td><strong>0.79</strong></td>
+            <td><strong>0.74</strong></td>
+            <td><strong>0.80</strong></td>
+        </tr>
+        <tr>
+            <td>MetaQuery-XL</td>
+            <td>0.56</td>
+            <td>0.55</td>
+            <td>0.62</td>
+            <td>0.49</td>
+            <td>0.63</td>
+            <td>0.41</td>
+            <td>0.55</td>
+        </tr>
+        <tr>
             <td>Liquid</td>
-            <td><strong>0.38</strong></td>
+            <td>0.38</td>
             <td>0.42</td>
-            <td><strong>0.53<strong></td>
+            <td>0.53</td>
             <td>0.36</td>
-            <td><strong>0.47<strong></td>
-            <td><strong>0.30<strong></td>
-            <td><strong>0.41</strong></td>
+            <td>0.47</td>
+            <td>0.30</td>
+            <td>0.41</td>
         </tr>
         <tr>
             <td>Emu3</td>
@@ -388,7 +408,7 @@ python Calculate.py \
 ```
 @article{niu2025wise,
   title={WISE: A World Knowledge-Informed Semantic Evaluation for Text-to-Image Generation},
-  author={Niu, Yuwei and Ning, Munan and Zheng, Mengren and Lin, Bin and Jin, Peng and Liao, Jiaqi and Ning, Kunpeng and Zhu, Bin and Yuan, Li},
+  author={Niu, Yuwei and Ning, Munan and Zheng, Mengren and Jin, Weiyang and Lin, Bin and Jin, Peng and Liao, Jiaqi and Ning, Kunpeng and Feng, Chaoran and Zhu, Bin and Yuan, Li},
   journal={arXiv preprint arXiv:2503.07265},
   year={2025}
 }
