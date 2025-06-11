@@ -293,7 +293,7 @@ python Calculate.py \
             <td>0.34</td>
             <td>0.45</td>
             <td>0.48</td>
-            <td><strong>0.41</strong></td>
+            <td>0.41</td>
             <td>0.45</td>
             <td>0.27</td>
             <td>0.39</td>
@@ -301,12 +301,12 @@ python Calculate.py \
         <tr>
             <td>Harmon-1.5B</td>
             <td>0.38</td>
-            <td><strong>0.48</strong></td>
+            <td>0.48</td>
             <td>0.52</td>
             <td>0.37</td>
             <td>0.44</td>
             <td>0.29</td>
-            <td></strong>0.41</strong></td>
+            <td>0.41</td>
         </tr> 
         <tr>
             <td>Janus-1.3B</td>
