@@ -44,11 +44,9 @@ The **Overall WiScore** is a weighted sum of six categories:
 
 **Prompt rewrite analysis:**
 
-`WiScore = (0.7 * Consistency + 0.2 * Realism + 0.1 * Aesthetic Quality) /2`  
+<img src="assets/Table2.png" alt="overview" style="zoom:80%;" />
 
-<img src="assets/Table2.pdf" alt="overview" style="zoom:80%;" />
-
-WiScore on rewritten prompts of different models. These prompts were simplified from the original WISE benchmark using GPT-4o (e.g., "The plant often gifted on Mother’s Day" to "Carnation"). Green ball indicates score increase after rewriting; red ball indicates score decrease.
+WiScore on rewritten prompts of different models. These prompts were simplified from the original WISE benchmark using GPT-4o (e.g., "The plant often gifted on Mother’s Day" to "Carnation"). Green ball indicates score increase after rewriting; red ball indicates score decrease. A smaller difference indicates that the model has a stronger ability to model world knowledge. This indicator excludes the influence of the generation quality itself.
 
 ## Usage Guide
 
