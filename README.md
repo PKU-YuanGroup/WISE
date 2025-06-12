@@ -27,7 +27,7 @@ To overcome the limitations of traditional CLIP metric, we introduce WiScore, a 
 4.  **WiScore Calculation:**  Finally, we calculated the WiScore for each image based on the GPT-4o scores and the defined weights, providing a comprehensive assessment of the model's ability to generate world knowledge-informed images.
 
 
-<img src="assets/framework.png" alt="overview" style="zoom:80%;" />
+<img src="assets/framework_2.jpg" alt="overview" style="zoom:80%;" />
 WiScore assesses Text-to-Image models using three key components:
 
 *   **Consistency:** How accurately the image matches the prompt's content and relationships.
@@ -41,6 +41,12 @@ WiScore assesses Text-to-Image models using three key components:
 The **Overall WiScore** is a weighted sum of six categories:  
 
 `Overall WiScore = (0.4 * Cultural + 0.167 * Time + 0.133 * Space + 0.1 * Biology + 0.1 * Physics + 0.1 * Chemistry)`
+
+**Prompt rewrite analysis:**
+
+<img src="assets/Table2.png" alt="overview" style="zoom:80%;" />
+
+WiScore on rewritten prompts of different models. These prompts were simplified from the original WISE benchmark using GPT-4o (e.g., "The plant often gifted on Mother’s Day" to "Carnation"). Green ball indicates score increase after rewriting; red ball indicates score decrease. A smaller difference indicates that the model has a stronger ability to model world knowledge. This indicator excludes the influence of the generation quality itself.
 
 ## Usage Guide
 
@@ -293,7 +299,7 @@ python Calculate.py \
             <td>0.34</td>
             <td>0.45</td>
             <td>0.48</td>
-            <td><strong>0.41</strong></td>
+            <td>0.41</td>
             <td>0.45</td>
             <td>0.27</td>
             <td>0.39</td>
@@ -301,12 +307,12 @@ python Calculate.py \
         <tr>
             <td>Harmon-1.5B</td>
             <td>0.38</td>
-            <td><strong>0.48</strong></td>
+            <td>0.48</td>
             <td>0.52</td>
             <td>0.37</td>
             <td>0.44</td>
             <td>0.29</td>
-            <td></strong>0.41</strong></td>
+            <td>0.41</td>
         </tr> 
         <tr>
             <td>Janus-1.3B</td>
