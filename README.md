@@ -264,16 +264,7 @@ python Calculate.py \
         </tr>
     </thead>
     <tbody>
-<!--         <tr>
-            <td>GPT4o</td>
-            <td><strong>0.81</strong></td>
-            <td><strong>0.71</strong></td>
-            <td><strong>0.89</strong></td>
-            <td><strong>0.83</strong></td>
-            <td><strong>0.79</strong></td>
-            <td><strong>0.74</strong></td>
-            <td><strong>0.80</strong></td>
-        </tr> -->
+
         <tr>
             <td>Qwen-Image</td>
             <td>0.67</td>
