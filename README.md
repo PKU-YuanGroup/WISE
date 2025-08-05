@@ -275,6 +275,36 @@ python Calculate.py \
             <td><strong>0.80</strong></td>
         </tr>
         <tr>
+            <td>BAGEL</td>
+            <td>0.44</td>
+            <td>0.55</td>
+            <td>0.68</td>
+            <td>0.44</td>
+            <td>0.60</td>
+            <td>0.39</td>
+            <td>0.52</td>
+        </tr>
+        <tr>
+            <td>Qwen-Image</td>
+            <td>0.67</td>
+            <td>0.67</td>
+            <td>0.80</td>
+            <td>0.62</td>
+            <td>0.79</td>
+            <td>0.41</td>
+            <td>0.67</td>
+        </tr>
+        <tr>
+            <td>UniWorld-V1</td>
+            <td>0.53</td>
+            <td>0.55</td>
+            <td>0.73</td>
+            <td>0.45</td>
+            <td>0.59</td>
+            <td>0.41</td>
+            <td>0.55</td>
+        </tr>      
+        <tr>
             <td>MetaQuery-XL</td>
             <td>0.56</td>
             <td>0.55</td>
