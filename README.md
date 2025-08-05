@@ -264,7 +264,7 @@ python Calculate.py \
         </tr>
     </thead>
     <tbody>
-        <tr>
+<!--         <tr>
             <td>GPT4o</td>
             <td><strong>0.81</strong></td>
             <td><strong>0.71</strong></td>
@@ -273,7 +273,17 @@ python Calculate.py \
             <td><strong>0.79</strong></td>
             <td><strong>0.74</strong></td>
             <td><strong>0.80</strong></td>
-        </tr>
+        </tr> -->
+        <tr>
+            <td>Qwen-Image</td>
+            <td>0.67</td>
+            <td>0.67</td>
+            <td>0.80</td>
+            <td>0.62</td>
+            <td>0.79</td>
+            <td>0.41</td>
+            <td>0.67</td>
+        </tr>      
         <tr>
             <td>BAGEL</td>
             <td>0.44</td>
@@ -284,16 +294,7 @@ python Calculate.py \
             <td>0.39</td>
             <td>0.52</td>
         </tr>
-        <tr>
-            <td>Qwen-Image</td>
-            <td>0.67</td>
-            <td>0.67</td>
-            <td>0.80</td>
-            <td>0.62</td>
-            <td>0.79</td>
-            <td>0.41</td>
-            <td>0.67</td>
-        </tr>
+
         <tr>
             <td>UniWorld-V1</td>
             <td>0.53</td>
