@@ -127,9 +127,6 @@ python Calculate.py \
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-
-
 <table>
     <thead>
         <tr>
@@ -264,7 +261,6 @@ python Calculate.py \
         </tr>
     </thead>
     <tbody>
-
         <tr>
             <td>Qwen-Image</td>
             <td>0.67</td>
@@ -285,7 +281,6 @@ python Calculate.py \
             <td>0.39</td>
             <td>0.52</td>
         </tr>
-
         <tr>
             <td>UniWorld-V1</td>
             <td>0.53</td>
