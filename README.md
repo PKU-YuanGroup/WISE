@@ -273,14 +273,14 @@ python Calculate.py \
         </tr>
         <tr>
             <td>Qwen-Image</td>
-            <td>0.67</td>
-            <td>0.67</td>
-            <td>0.80</td>
             <td>0.62</td>
-            <td>0.79</td>
-            <td>0.41</td>
-            <td>0.67</td>
-        </tr>      
+            <td>0.63</td>
+            <td>0.77</td>
+            <td>0.57</td>
+            <td>0.75</td>
+            <td>0.40</td>
+            <td>0.62</td>
+        </tr>     
         <tr>
             <td>BAGEL</td>
             <td>0.44</td>
@@ -300,6 +300,36 @@ python Calculate.py \
             <td>0.59</td>
             <td>0.41</td>
             <td>0.55</td>
+        </tr>
+        <tr>
+            <td>OpenUni-B-512</td>
+            <td>0.37</td>
+            <td>0.45</td>
+            <td>0.58</td>
+            <td>0.39</td>
+            <td>0.50</td>
+            <td>0.30</td>
+            <td>0.43</td>
+        </tr>
+        <tr>
+            <td>OpenUni-L-512</td>
+            <td>0.51</td>
+            <td>0.49</td>
+            <td>0.64</td>
+            <td>0.48</td>
+            <td>0.63</td>
+            <td>0.35</td>
+            <td>0.52</td>
+        </tr>
+        <tr>
+            <td>OpenUni-L-1024</td>
+            <td>0.49</td>
+            <td>0.53</td>
+            <td>0.69</td>
+            <td>0.49</td>
+            <td>0.56</td>
+            <td>0.39</td>
+            <td>0.52</td>
         </tr>      
         <tr>
             <td>MetaQuery-XL</td>
