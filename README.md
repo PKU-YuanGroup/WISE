@@ -301,6 +301,26 @@ python Calculate.py \
             <td>0.41</td>
             <td>0.55</td>
         </tr>
+              <tr>
+            <td>Manzano-3B</td>
+            <td>0.42</td>
+            <td>0.51</td>
+            <td>0.59</td>
+            <td>0.45</td>
+            <td>0.51</td>
+            <td>0.32</td>
+            <td>0.46</td>
+        </tr>
+        <tr>
+            <td>Manzano-30B</td>
+            <td>0.58</td>
+            <td>0.50</td>
+            <td>0.65</td>
+            <td>0.50</td>
+            <td>0.55</td>
+            <td>0.32</td>
+            <td>0.54</td>
+        </tr>
         <tr>
             <td>OpenUni-B-512</td>
             <td>0.37</td>
