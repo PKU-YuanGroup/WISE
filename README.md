@@ -280,7 +280,17 @@ python Calculate.py \
             <td>0.75</td>
             <td>0.40</td>
             <td>0.62</td>
-        </tr>     
+        </tr>
+      <tr>
+        <td>UniWorld-V2</td>
+        <td>0.60</td>
+        <td>0.61</td>
+        <td>0.70</td>
+        <td>0.53</td>
+        <td>0.64</td>
+        <td>0.32</td>
+        <td>0.58</td>
+    </tr>
         <tr>
             <td>BAGEL</td>
             <td>0.44</td>
