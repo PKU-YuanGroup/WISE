@@ -272,6 +272,36 @@ python Calculate.py \
             <td><strong>0.80</strong></td>
         </tr>
         <tr>
+            <td>DeepGen1.0</td>
+            <td><strong>0.72</strong></td>
+            <td><strong>0.81</strong></td>
+            <td><strong>0.70</strong></td>
+            <td><strong>0.67</strong></td>
+            <td><strong>0.82</strong></td>
+            <td><strong>0.66</strong></td>
+            <td><strong>0.73</strong></td>
+        </tr>
+      <tr>
+            <td>LongCat-Image</td>
+            <td><strong>0.66</strong></td>
+            <td><strong>0.61</strong></td>
+            <td><strong>0.72</strong></td>
+            <td><strong>0.66</strong></td>
+            <td><strong>0.72</strong></td>
+            <td><strong>0.49</strong></td>
+            <td><strong>0.65</strong></td>
+        </tr>
+        <tr>
+            <td>NextFlow-RL</td>
+            <td><strong>0.63</strong></td>
+            <td><strong>0.63</strong></td>
+            <td><strong>0.77</strong></td>
+            <td><strong>0.58</strong></td>
+            <td><strong>0.67</strong></td>
+            <td><strong>0.39</strong></td>
+            <td><strong>0.62</strong></td>
+        </tr>
+        <tr>
             <td>Qwen-Image</td>
             <td>0.62</td>
             <td>0.63</td>
@@ -291,6 +321,16 @@ python Calculate.py \
         <td>0.32</td>
         <td>0.58</td>
     </tr>
+       <tr>
+            <td>Hunyuan-Image 3.0</td>
+            <td><strong>0.58</strong></td>
+            <td><strong>0.57</strong></td>
+            <td><strong>0.70</strong></td>
+            <td><strong>0.56</strong></td>
+            <td><strong>0.63</strong></td>
+            <td><strong>0.31</strong></td>
+            <td><strong>0.57</strong></td>
+        </tr>
         <tr>
             <td>BAGEL</td>
             <td>0.44</td>
