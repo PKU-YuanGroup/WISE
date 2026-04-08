@@ -8,6 +8,9 @@ import concurrent.futures
 from pathlib import Path
 from typing import Dict, Any, List
 
+REQUIRED_SCORE_KEYS = {"consistency", "realism", "aesthetic_quality"}
+MAX_EXTRACT_RETRIES = 3
+
 def parse_arguments():
     parser = argparse.ArgumentParser(description='Image Quality Assessment Tool')
     parser.add_argument('--json_path', required=True)
@@ -56,6 +59,20 @@ def extract_scores(txt: str) -> Dict[str, float]:
     out = {}
     for k, v in matches:
         out[k.lower().replace(" ", "_")] = float(v)
+    if out:
+        return out
+
+    # Fallback: handle plain 3-line numeric outputs like:
+    # 2
+    # 1
+    # 0
+    nums = re.findall(r"(?m)^\s*([0-2])\s*$", txt)
+    if len(nums) >= 3:
+        return {
+            "consistency": float(nums[0]),
+            "realism": float(nums[1]),
+            "aesthetic_quality": float(nums[2]),
+        }
     return out
 
 def encode_image(path: str) -> str:
@@ -155,37 +172,44 @@ Please strictly adhere to the scoring criteria and follow the template format wh
 
 
 def evaluate_image(prompt_id: int, prompt: Dict, img_path: str, cfg: Dict):
-    try:
-        print(f"Evaluating {prompt_id} ...")
-        img64 = encode_image(img_path)
-        msgs = build_evaluation_messages(prompt, img64)
-        resp = openai.ChatCompletion.create(
-            model=cfg["model"], messages=msgs, temperature=0.0, max_tokens=2000
-        )
-        eval_txt = resp['choices'][0]['message']['content']
-        scores = extract_scores(eval_txt)
+    print(f"Evaluating {prompt_id} ...")
+    img64 = encode_image(img_path)
+    msgs = build_evaluation_messages(prompt, img64)
 
-        print(f"\n--- {prompt_id} ---\n{eval_txt}\n--------------\n")
+    for attempt in range(1, MAX_EXTRACT_RETRIES + 1):
+        try:
+            resp = openai.ChatCompletion.create(
+                model=cfg["model"], messages=msgs, temperature=0.0, max_tokens=2000
+            )
+            eval_txt = resp['choices'][0]['message']['content']
+            scores = extract_scores(eval_txt)
+            print(f"\n--- {prompt_id} (attempt {attempt}) ---\n{eval_txt}\n--------------\n")
 
-        return (
-            {  # full record
-                "prompt_id": prompt_id,
-                "prompt": prompt["Prompt"],
-                "key": prompt["Explanation"],
-                "image_path": img_path,
-                "evaluation": eval_txt
-            },
-            {  # score record
-                "prompt_id": prompt_id,
-                "Subcategory": prompt["Subcategory"],
-                "consistency": scores.get("consistency", 0),
-                "realism": scores.get("realism", 0),
-                "aesthetic_quality": scores.get("aesthetic_quality", 0)
-            }
-        )
-    except Exception as e:
-        print(f"[ERR] {prompt_id}: {e}")
-        return None
+            if REQUIRED_SCORE_KEYS.issubset(scores.keys()):
+                return {
+                    "status": "ok",
+                    "full": {
+                        "prompt_id": prompt_id,
+                        "prompt": prompt["Prompt"],
+                        "key": prompt["Explanation"],
+                        "image_path": img_path,
+                        "evaluation": eval_txt
+                    },
+                    "score": {
+                        "prompt_id": prompt_id,
+                        "Subcategory": prompt["Subcategory"],
+                        "consistency": scores["consistency"],
+                        "realism": scores["realism"],
+                        "aesthetic_quality": scores["aesthetic_quality"]
+                    }
+                }
+
+            missing = sorted(REQUIRED_SCORE_KEYS - set(scores.keys()))
+            print(f"[WARN] {prompt_id}: score parse incomplete, missing={missing}, attempt={attempt}/{MAX_EXTRACT_RETRIES}")
+        except Exception as e:
+            print(f"[ERR] {prompt_id}: attempt={attempt}/{MAX_EXTRACT_RETRIES}, err={e}")
+
+    return {"status": "extract_fail", "prompt_id": prompt_id}
 
 def save_results(data: List[Dict], filename: str, cfg: Dict):
     path = os.path.join(cfg["output_dir"], filename)
@@ -224,13 +248,17 @@ def main():
         tasks.append((pid, pdata, img_path))
 
     # ---- Multi-threaded evaluation ----
+    failed_extract_ids = []
     with concurrent.futures.ThreadPoolExecutor(max_workers=cfg["max_workers"]) as ex:
         future_to_id = {ex.submit(evaluate_image, pid, pd, ip, cfg): pid for pid, pd, ip in tasks}
         for fut in concurrent.futures.as_completed(future_to_id):
             res = fut.result()
-            if res is None:
+            if not res or res.get("status") != "ok":
+                if res and res.get("status") == "extract_fail":
+                    failed_extract_ids.append(res["prompt_id"])
                 continue
-            full_rec, score_rec = res
+            full_rec = res["full"]
+            score_rec = res["score"]
             exist_full[full_rec["prompt_id"]]     = full_rec
             exist_scores[score_rec["prompt_id"]]  = score_rec
 
@@ -240,6 +268,8 @@ def main():
 
     save_results(full_sorted,  cfg["result_files"]["full"],   cfg)
     save_results(score_sorted, cfg["result_files"]["scores"], cfg)
+    if failed_extract_ids:
+        print(f"[WARN] Failed to extract scores (skipped): {sorted(failed_extract_ids)}")
 
 if __name__ == "__main__":
     main()
