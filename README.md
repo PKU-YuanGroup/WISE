@@ -1,544 +1,133 @@
 # WISE
 
+This repository is the official implementation of [WISE](https://arxiv.org/abs/2503.07265).
 
+**Current default: WISE_Verified.** If you need the original GPT-4o based WISE release, see [WISE_legacy](WISE_legacy/README.md).
 
-This repository is the official implementation of [WISE]([[https://arxiv.org/abs](https://arxiv.org/abs/2503.07265)]((https://arxiv.org/abs/2503.07265))).   
+<img src="WISE_legacy/assets/intro.png" alt="WISE overview" style="zoom:80%;" />
 
-## 💡 News 
-- 2025/06/03: We have updated our code again to provide clearer, simpler, and easier evaluation! 😊
-- 2025/05/24: We have collected some feedback and updated our code. If you have any questions or comments, feel free to email us at [niuyuwei04@gmail.com](mailto:niuyuwei04@gmail.com)!
-- 2025/03/11: We release our paper at [https://arxiv.org/abs/wise](https://arxiv.org/abs/2503.07265).
-- 2025/03/10: We have released the codes and data.
-  
-## 🎩Introduction
+## 💡 News
 
-Text-to-Image (T2I) models are capable of generating high-quality artistic creations and visual content. However, existing research and evaluation standards predominantly focus on image realism and shallow text-image alignment, lacking a comprehensive assessment of complex semantic understanding and world knowledge integration in text to image generation. 
-To address this challenge, we propose WISE, the first benchmark specifically designed for World Knowledge-Informed Semantic Evaluation.  WISE moves beyond simple word-pixel mapping by challenging models with 1000 meticulously crafted prompts across 25 sub-domains in cultural common sense, spatio-temporal understanding, and natural science. 
-To overcome the limitations of traditional CLIP metric, we introduce WiScore, a novel quantitative metric for assessing knowledge-image alignment. Through comprehensive testing of 20 models (10 dedicated T2I models and 10 unified multimodal models) using 1,000 structured prompts spanning 25 subdomains, our findings reveal significant limitations in their ability to effectively integrate and apply world knowledge during image generation, highlighting critical pathways for enhancing knowledge incorporation and application in next-generation T2I models.
+- 2026/04/19: We release **WISE_Verified**, a maintenance update for easier and lower-cost evaluation. It uses a vLLM-served **Qwen3.5-35B-A3B** judge, refreshes about 200 prompts, changes WiScore into a binary 0/1 score focused on world-knowledge consistency and realism, and updates the leaderboard with 21 models, including NanoBanana-Pro, GPT-Image-1.5, QwenImage, FLUX.2, BAGEL, and HunyuanImage.
+- 2025/06/03: We updated the original code to provide clearer, simpler, and easier evaluation.
+- 2025/05/24: We collected feedback and updated the original code. If you have any questions or comments, feel free to email us at [niuyuwei04@gmail.com](mailto:niuyuwei04@gmail.com).
+- 2025/03/11: We released our paper at [https://arxiv.org/abs/2503.07265](https://arxiv.org/abs/2503.07265).
+- 2025/03/10: We released the original code and data.
 
-<img src="assets/intro.png" alt="overview" style="zoom:80%;" />
+## 🎩 Introduction
 
-## 📖WISE Eval
-<img src="assets/examples.png" alt="overview" style="zoom:80%;" />
+Text-to-Image (T2I) models can generate high-quality artistic creations and visual content. However, existing research and evaluation standards often focus on image realism and shallow text-image alignment, while lacking a comprehensive assessment of complex semantic understanding and world knowledge integration in text-to-image generation.
 
-1.  **Prompt Generation:**  We meticulously crafted 1000 prompts across 25 sub-domains within Cultural Common Sense, Spatio-temporal Reasoning, and Natural Science.  
-2.  **Image Generation:** Each prompt was fed to 20 different Text-to-Image (T2I) models (10 dedicated T2I models and 10 unified multimodal models) to generate corresponding images.  
-3.  **GPT-4o Evaluation:** For each generated image, we employed **GPT-4o-2024-05-13** (with specified instructions detailed in the paper) to independently assess and score each aspect (Consistency, Realism, and Aesthetic Quality) on a scale from 0 to 2.  GPT-4o acts as a judge, providing objective and consistent scoring.
-4.  **WiScore Calculation:**  Finally, we calculated the WiScore for each image based on the GPT-4o scores and the defined weights, providing a comprehensive assessment of the model's ability to generate world knowledge-informed images.
+WISE is a benchmark for **World Knowledge-Informed Semantic Evaluation**. It moves beyond simple word-pixel mapping by challenging models with 1,000 prompts across cultural common sense, spatio-temporal reasoning, and natural science.
 
+**WISE_Verified is not WISE 2.0.** It is a practical update of the original benchmark so that users can evaluate models with an open-source judge more conveniently, especially if GPT-4o-2024-05-13 becomes unavailable or too costly for large-scale evaluation.
 
-<img src="assets/framework_2.jpg" alt="overview" style="zoom:80%;" />
-WiScore assesses Text-to-Image models using three key components:
+## What Changed in WISE_Verified
 
-*   **Consistency:** How accurately the image matches the prompt's content and relationships.
-*   **Realism:** How believable and photorealistic the image appears.
-*   **Aesthetic Quality:** How visually appealing and artistically well-composed the image is.
+WISE_Verified keeps the original goal of measuring world-knowledge consistency, but changes the default evaluation protocol:
 
-**WiScore Calculation:**
+1. **Open-source judge:** We use **Qwen3.5-35B-A3B** through a vLLM OpenAI-compatible endpoint for evaluation.
+2. **Verified prompts:** About 200 WISE prompts were updated. Some original prompts were too easy, while others could trigger closed-source model policy restrictions during generation.
+3. **Binary WiScore:** WISE_Verified changes WiScore into a binary 0/1 score. We no longer separately score realism or aesthetic quality; each image is judged by whether it correctly realizes the prompt's world-knowledge meaning and is realistic and visually usable for evaluation.
+4. **Updated leaderboard:** We evaluated 21 models, including NanoBanana-Pro, GPT-Image-1.5, QwenImage, FLUX.2, BAGEL, and HunyuanImage. Some closed-source models or compute-heavy models are still missing because they do not provide usable APIs or exceed our current compute budget. We welcome model authors and users to contact us if they can provide results.
 
-`WiScore = (0.7 * Consistency + 0.2 * Realism + 0.1 * Aesthetic Quality) /2`  
+## Repository Layout
 
-The **Overall WiScore** is a weighted sum of six categories:  
+- [data_verified/cultural_common_sense_verified.json](data_verified/cultural_common_sense_verified.json): verified cultural common sense prompts, IDs 1-400.
+- [data_verified/spatio-temporal_reasoning_verified.json](data_verified/spatio-temporal_reasoning_verified.json): verified time and space prompts, IDs 401-640.
+- [data_verified/natural_science_verified.json](data_verified/natural_science_verified.json): verified biology, physics, and chemistry prompts, IDs 641-1000.
+- [data_verified/merge.json](data_verified/merge.json): optional merged copy of all 1,000 verified prompts.
+- [vllm_eval.py](vllm_eval.py): evaluator for Qwen3.5-35B-A3B served by vLLM.
+- [calculate_verified.py](calculate_verified.py): WISE_Verified score calculation script.
+- [eval_qwen.sh](eval_qwen.sh): end-to-end evaluation template.
+- [leadboard.md](leadboard.md): full WISE_Verified leaderboard.
+- [WISE_legacy](WISE_legacy/README.md): archived original WISE release with GPT-4o evaluation, original data, original code, and assets.
 
-`Overall WiScore = (0.4 * Cultural + 0.167 * Time + 0.133 * Space + 0.1 * Biology + 0.1 * Physics + 0.1 * Chemistry)`
+## WISE_Verified Evaluation
 
-**Prompt rewrite analysis:**
-
-<img src="assets/Table2.png" alt="overview" style="zoom:80%;" />
-
-WiScore on rewritten prompts of different models. These prompts were simplified from the original WISE benchmark using GPT-4o (e.g., "The plant often gifted on Mother’s Day" to "Carnation"). Green ball indicates score increase after rewriting; red ball indicates score decrease. A smaller difference indicates that the model has a stronger ability to model world knowledge. This indicator excludes the influence of the generation quality itself.
-
-## Usage Guide
-
----
-
-To evaluate using **GPT-4o-2024-05-13**, follow these steps:
-
-### 1. Evaluate with GPT-4o-2024-05-13
-
-First, set the `IMAGE_DIR` variable to the directory where your model's generated images are saved. The image names should be in the format `1-1000.png`.
+Prepare generated images in one directory. The file names must match the prompt IDs:
 
 ```bash
-IMAGE_DIR="path/to/your_image_output_dir" # Directory where model-generated images are saved, e.g., 1-1000.png
+IMAGE_DIR="/path/to/generated_images"  # contains 1.png, 2.png, ..., 1000.png
 ```
 
-Then, run the `gpt_eval.py` script for each category. Remember to replace `""` with your actual API key.
+Start a [vLLM](https://github.com/vllm-project/vllm) server that exposes an OpenAI-compatible chat completion endpoint for Qwen3.5-35B-A3B. See the official vLLM repository for installation and serving instructions. For example:
 
 ```bash
-python gpt_eval.py \
-    --json_path data/cultural_common_sense.json \
-    --output_dir ${IMAGE_DIR}/Results/cultural_common_sense \
-    --image_dir ${IMAGE_DIR} \
-    --api_key "" \
-    --model "gpt-4o-2024-05-13" \
-    --result_full ${IMAGE_DIR}/Results/cultural_common_sense_full_results.json \
-    --result_scores ${IMAGE_DIR}/Results/cultural_common_sense_scores_results.jsonl \
-    --max_workers 96
-
-python gpt_eval.py \
-    --json_path data/spatio-temporal_reasoning.json \
-    --output_dir ${IMAGE_DIR}/Results/spatio-temporal_reasoning \
-    --image_dir ${IMAGE_DIR} \
-    --api_key "" \
-    --model "gpt-4o-2024-05-13" \
-    --result_full ${IMAGE_DIR}/Results/spatio-temporal_reasoning_results.json \
-    --result_scores ${IMAGE_DIR}/Results/spatio-temporal_reasoning_results.jsonl \
-    --max_workers 96
-
-python gpt_eval.py \
-    --json_path data/natural_science.json \
-    --output_dir ${IMAGE_DIR}/Results/natural_science \
-    --image_dir ${IMAGE_DIR} \
-    --api_key "" \
-    --model "gpt-4o-2024-05-13" \
-    --result_full ${IMAGE_DIR}/Results/natural_science_full_results.json \
-    --result_scores ${IMAGE_DIR}/Results/natural_science_scores_results.jsonl \
-    --max_workers 96
+vllm serve /path/to/Qwen3.5-35B-A3B \
+    --served-model-name Qwen3.5-35B-A3B \
+    --host 0.0.0.0 \
+    --port 8000
 ```
 
-### 2. Calculate Scores
-
-After running the evaluations, use `Calculate.py` to compute the scores.
+Then run the evaluation:
 
 ```bash
-python Calculate.py \
-    "${IMAGE_DIR}/Results/cultural_common_sense_scores_results.jsonl" \
-    "${IMAGE_DIR}/Results/natural_science_scores_results.jsonl" \
-    "${IMAGE_DIR}/Results/spatio-temporal_reasoning_results.jsonl" \
+export IMAGE_DIR="/path/to/generated_images"
+export VLLM_API_BASE="http://127.0.0.1:8000/v1"
+export VLLM_API_KEY="EMPTY"
+export JUDGE_MODEL="Qwen3.5-35B-A3B"
+export MAX_WORKERS=96
+
+bash eval_qwen.sh
+```
+
+The script writes category-level outputs to `${IMAGE_DIR}/Results-qwen35/` and then calls `calculate_verified.py` to report the category scores and overall WISE_Verified score.
+
+You can also run the scoring step manually after evaluation:
+
+```bash
+python calculate_verified.py \
+    "${IMAGE_DIR}/Results-qwen35/cultural_common_sense_scores_results.jsonl" \
+    "${IMAGE_DIR}/Results-qwen35/natural_science_scores_results.jsonl" \
+    "${IMAGE_DIR}/Results-qwen35/spatio-temporal_reasoning_scores_results.jsonl" \
     --category all
 ```
 
----
+## Scoring
 
-### Important Notes!
+`vllm_eval.py` produces one binary score for each image:
 
-* **GPT Version**: Please ensure you use **`gpt-4o-2024-05-13`** for evaluation.
-* **Breakpoint Retesting**: Our `gpt_eval.py` supports resuming from breakpoints. If your evaluation encounters an error midway, simply **re-run the script**.
-* **Categorized Score Calculation**: `Calculate.py` supports calculating scores by category. You can change the `--category` parameter to specify which categories to calculate (e.g., `--category culture` or `--category all`).
+- `Score: 1`: the image is correct according to the prompt and explanation, reflects the intended world knowledge, and is realistic and visually usable for judging.
+- `Score: 0`: the image misses the intended knowledge-based answer, has incorrect key relations, is unrealistic or too ambiguous to verify, or has generation failures that interfere with evaluation.
 
----
+The per-sample WiScore is now this binary 0/1 score. The overall WISE_Verified score uses the following category weights:
 
+```text
+Overall = 0.40 * CULTURE
+        + 0.12 * TIME
+        + 0.12 * SPACE
+        + 0.12 * BIOLOGY
+        + 0.12 * PHYSICS
+        + 0.12 * CHEMISTRY
+```
 
 ## 🏆 Leaderboard
 
-**Normalized WiScore of different models**
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<table>
-    <thead>
-        <tr>
-            <th colspan="8" class="lightyellow">Dedicated T2I</th>
-        </tr>
-        <tr>
-            <th>Model</th>
-            <th>Cultural</th>
-            <th>Time</th>
-            <th>Space</th>
-            <th>Biology</th>
-            <th>Physics</th>
-            <th>Chemistry</th>
-            <th><strong>Overall</strong></th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>FLUX.1-dev</td>
-            <td>0.48</td>
-            <td><strong>0.58</strong></td>
-            <td><strong>0.62</strong></td>
-            <td>0.42</td>
-            <td>0.51</td>
-            <td><strong>0.35</strong></td>
-            <td><strong>0.50</strong></td>
-        </tr>
-        <tr>
-            <td>FLUX.1-schnell</td>
-            <td>0.39</td>
-            <td>0.44</td>
-            <td>0.50</td>
-            <td>0.31</td>
-            <td>0.44</td>
-            <td>0.26</td>
-            <td>0.40</td>
-        </tr>
-        <tr>
-            <td>PixArt-Alpha</td>
-            <td>0.45</td>
-            <td>0.50</td>
-            <td>0.48</td>
-            <td><strong>0.49</strong></td>
-            <td><strong>0.56</strong></td>
-            <td>0.34</td>
-            <td>0.47</td>
-        </tr>
-        <tr>
-            <td>playground-v2.5</td>
-            <td><strong>0.49</strong></td>
-            <td>0.58</td>
-            <td>0.55</td>
-            <td>0.43</td>
-            <td>0.48</td>
-            <td>0.33</td>
-            <td>0.49</td>
-        </tr>
-        <tr>
-            <td>SD-v1-5</td>
-            <td>0.34</td>
-            <td>0.35</td>
-            <td>0.32</td>
-            <td>0.28</td>
-            <td>0.29</td>
-            <td>0.21</td>
-            <td>0.32</td>
-        </tr>
-        <tr>
-            <td>SD-2-1</td>
-            <td>0.30</td>
-            <td>0.38</td>
-            <td>0.35</td>
-            <td>0.33</td>
-            <td>0.34</td>
-            <td>0.21</td>
-            <td>0.32</td>
-        </tr>
-        <tr>
-            <td>SD-XL-base-0.9</td>
-            <td>0.43</td>
-            <td>0.48</td>
-            <td>0.47</td>
-            <td>0.44</td>
-            <td>0.45</td>
-            <td>0.27</td>
-            <td>0.43</td>
-        </tr>
-        <tr>
-            <td>SD-3-medium</td>
-            <td>0.42</td>
-            <td>0.44</td>
-            <td>0.48</td>
-            <td>0.39</td>
-            <td>0.47</td>
-            <td>0.29</td>
-            <td>0.42</td>
-        </tr>
-        <tr>
-            <td>SD-3.5-medium</td>
-            <td>0.43</td>
-            <td>0.50</td>
-            <td>0.52</td>
-            <td>0.41</td>
-            <td>0.53</td>
-            <td>0.33</td>
-            <td>0.45</td>
-        </tr>
-        <tr>
-            <td>SD-3.5-large</td>
-            <td>0.44</td>
-            <td>0.50</td>
-            <td>0.58</td>
-            <td>0.44</td>
-            <td>0.52</td>
-            <td>0.31</td>
-            <td>0.46</td>
-        </tr>
-    </tbody>
-    <thead>
-        <tr>
-            <th colspan="8" class="softblue">Unify MLLM</th>
-        </tr>
-        <tr>
-            <th>Model</th>
-            <th>Cultural</th>
-            <th>Time</th>
-            <th>Space</th>
-            <th>Biology</th>
-            <th>Physics</th>
-            <th>Chemistry</th>
-            <th><strong>Overall</strong></th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>GPT4o</td>
-            <td><strong>0.81</strong></td>
-            <td><strong>0.71</strong></td>
-            <td><strong>0.89</strong></td>
-            <td><strong>0.83</strong></td>
-            <td><strong>0.79</strong></td>
-            <td><strong>0.74</strong></td>
-            <td><strong>0.80</strong></td>
-        </tr>
-        <tr>
-            <td>DeepGen1.0</td>
-            <td><strong>0.72</strong></td>
-            <td><strong>0.81</strong></td>
-            <td><strong>0.70</strong></td>
-            <td><strong>0.67</strong></td>
-            <td><strong>0.82</strong></td>
-            <td><strong>0.66</strong></td>
-            <td><strong>0.73</strong></td>
-        </tr>
-      <tr>
-            <td>LongCat-Image</td>
-            <td><strong>0.66</strong></td>
-            <td><strong>0.61</strong></td>
-            <td><strong>0.72</strong></td>
-            <td><strong>0.66</strong></td>
-            <td><strong>0.72</strong></td>
-            <td><strong>0.49</strong></td>
-            <td><strong>0.65</strong></td>
-        </tr>
-        <tr>
-            <td>NextFlow-RL</td>
-            <td><strong>0.63</strong></td>
-            <td><strong>0.63</strong></td>
-            <td><strong>0.77</strong></td>
-            <td><strong>0.58</strong></td>
-            <td><strong>0.67</strong></td>
-            <td><strong>0.39</strong></td>
-            <td><strong>0.62</strong></td>
-        </tr>
-        <tr>
-            <td>Qwen-Image</td>
-            <td>0.62</td>
-            <td>0.63</td>
-            <td>0.77</td>
-            <td>0.57</td>
-            <td>0.75</td>
-            <td>0.40</td>
-            <td>0.62</td>
-        </tr>
-      <tr>
-        <td>UniWorld-V2</td>
-        <td>0.60</td>
-        <td>0.61</td>
-        <td>0.70</td>
-        <td>0.53</td>
-        <td>0.64</td>
-        <td>0.32</td>
-        <td>0.58</td>
-    </tr>
-       <tr>
-            <td>Hunyuan-Image 3.0</td>
-            <td><strong>0.58</strong></td>
-            <td><strong>0.57</strong></td>
-            <td><strong>0.70</strong></td>
-            <td><strong>0.56</strong></td>
-            <td><strong>0.63</strong></td>
-            <td><strong>0.31</strong></td>
-            <td><strong>0.57</strong></td>
-        </tr>
-        <tr>
-            <td>BAGEL</td>
-            <td>0.44</td>
-            <td>0.55</td>
-            <td>0.68</td>
-            <td>0.44</td>
-            <td>0.60</td>
-            <td>0.39</td>
-            <td>0.52</td>
-        </tr>
-        <tr>
-            <td>UniWorld-V1</td>
-            <td>0.53</td>
-            <td>0.55</td>
-            <td>0.73</td>
-            <td>0.45</td>
-            <td>0.59</td>
-            <td>0.41</td>
-            <td>0.55</td>
-        </tr>
-              <tr>
-            <td>Manzano-3B</td>
-            <td>0.42</td>
-            <td>0.51</td>
-            <td>0.59</td>
-            <td>0.45</td>
-            <td>0.51</td>
-            <td>0.32</td>
-            <td>0.46</td>
-        </tr>
-        <tr>
-            <td>Manzano-30B</td>
-            <td>0.58</td>
-            <td>0.50</td>
-            <td>0.65</td>
-            <td>0.50</td>
-            <td>0.55</td>
-            <td>0.32</td>
-            <td>0.54</td>
-        </tr>
-        <tr>
-            <td>OpenUni-B-512</td>
-            <td>0.37</td>
-            <td>0.45</td>
-            <td>0.58</td>
-            <td>0.39</td>
-            <td>0.50</td>
-            <td>0.30</td>
-            <td>0.43</td>
-        </tr>
-        <tr>
-            <td>OpenUni-L-512</td>
-            <td>0.51</td>
-            <td>0.49</td>
-            <td>0.64</td>
-            <td>0.48</td>
-            <td>0.63</td>
-            <td>0.35</td>
-            <td>0.52</td>
-        </tr>
-        <tr>
-            <td>OpenUni-L-1024</td>
-            <td>0.49</td>
-            <td>0.53</td>
-            <td>0.69</td>
-            <td>0.49</td>
-            <td>0.56</td>
-            <td>0.39</td>
-            <td>0.52</td>
-        </tr>      
-        <tr>
-            <td>MetaQuery-XL</td>
-            <td>0.56</td>
-            <td>0.55</td>
-            <td>0.62</td>
-            <td>0.49</td>
-            <td>0.63</td>
-            <td>0.41</td>
-            <td>0.55</td>
-        </tr>
-        <tr>
-            <td>Liquid</td>
-            <td>0.38</td>
-            <td>0.42</td>
-            <td>0.53</td>
-            <td>0.36</td>
-            <td>0.47</td>
-            <td>0.30</td>
-            <td>0.41</td>
-        </tr>
-        <tr>
-            <td>Emu3</td>
-            <td>0.34</td>
-            <td>0.45</td>
-            <td>0.48</td>
-            <td>0.41</td>
-            <td>0.45</td>
-            <td>0.27</td>
-            <td>0.39</td>
-        </tr>
-        <tr>
-            <td>Harmon-1.5B</td>
-            <td>0.38</td>
-            <td>0.48</td>
-            <td>0.52</td>
-            <td>0.37</td>
-            <td>0.44</td>
-            <td>0.29</td>
-            <td>0.41</td>
-        </tr> 
-        <tr>
-            <td>Janus-1.3B</td>
-            <td>0.16</td>
-            <td>0.26</td>
-            <td>0.35</td>
-            <td>0.28</td>
-            <td>0.30</td>
-            <td>0.14</td>
-            <td>0.23</td>
-        </tr>
-        <tr>
-            <td>JanusFlow-1.3B</td>
-            <td>0.13</td>
-            <td>0.26</td>
-            <td>0.28</td>
-            <td>0.20</td>
-            <td>0.19</td>
-            <td>0.11</td>
-            <td>0.18</td>
-        </tr>
-        <tr>
-            <td>Janus-Pro-1B</td>
-            <td>0.20</td>
-            <td>0.28</td>
-            <td>0.45</td>
-            <td>0.24</td>
-            <td>0.32</td>
-            <td>0.16</td>
-            <td>0.26</td>
-        </tr>
-        <tr>
-            <td>Janus-Pro-7B</td>
-            <td>0.30</td>
-            <td>0.37</td>
-            <td>0.49</td>
-            <td>0.36</td>
-            <td>0.42</td>
-            <td>0.26</td>
-            <td>0.35</td>
-        </tr>
-        <tr>
-            <td>Orthus-7B-base</td>
-            <td>0.07</td>
-            <td>0.10</td>
-            <td>0.12</td>
-            <td>0.15</td>
-            <td>0.15</td>
-            <td>0.10</td>
-            <td>0.10</td>
-        </tr>
-        <tr>
-            <td>Orthus-7B-instruct</td>
-            <td>0.23</td>
-            <td>0.31</td>
-            <td>0.38</td>
-            <td>0.28</td>
-            <td>0.31</td>
-            <td>0.20</td>
-            <td>0.27</td>
-        </tr>
-        <tr>
-            <td>show-o</td>
-            <td>0.28</td>
-            <td>0.36</td>
-            <td>0.40</td>
-            <td>0.23</td>
-            <td>0.33</td>
-            <td>0.22</td>
-            <td>0.30</td>
-        </tr>
-        <tr>
-            <td>show-o-512</td>
-            <td>0.28</td>
-            <td>0.40</td>
-            <td>0.48</td>
-            <td>0.30</td>
-            <td>0.46</td>
-            <td><strong>0.30</strong></td>
-            <td>0.35</td>
-        </tr>
-        <tr>
-            <td>vila-u-7b-256</td>
-            <td>0.26</td>
-            <td>0.33</td>
-            <td>0.37</td>
-            <td>0.35</td>
-            <td>0.39</td>
-            <td>0.23</td>
-            <td>0.31</td>
-        </tr>
-    </tbody>
-</table>
+The full WISE_Verified leaderboard is available in [leadboard.md](leadboard.md).
 
-</body>
-</html>
+| Rank | Model | Overall | CULTURE | TIME | SPACE | BIOLOGY | PHYSICS | CHEMISTRY |
+| ---: | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+| 1 | NanoBanana-Pro | 0.8760 | 0.8975 | 0.8167 | 0.9333 | 0.8167 | 0.8667 | 0.8750 |
+| 2 | GPT-Image-1.5 | 0.8250 | 0.8900 | 0.6917 | 0.8833 | 0.8000 | 0.7583 | 0.7750 |
+| 3 | BAGEL (w/ CoT) | 0.6280 | 0.7800 | 0.6333 | 0.5667 | 0.3750 | 0.5500 | 0.5083 |
+| 4 | FLUX.2-dev | 0.5650 | 0.6650 | 0.5667 | 0.6583 | 0.3667 | 0.5250 | 0.3750 |
+| 5 | QwenImage | 0.5100 | 0.6275 | 0.5250 | 0.5583 | 0.3417 | 0.4833 | 0.2500 |
+| 6 | Qwen-Image-2512 | 0.4990 | 0.5950 | 0.4750 | 0.6000 | 0.3500 | 0.4917 | 0.2583 |
+| 7 | Z-Image | 0.4530 | 0.5475 | 0.4667 | 0.5083 | 0.3250 | 0.4750 | 0.1750 |
+| 8 | FLUX.2-klein-9B | 0.4400 | 0.4900 | 0.3917 | 0.5500 | 0.3833 | 0.4833 | 0.2250 |
+| 9 | HunyuanImage-3.0 | 0.4350 | 0.5250 | 0.3917 | 0.4833 | 0.3083 | 0.4500 | 0.2417 |
+| 10 | FLUX.1-dev | 0.4160 | 0.5225 | 0.4000 | 0.5333 | 0.1750 | 0.3750 | 0.2417 |
+
+## Original WISE
+
+The original WISE release used **GPT-4o-2024-05-13** to score consistency, realism, and aesthetic quality, then computed the original WiScore. That version is archived in [WISE_legacy](WISE_legacy/README.md), including the original README, code, data, and figures.
+
+Use the legacy version if you need to reproduce the original paper setting or compare against the old GPT-4o based scores.
 
 ## Citation
-```
+
+```bibtex
 @article{niu2025wise,
   title={WISE: A World Knowledge-Informed Semantic Evaluation for Text-to-Image Generation},
   author={Niu, Yuwei and Ning, Munan and Zheng, Mengren and Jin, Weiyang and Lin, Bin and Jin, Peng and Liao, Jiaqi and Ning, Kunpeng and Feng, Chaoran and Zhu, Bin and Yuan, Li},
@@ -547,11 +136,10 @@ python Calculate.py \
 }
 ```
 
-
 ## 📧 Contact
-If you have any questions, feel free to contact Yuwei Niu with niuyuwei04@gmail.com
+
+If you have questions, comments, or model results to add to the leaderboard, please contact Yuwei Niu at [niuyuwei04@gmail.com](mailto:niuyuwei04@gmail.com).
 
 ## Recommendation
 
-If you're interested in the Unify model, [Purshow/Awesome-Unified-Multimodal](https://github.com/Purshow/Awesome-Unified-Multimodal) is one of the most comprehensive resources for papers, code, and other materials related to unified multimodal models.
-
+If you are interested in unified multimodal models, [Purshow/Awesome-Unified-Multimodal](https://github.com/Purshow/Awesome-Unified-Multimodal) is a comprehensive resource for papers, code, and other materials.

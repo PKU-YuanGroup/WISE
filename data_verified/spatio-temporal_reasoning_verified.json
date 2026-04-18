@@ -1,0 +1,1682 @@
+[
+  {
+    "Prompt": "The Sydney Opera House when London has just passed midnight.",
+    "Explanation": "Midnight in London corresponds to clear daytime in Sydney. The Opera House should be shown in broad daylight rather than at night or around sunrise.",
+    "Category": "time",
+    "Subcategory": "Horizontal time",
+    "prompt_id": 401
+  },
+  {
+    "Prompt": "The monastery gate when robins are tugging worms from the grass in the yard.",
+    "Explanation": "Robins foraging this way is a just-after-sunrise cue. The gate and yard should be shown in early daylight rather than full midday brightness or evening dimness.",
+    "Category": "time",
+    "Subcategory": "Horizontal time",
+    "prompt_id": 402
+  },
+  {
+    "Prompt": "The stone courtyard below a bell tower when crickets begin chirping around the wall.",
+    "Explanation": "Crickets starting up is a dusk cue. The courtyard should be shown in warm fading light rather than harsh midday sun or full night.",
+    "Category": "time",
+    "Subcategory": "Horizontal time",
+    "prompt_id": 403
+  },
+  {
+    "Prompt": "The pond footbridge when dragonflies are skimming low over the surface.",
+    "Explanation": "Active dragonflies over a pond suggest full daylight rather than dawn or dusk. The footbridge and pond should be shown in clear daytime light.",
+    "Category": "time",
+    "Subcategory": "Horizontal time",
+    "prompt_id": 404
+  },
+  {
+    "Prompt": "The orchard watch hut when the first bats begin leaving the trees.",
+    "Explanation": "Bats emerge around dusk. The orchard and the watch hut should be shown in fading evening light or very early night rather than full daylight.",
+    "Category": "time",
+    "Subcategory": "Horizontal time",
+    "prompt_id": 405
+  },
+  {
+    "Prompt": "The Brooklyn Bridge when Tokyo is reaching noon.",
+    "Explanation": "Noon in Tokyo corresponds to night in New York. The bridge should be shown under a dark sky with city lights visible rather than in daytime light.",
+    "Category": "time",
+    "Subcategory": "Horizontal time",
+    "prompt_id": 406
+  },
+  {
+    "Prompt": "The chapel path when robins have already begun singing in the cypress trees.",
+    "Explanation": "The robin dawn chorus indicates the period around sunrise. The chapel path should be lit by soft early daylight rather than midday or night conditions.",
+    "Category": "time",
+    "Subcategory": "Horizontal time",
+    "prompt_id": 407
+  },
+  {
+    "Prompt": "The canals of Amsterdam when Seoul is beginning the workday.",
+    "Explanation": "The start of the workday in Seoul corresponds to deep night in Amsterdam. The canals should be shown under night lighting rather than in daylight.",
+    "Category": "time",
+    "Subcategory": "Horizontal time",
+    "prompt_id": 408
+  },
+  {
+    "Prompt": "The harbor in Vancouver when Shanghai is entering the lunch hour.",
+    "Explanation": "Lunchtime in Shanghai corresponds to the previous evening in Vancouver. The harbor should be shown after sunset or in early night rather than in daylight.",
+    "Category": "time",
+    "Subcategory": "Horizontal time",
+    "prompt_id": 409
+  },
+  {
+    "Prompt": "The riverside steps when the first fireflies begin appearing above the reeds.",
+    "Explanation": "The first fireflies signal dusk. The steps and riverside should be shown in warm fading light or the earliest night, not in daytime brightness.",
+    "Category": "time",
+    "Subcategory": "Horizontal time",
+    "prompt_id": 410
+  },
+  {
+    "Prompt": "The temple gate in Kyoto when Paris is finishing lunch.",
+    "Explanation": "Paris finishing lunch corresponds to evening in Kyoto. The gate should be shown after the main daylight peak, in evening or early-night light rather than in bright daytime conditions.",
+    "Category": "time",
+    "Subcategory": "Horizontal time",
+    "prompt_id": 411
+  },
+  {
+    "Prompt": "The rice paddies when lotus flowers start closing their petals.",
+    "Explanation": "The key temporal cue is dusk: lotus flowers begin closing their petals as evening approaches. The image should show flooded rice paddies in fading evening light rather than bright midday conditions.",
+    "Category": "time",
+    "Subcategory": "Horizontal time",
+    "prompt_id": 412
+  },
+  {
+    "Prompt": "The beach boardwalk when ghost crabs have begun emerging from the dunes.",
+    "Explanation": "Ghost crabs emerge after sunset and at night. The boardwalk and beach should appear dim, moonlit, or otherwise night-lit rather than sunlit like a daytime shore.",
+    "Category": "time",
+    "Subcategory": "Horizontal time",
+    "prompt_id": 413
+  },
+  {
+    "Prompt": "The streets around the Colosseum when Sydney has just passed midnight.",
+    "Explanation": "Just after midnight in Sydney corresponds to full daytime in Rome. The streets around the Colosseum should be shown in strong natural daylight rather than at night.",
+    "Category": "time",
+    "Subcategory": "Horizontal time",
+    "prompt_id": 414
+  },
+  {
+    "Prompt": "The plaza in Madrid when Tokyo is settling into midnight.",
+    "Explanation": "Midnight in Tokyo corresponds to daytime in Madrid. The plaza should still be clearly daylit rather than evening-dark.",
+    "Category": "time",
+    "Subcategory": "Horizontal time",
+    "prompt_id": 415
+  },
+  {
+    "Prompt": "The village pond when the first frogs begin calling from the reeds.",
+    "Explanation": "Frogs begin calling around dusk. The pond should be shown in fading evening light rather than full daylight.",
+    "Category": "time",
+    "Subcategory": "Horizontal time",
+    "prompt_id": 416
+  },
+  {
+    "Prompt": "The waterfront in Auckland when Dubai is reaching noon.",
+    "Explanation": "Noon in Dubai corresponds to evening in Auckland. The waterfront should be shown after daytime has passed its brightest point, in late-evening or early-night conditions rather than under strong daylight.",
+    "Category": "time",
+    "Subcategory": "Horizontal time",
+    "prompt_id": 417
+  },
+  {
+    "Prompt": "The market square in Krakow when Singapore is starting breakfast.",
+    "Explanation": "Breakfast time in Singapore corresponds to night in Krakow. The square should be shown at night rather than in daylight.",
+    "Category": "time",
+    "Subcategory": "Horizontal time",
+    "prompt_id": 418
+  },
+  {
+    "Prompt": "The stone path beside the conservatory when night moths begin circling the vines above it.",
+    "Explanation": "Night moth activity is a night cue. The conservatory and the stone path should be dimly lit rather than daylight-bright.",
+    "Category": "time",
+    "Subcategory": "Horizontal time",
+    "prompt_id": 419
+  },
+  {
+    "Prompt": "The shrine approach in Nara when Mexico City is just entering the afternoon.",
+    "Explanation": "Early afternoon in Mexico City corresponds to the period before or around sunrise in Nara. The shrine approach should be shown in first light rather than full daytime brightness.",
+    "Category": "time",
+    "Subcategory": "Horizontal time",
+    "prompt_id": 420
+  },
+  {
+    "Prompt": "The garden gate when honeybees have started working the flower boxes by the fence.",
+    "Explanation": "Once bees are actively working flowers, the day has clearly moved into daylight. The gate and garden should be shown in daytime rather than at dusk or night.",
+    "Category": "time",
+    "Subcategory": "Horizontal time",
+    "prompt_id": 421
+  },
+  {
+    "Prompt": "The Charles Bridge when Seoul is at lunchtime.",
+    "Explanation": "Lunchtime in Seoul corresponds to the period around sunrise in Prague. The bridge should be shown in first light rather than at midday or night.",
+    "Category": "time",
+    "Subcategory": "Horizontal time",
+    "prompt_id": 422
+  },
+  {
+    "Prompt": "The promenade in Rio de Janeiro when Bangkok is entering midnight.",
+    "Explanation": "Midnight in Bangkok corresponds to full daytime in Rio de Janeiro. The promenade should be shown in bright daytime rather than at sunset or night.",
+    "Category": "time",
+    "Subcategory": "Horizontal time",
+    "prompt_id": 423
+  },
+  {
+    "Prompt": "The pond railing when tree frogs have begun calling from the leaves along the bank.",
+    "Explanation": "Tree frogs calling is an evening or night cue. The pond and railing should be shown in dim evening or night light rather than full daytime brightness.",
+    "Category": "time",
+    "Subcategory": "Horizontal time",
+    "prompt_id": 424
+  },
+  {
+    "Prompt": "The cathedral square in Prague when Los Angeles has just passed midnight.",
+    "Explanation": "Just after midnight in Los Angeles corresponds to daytime in Prague. The square should be shown in daylight rather than in night lighting.",
+    "Category": "time",
+    "Subcategory": "Horizontal time",
+    "prompt_id": 425
+  },
+  {
+    "Prompt": "The steps of the Acropolis when Buenos Aires has just passed midnight.",
+    "Explanation": "Just after midnight in Buenos Aires corresponds to the period around sunrise in Athens. The Acropolis should be shown in first light rather than at night or under a high daytime sun.",
+    "Category": "time",
+    "Subcategory": "Horizontal time",
+    "prompt_id": 426
+  },
+  {
+    "Prompt": "The old port in Marseille when Tokyo is beginning the workday.",
+    "Explanation": "The beginning of the workday in Tokyo corresponds to deep night in Marseille. The port should be shown under artificial night lighting rather than daylight.",
+    "Category": "time",
+    "Subcategory": "Horizontal time",
+    "prompt_id": 427
+  },
+  {
+    "Prompt": "The riverfront in Budapest when Seoul is at noon.",
+    "Explanation": "Noon in Seoul corresponds to the period around sunrise in Budapest. The riverfront should be shown in first light rather than in full daytime brightness or night.",
+    "Category": "time",
+    "Subcategory": "Horizontal time",
+    "prompt_id": 428
+  },
+  {
+    "Prompt": "The Burj Khalifa when New York has just passed midnight.",
+    "Explanation": "Just after midnight in New York corresponds to clear daytime in Dubai. The Burj Khalifa should be shown in strong daylight rather than at night.",
+    "Category": "time",
+    "Subcategory": "Horizontal time",
+    "prompt_id": 429
+  },
+  {
+    "Prompt": "The avenue beneath the Eiffel Tower when Sydney is settling into midnight.",
+    "Explanation": "Midnight in Sydney corresponds to full daytime in Paris. The avenue should be shown in broad daylight rather than in evening illumination.",
+    "Category": "time",
+    "Subcategory": "Horizontal time",
+    "prompt_id": 430
+  },
+  {
+    "Prompt": "The lane beside the orchard wall when crickets have begun chirping in the grass.",
+    "Explanation": "Crickets beginning to chirp is a dusk cue. The lane and wall should be shown in warm declining light rather than harsh midday sun.",
+    "Category": "time",
+    "Subcategory": "Horizontal time",
+    "prompt_id": 431
+  },
+  {
+    "Prompt": "The beach at Waikiki when Beijing is entering the lunch hour.",
+    "Explanation": "Lunchtime in Beijing corresponds to the previous evening in Honolulu. The beach should be shown near sunset or in early night rather than in strong daytime light.",
+    "Category": "time",
+    "Subcategory": "Horizontal time",
+    "prompt_id": 432
+  },
+  {
+    "Prompt": "The plaza beside the cathedral in Seville when Tokyo is approaching noon.",
+    "Explanation": "Approaching noon in Tokyo corresponds to the period around sunrise in Seville. The plaza should be shown in first light rather than under a high sun.",
+    "Category": "time",
+    "Subcategory": "Horizontal time",
+    "prompt_id": 433
+  },
+  {
+    "Prompt": "The harbor in Cape Town when Singapore has just passed midnight.",
+    "Explanation": "Just after midnight in Singapore corresponds to evening in Cape Town. The harbor should be shown in late-evening light rather than full daytime brightness.",
+    "Category": "time",
+    "Subcategory": "Horizontal time",
+    "prompt_id": 434
+  },
+  {
+    "Prompt": "The village square when swallows have given way to bats above the rooftops.",
+    "Explanation": "Bats replacing swallows indicates dusk. The square should be shown in fading evening light rather than full daylight.",
+    "Category": "time",
+    "Subcategory": "Horizontal time",
+    "prompt_id": 435
+  },
+  {
+    "Prompt": "The square before St. Basil's Cathedral when Mexico City is reaching lunch.",
+    "Explanation": "Lunchtime in Mexico City corresponds to evening in Moscow. The square should be shown in late-evening light or early night rather than in daytime sun.",
+    "Category": "time",
+    "Subcategory": "Horizontal time",
+    "prompt_id": 436
+  },
+  {
+    "Prompt": "The old quarter in Lisbon when Seoul has turned past midnight.",
+    "Explanation": "Just after midnight in Seoul corresponds to daytime in Lisbon. The old quarter should still be shown in clear natural daylight.",
+    "Category": "time",
+    "Subcategory": "Horizontal time",
+    "prompt_id": 437
+  },
+  {
+    "Prompt": "The steps along Sydney Harbour when Rome has just passed midnight.",
+    "Explanation": "Just after midnight in Rome corresponds to daytime in Sydney. The harbor should be shown in daylight rather than under night lighting.",
+    "Category": "time",
+    "Subcategory": "Horizontal time",
+    "prompt_id": 438
+  },
+  {
+    "Prompt": "The alleys around Jama Masjid in Delhi when London is reaching noon.",
+    "Explanation": "Noon in London corresponds to daytime in Delhi. The alleys should be shown in clear daylight rather than at dawn or night.",
+    "Category": "time",
+    "Subcategory": "Horizontal time",
+    "prompt_id": 439
+  },
+  {
+    "Prompt": "The harbor in Vancouver when Tokyo is just entering midnight.",
+    "Explanation": "Midnight in Tokyo corresponds to daytime in Vancouver. The harbor should be shown in daylight rather than after sunset.",
+    "Category": "time",
+    "Subcategory": "Horizontal time",
+    "prompt_id": 440
+  },
+  {
+    "Prompt": "The square beneath Big Ben when Singapore is reaching noon.",
+    "Explanation": "Noon in Singapore corresponds to the period around sunrise in London. The square should be shown in first light rather than at midday or night.",
+    "Category": "time",
+    "Subcategory": "Horizontal time",
+    "prompt_id": 441
+  },
+  {
+    "Prompt": "The old town in Dubrovnik when New York is beginning the workday.",
+    "Explanation": "The beginning of the workday in New York corresponds to daytime in Dubrovnik. The old town should be shown in clear daylight rather than at night.",
+    "Category": "time",
+    "Subcategory": "Horizontal time",
+    "prompt_id": 442
+  },
+  {
+    "Prompt": "The pond bridge when dragonflies are darting above the water.",
+    "Explanation": "Dragonflies darting above the pond suggest full daylight rather than dawn or dusk. The bridge and water should look clearly daylit.",
+    "Category": "time",
+    "Subcategory": "Horizontal time",
+    "prompt_id": 443
+  },
+  {
+    "Prompt": "The street crossing in Shibuya when Paris has just passed midnight.",
+    "Explanation": "Just after midnight in Paris corresponds to daytime in Tokyo. The crossing should be shown in daylight rather than under late-night neon alone.",
+    "Category": "time",
+    "Subcategory": "Horizontal time",
+    "prompt_id": 444
+  },
+  {
+    "Prompt": "The Fernsehturm in Berlin when Buenos Aires is approaching noon.",
+    "Explanation": "Approaching noon in Buenos Aires corresponds to daytime in Berlin. The tower should be shown in daylight rather than at night.",
+    "Category": "time",
+    "Subcategory": "Horizontal time",
+    "prompt_id": 445
+  },
+  {
+    "Prompt": "The boulevard beside the Arc de Triomphe when Seoul has just passed midnight.",
+    "Explanation": "Just after midnight in Seoul corresponds to daytime in Paris. The boulevard should be shown in clear natural daylight rather than in night lighting.",
+    "Category": "time",
+    "Subcategory": "Horizontal time",
+    "prompt_id": 446
+  },
+  {
+    "Prompt": "The garden path beneath the pergola before the robins there have begun their morning chorus.",
+    "Explanation": "Before the robin dawn chorus, it is still before or around sunrise. The path and pergola should appear dim rather than fully daylit.",
+    "Category": "time",
+    "Subcategory": "Horizontal time",
+    "prompt_id": 447
+  },
+  {
+    "Prompt": "The garden path beside the courtyard pond when night moths are gathering around the vines on the wall.",
+    "Explanation": "Night moths gathering is a night cue. The path and pond should be dimly lit rather than daylight-bright.",
+    "Category": "time",
+    "Subcategory": "Horizontal time",
+    "prompt_id": 448
+  },
+  {
+    "Prompt": "The Golden Gate Bridge when Dubai is reaching noon.",
+    "Explanation": "Noon in Dubai corresponds to night in San Francisco. The bridge should be shown under a dark sky with artificial lighting rather than in daylight.",
+    "Category": "time",
+    "Subcategory": "Horizontal time",
+    "prompt_id": 449
+  },
+  {
+    "Prompt": "The old harbor in Lisbon when Tokyo is entering the lunch hour.",
+    "Explanation": "Lunchtime in Tokyo corresponds to the period around sunrise in Lisbon. The harbor should be shown in first light rather than in bright daytime sun.",
+    "Category": "time",
+    "Subcategory": "Horizontal time",
+    "prompt_id": 450
+  },
+  {
+    "Prompt": "The central square in Mexico City when Rome has just passed midnight.",
+    "Explanation": "Just after midnight in Rome corresponds to a still-daylit period in Mexico City. The square should remain in natural light rather than full night.",
+    "Category": "time",
+    "Subcategory": "Horizontal time",
+    "prompt_id": 451
+  },
+  {
+    "Prompt": "The pond bank when cicadas are already loud in the trees behind it.",
+    "Explanation": "A strong cicada chorus indicates full daytime. The pond bank should be shown in strong daylight rather than dawn, dusk, or night.",
+    "Category": "time",
+    "Subcategory": "Horizontal time",
+    "prompt_id": 452
+  },
+  {
+    "Prompt": "The waterfront in Hong Kong when New York is approaching noon.",
+    "Explanation": "Approaching noon in New York corresponds to midnight in Hong Kong. The waterfront should be shown at night rather than in daytime.",
+    "Category": "time",
+    "Subcategory": "Horizontal time",
+    "prompt_id": 453
+  },
+  {
+    "Prompt": "The bridge over the Arno in Florence when Seoul is beginning breakfast.",
+    "Explanation": "Breakfast time in Seoul corresponds to deep night in Florence. The bridge should be shown under night lighting rather than daylight.",
+    "Category": "time",
+    "Subcategory": "Horizontal time",
+    "prompt_id": 454
+  },
+  {
+    "Prompt": "The pagoda beside West Lake in Hangzhou when Paris is approaching noon.",
+    "Explanation": "Approaching noon in Paris corresponds to evening in Hangzhou. The pagoda and lake should be shown in late-day or evening light rather than in broad daytime brightness.",
+    "Category": "time",
+    "Subcategory": "Horizontal time",
+    "prompt_id": 455
+  },
+  {
+    "Prompt": "The stone streets of Prague when Beijing is reaching midnight.",
+    "Explanation": "Midnight in Beijing corresponds to evening in Prague. The streets should be shown in evening light rather than in full daytime sun or deep night.",
+    "Category": "time",
+    "Subcategory": "Horizontal time",
+    "prompt_id": 456
+  },
+  {
+    "Prompt": "The rice terraces when tree frogs begin calling from the embankments.",
+    "Explanation": "Tree frogs beginning to call is a dusk cue. The terraces should be shown in dimming evening light rather than bright daytime sun.",
+    "Category": "time",
+    "Subcategory": "Horizontal time",
+    "prompt_id": 457
+  },
+  {
+    "Prompt": "The cathedral square in Cusco when Tokyo has just passed midnight.",
+    "Explanation": "Just after midnight in Tokyo corresponds to daytime in Cusco. The square should be shown in clear daylight rather than at dusk or night.",
+    "Category": "time",
+    "Subcategory": "Horizontal time",
+    "prompt_id": 458
+  },
+  {
+    "Prompt": "The village pond when the first night moths begin circling the flowers by the bank.",
+    "Explanation": "Night moths becoming active is a dusk-to-night cue. The pond should be shown in dimming light rather than bright sun.",
+    "Category": "time",
+    "Subcategory": "Horizontal time",
+    "prompt_id": 459
+  },
+  {
+    "Prompt": "The palace gardens in Vienna when Bangkok is reaching noon.",
+    "Explanation": "Noon in Bangkok corresponds to the period after sunrise in Vienna. The gardens should be shown in daylight rather than at night or in late-day light.",
+    "Category": "time",
+    "Subcategory": "Horizontal time",
+    "prompt_id": 460
+  },
+  {
+    "Prompt": "The curved brass-and-reed instrument often shown in images of 1920s jazz clubs.",
+    "Explanation": "This refers to a saxophone. The image should show a metal woodwind instrument with a curved body, a flared bell at the lower end, a side-covered key system along the tube, and a mouthpiece with a reed at the top. It should be held diagonally rather than looking like a straight trumpet or clarinet.",
+    "Category": "time",
+    "Subcategory": "Longitudinal time",
+    "prompt_id": 461
+  },
+  {
+    "Prompt": "The postwar women's fashion item whose needle-like heel became a glamour icon in the 1950s.",
+    "Explanation": "This refers to stiletto heels. The image should show a women's pump or dress shoe with a sharply elevated, extremely thin heel under the back of the shoe, a sleek narrow silhouette, and elegant postwar styling. It should not look like a chunky heel, a boot, or a flat.",
+    "Category": "time",
+    "Subcategory": "Longitudinal time",
+    "prompt_id": 462
+  },
+  {
+    "Prompt": "The battle equipment most associated with heavily armed Greek citizen-soldiers fighting in a phalanx.",
+    "Explanation": "This refers to hoplite armor. The image should show the characteristic defensive ensemble of a Greek hoplite: a bronze cuirass or muscled breastplate, a crested helmet, and metal greaves protecting the shins, with the visual language of classical Greek warfare. It should not look like Roman legionary gear or medieval plate armor.",
+    "Category": "time",
+    "Subcategory": "Longitudinal time",
+    "prompt_id": 463
+  },
+  {
+    "Prompt": "The screw press with movable type associated with Gutenberg's fifteenth-century printing revolution.",
+    "Explanation": "This refers to a Gutenberg-style printing press. The image should show a wooden press frame with a large vertical screw mechanism and a flat platen used to press paper onto inked movable type. It should not look like a later industrial metal press or a modern printer.",
+    "Category": "time",
+    "Subcategory": "Longitudinal time",
+    "prompt_id": 464
+  },
+  {
+    "Prompt": "The silver coin widely used in ancient Rome, often stamped with an emperor's portrait.",
+    "Explanation": "This refers to a Roman denarius coin. The image should show a small hammered silver coin with a side-profile imperial portrait on one face, Roman lettering around the edge, and a reverse side bearing a Roman symbol, deity, or standing figure. It should not look like a modern milled coin with machine-perfect edges.",
+    "Category": "time",
+    "Subcategory": "Longitudinal time",
+    "prompt_id": 465
+  },
+  {
+    "Prompt": "The crank-operated office machine used to total columns of numbers before electronic calculators became common.",
+    "Explanation": "This refers to a mechanical adding machine. The image should show a compact metal desk machine with rows of number keys or levers, a hand crank or mechanical actuation system, and often a register display or paper roll for totals. It should not look like an electronic calculator with a digital screen.",
+    "Category": "time",
+    "Subcategory": "Longitudinal time",
+    "prompt_id": 466
+  },
+  {
+    "Prompt": "The underwater apparatus connected to an air hose that deep-sea divers relied on before modern scuba gear.",
+    "Explanation": "This refers to a standard diving helmet and dress. The image should show a heavy metal helmet with round glass viewports, a hose connection for surface-supplied air, and a thick waterproof diving suit attached at the neck ring. It should not look like a modern scuba mask or a lightweight snorkel setup.",
+    "Category": "time",
+    "Subcategory": "Longitudinal time",
+    "prompt_id": 467
+  },
+  {
+    "Prompt": "The bellows camera used by studio photographers in the nineteenth century before compact roll-film cameras.",
+    "Explanation": "This refers to a wooden bellows camera. The image should show a large early camera with a front lens board and rear body connected by an accordion-like bellows, usually mounted on a tripod or rail. It should not look like a compact handheld film camera or a modern digital camera.",
+    "Category": "time",
+    "Subcategory": "Longitudinal time",
+    "prompt_id": 468
+  },
+  {
+    "Prompt": "The military footwear most associated with Roman legionaries on campaign.",
+    "Explanation": "This refers to Roman caligae. The image should show open military footwear with a thick sole built for marching durability and multiple leather straps wrapping over the foot and around the ankle. It should not look like a modern sandal, a boot, or a civilian slip-on shoe.",
+    "Category": "time",
+    "Subcategory": "Longitudinal time",
+    "prompt_id": 469
+  },
+  {
+    "Prompt": "The machine office clerks used to type formal letters before desktop computers became common.",
+    "Explanation": "This refers to a mechanical typewriter. The image should show a metal-bodied writing machine with rows of round raised keys, a platen roller holding a sheet of paper, a carriage that moves across the top, and internal typebars striking the ribbon. It should not look like a computer keyboard or a word processor.",
+    "Category": "time",
+    "Subcategory": "Longitudinal time",
+    "prompt_id": 470
+  },
+  {
+    "Prompt": "The portable cassette player with headphones many teenagers carried before smartphones and streaming became common.",
+    "Explanation": "This refers to a Walkman-style portable cassette player. The image should show a small rectangular handheld player sized for a cassette tape, with physical buttons, a cassette compartment or window, and wired headphones connected by a cord. It should not look like a smartphone, MP3 player, or speaker.",
+    "Category": "time",
+    "Subcategory": "Longitudinal time",
+    "prompt_id": 471
+  },
+  {
+    "Prompt": "The classroom machine teachers laid transparent sheets on before digital projection became standard.",
+    "Explanation": "This refers to an overhead projector. The image should show a boxy base with a bright flat glass stage for transparencies, a vertical arm rising from the body, and a projection head with a lens and mirror above the stage. It should not look like a slide projector or a modern ceiling-mounted digital projector.",
+    "Category": "time",
+    "Subcategory": "Longitudinal time",
+    "prompt_id": 472
+  },
+  {
+    "Prompt": "The formal women's attire whose tightly corseted bodice and bustle-backed silhouette signaled late Victorian respectability.",
+    "Explanation": "This refers to a late Victorian bustle dress. The image should show a high closed neckline, long fitted sleeves, a tightly shaped bodice, a very narrow waist, and skirt volume projecting at the back through a bustle rather than falling straight down. It should not look like a loose modern gown or an eighteenth-century court dress.",
+    "Category": "time",
+    "Subcategory": "Longitudinal time",
+    "prompt_id": 473
+  },
+  {
+    "Prompt": "The elite road-going conveyance that let eighteenth-century Europeans travel inside an enclosed cabin behind a team of horses.",
+    "Explanation": "This refers to a coach-type horse-drawn carriage. The image should show a fully enclosed passenger cabin with windows, large wheels, suspended bodywork, and an exterior driver position at the front. It should not look like an open wagon, a small cart, or a modern automobile.",
+    "Category": "time",
+    "Subcategory": "Longitudinal time",
+    "prompt_id": 474
+  },
+  {
+    "Prompt": "The long narrow ship with a carved prow used by Viking raiders and sailors.",
+    "Explanation": "This refers to a Viking longship. The image should show a long, narrow wooden hull with overlapping planks, a single mast, side oars, and a carved prow, often dragon-like or otherwise ornamented. It should not look like a broad merchant ship or a later galleon.",
+    "Category": "time",
+    "Subcategory": "Longitudinal time",
+    "prompt_id": 475
+  },
+  {
+    "Prompt": "The lantern device used to project painted glass slides before cinema existed.",
+    "Explanation": "This refers to a magic lantern. The image should show a small projection device with a box-like body, a front lens barrel, an internal light source, and a slot for painted glass slides. It should not look like a reel-based film projector or a modern digital projector.",
+    "Category": "time",
+    "Subcategory": "Longitudinal time",
+    "prompt_id": 476
+  },
+  {
+    "Prompt": "The flame-protected light source miners relied on underground before electric lamps became standard.",
+    "Explanation": "This refers to a Davy lamp. The image should show a small handheld oil lamp with its flame enclosed by a cylindrical wire gauze or metal safety cage, designed to reduce the risk of igniting gas in mines. It should not look like an open candle lantern or a modern flashlight.",
+    "Category": "time",
+    "Subcategory": "Longitudinal time",
+    "prompt_id": 477
+  },
+  {
+    "Prompt": "The multicolored cube puzzle that became an international craze in the 1980s.",
+    "Explanation": "This refers to a Rubik's Cube. The image should show a handheld cube divided into smaller colored squares on each face, typically in a 3x3 grid, with segments designed to twist relative to each other. It should not look like a plain toy cube or a stack of blocks.",
+    "Category": "time",
+    "Subcategory": "Longitudinal time",
+    "prompt_id": 478
+  },
+  {
+    "Prompt": "The colorful van closely associated with the hippie movement of the 1960s.",
+    "Explanation": "This refers to a Volkswagen Bus. The image should show a rounded microbus with a blunt front, multiple side windows, and the familiar mid-century van silhouette often linked to 1960s counterculture. It should not look like a modern minivan or a generic delivery van.",
+    "Category": "time",
+    "Subcategory": "Longitudinal time",
+    "prompt_id": 479
+  },
+  {
+    "Prompt": "The two-wheeled vehicle associated with Roman races and triumphal imagery.",
+    "Explanation": "This refers to a Roman chariot. The image should show a light two-wheeled horse-drawn vehicle with a small standing platform, large spoked wheels, and an open front or waist-high rail for the driver. It should not look like a farm wagon or a modern carriage.",
+    "Category": "time",
+    "Subcategory": "Longitudinal time",
+    "prompt_id": 480
+  },
+  {
+    "Prompt": "The wedge-shaped writing system pressed into clay tablets in ancient Mesopotamia.",
+    "Explanation": "This refers to cuneiform writing on a clay tablet. The image should show a clay tablet covered with repeated wedge-shaped impressions arranged in rows or blocks of text, incised into the surface rather than painted in ink. It should not look like alphabetic handwriting on paper.",
+    "Category": "time",
+    "Subcategory": "Longitudinal time",
+    "prompt_id": 481
+  },
+  {
+    "Prompt": "The curled white headpiece associated with judges and aristocrats in eighteenth-century Britain.",
+    "Explanation": "This refers to a powdered wig. The image should show a formal white or pale wig built from deliberate rows of curls, often fuller at the sides and around the ears, with a structured eighteenth-century silhouette rather than loose natural hair. It should not look like modern loose curls, a casual wig, or uncovered natural hair.",
+    "Category": "time",
+    "Subcategory": "Longitudinal time",
+    "prompt_id": 482
+  },
+  {
+    "Prompt": "The household sewing machine operated by a foot treadle before electric models became common.",
+    "Explanation": "This refers to a treadle sewing machine. The image should show a cast-iron sewing head mounted in a table, with a large side handwheel and a foot treadle pedal mechanism below connected by a belt. It should not look like a modern plastic electric sewing machine.",
+    "Category": "time",
+    "Subcategory": "Longitudinal time",
+    "prompt_id": 483
+  },
+  {
+    "Prompt": "The apparatus that sent coded long-distance messages before telephones became widespread.",
+    "Explanation": "This refers to a telegraph set. The image should show a telegraph key mounted on a base, often with wires and a companion sounder or electrical component, used to tap coded messages. It should not look like a telephone handset, radio, or computer terminal.",
+    "Category": "time",
+    "Subcategory": "Longitudinal time",
+    "prompt_id": 484
+  },
+  {
+    "Prompt": "The parlor entertainment machine that amplified recorded music mechanically through a large horn before household radio.",
+    "Explanation": "This refers to a gramophone. The image should show a tabletop record-playing machine with a large flared horn, a turntable for flat discs, and an early mechanical body rather than an electronic speaker cabinet. It should not look like a cylinder phonograph or a modern record player.",
+    "Category": "time",
+    "Subcategory": "Longitudinal time",
+    "prompt_id": 485
+  },
+  {
+    "Prompt": "The round timepiece many gentlemen carried in a waistcoat pocket before wristwatches became standard.",
+    "Explanation": "This refers to a pocket watch. The image should show a small round metal watch case, often with a hinged cover, a winding crown at the top, and a chain for fastening it to a waistcoat or pocket. The face should read as a compact hand-held timepiece rather than a watch strapped to the wrist.",
+    "Category": "time",
+    "Subcategory": "Longitudinal time",
+    "prompt_id": 486
+  },
+  {
+    "Prompt": "The steam-powered railway engine that defined nineteenth-century train travel.",
+    "Explanation": "This refers to a steam locomotive. The image should show a railway engine with a large cylindrical boiler, a smokestack at the front, heavy driving wheels, and a distinctly steam-era mechanical build. It should not look like a streamlined electric train or a diesel engine.",
+    "Category": "time",
+    "Subcategory": "Longitudinal time",
+    "prompt_id": 487
+  },
+  {
+    "Prompt": "The boxy automobile that became a symbol of mass-produced cars in the early twentieth century.",
+    "Explanation": "This refers to a Ford Model T. The image should show an early mass-produced automobile with a tall upright body, exposed separate fenders, thin spoked wheels, narrow tires, and a simple boxy passenger compartment raised high above the ground. It should not look like a later streamlined sedan or a modern car with integrated body panels.",
+    "Category": "time",
+    "Subcategory": "Longitudinal time",
+    "prompt_id": 488
+  },
+  {
+    "Prompt": "The stepped stone pyramid with a temple at the top associated with major Maya ceremonial centers.",
+    "Explanation": "This refers to a Mayan stepped pyramid. The image should show a stone ceremonial pyramid built in stacked stepped terraces, usually with a broad central staircase climbing to a temple or shrine platform at the top. It should not look like a smooth-sided Egyptian pyramid or a low flat platform.",
+    "Category": "time",
+    "Subcategory": "Longitudinal time",
+    "prompt_id": 489
+  },
+  {
+    "Prompt": "The wooden radio set households gathered around for news and entertainment before television became common.",
+    "Explanation": "This refers to an early radio receiver. The image should show a wooden cabinet radio with a boxed body, tuning knobs, a dial or frequency window, and a front speaker grille or cloth-covered speaker opening. It should not look like a television set, a modern Bluetooth speaker, or a plastic tabletop stereo.",
+    "Category": "time",
+    "Subcategory": "Longitudinal time",
+    "prompt_id": 490
+  },
+  {
+    "Prompt": "The steel helmet worn by British soldiers in World War I trenches.",
+    "Explanation": "This refers to a Brodie helmet. The image should show a shallow steel combat helmet with a broad circular brim and a simple rounded crown sitting above the head, creating the characteristic British World War I silhouette. It should not look like the deeper, more enveloping German Stahlhelm or a modern ballistic helmet.",
+    "Category": "time",
+    "Subcategory": "Longitudinal time",
+    "prompt_id": 491
+  },
+  {
+    "Prompt": "The small ocean-going ship with lateen sails used by Iberian explorers in the Age of Discovery.",
+    "Explanation": "This refers to a caravel. The image should show a relatively small wooden exploration ship with a high stern, a narrow seagoing hull, and two or three masts carrying lateen sails or mixed Iberian rigging. It should not look like a massive multi-deck galleon or a modern sailing yacht.",
+    "Category": "time",
+    "Subcategory": "Longitudinal time",
+    "prompt_id": 492
+  },
+  {
+    "Prompt": "The desk telephone with a circular finger dial common in the early twentieth century.",
+    "Explanation": "This refers to a rotary dial telephone. The image should show a heavy desk telephone with a handset resting on a cradle, a circular finger dial numbered around the center, and a solid base rather than a handheld mobile form. It should not look like a push-button office phone or a smartphone handset.",
+    "Category": "time",
+    "Subcategory": "Longitudinal time",
+    "prompt_id": 493
+  },
+  {
+    "Prompt": "The instant camera used for printed snapshots before phone cameras existed.",
+    "Explanation": "This refers to a Polaroid instant camera. The image should show a chunky instant camera body with a front lens and a slot for ejecting a developing photograph, often with a square white-bordered print emerging. It should not look like a slim digital camera.",
+    "Category": "time",
+    "Subcategory": "Longitudinal time",
+    "prompt_id": 494
+  },
+  {
+    "Prompt": "The three-cornered hat associated with officers during the American Revolutionary War.",
+    "Explanation": "This refers to a tricorn hat. The image should show a formal felt or cloth hat with a broad brim folded upward at three points, producing a crisp triangular silhouette typical of eighteenth-century military and elite dress. It should not look like a flat-brimmed hat, a bicorne, or a helmet.",
+    "Category": "time",
+    "Subcategory": "Longitudinal time",
+    "prompt_id": 495
+  },
+  {
+    "Prompt": "The bulky boots worn by astronauts on the first moonwalk.",
+    "Explanation": "This refers to lunar boots. The image should show oversized overboots worn on top of a spacesuit, with thick layered insulation, a bulky rounded shape, and soles meant for moving across the lunar surface. It should not look like ordinary winter boots, hiking boots, or slim modern footwear.",
+    "Category": "time",
+    "Subcategory": "Longitudinal time",
+    "prompt_id": 496
+  },
+  {
+    "Prompt": "The vehicle firefighters rode through city streets before motorized fire engines became standard.",
+    "Explanation": "This refers to a horse-drawn fire engine. The image should show a wheeled firefighting wagon pulled by horses, carrying ladders, hose equipment, and a visible pump or water-handling assembly on the vehicle body. It should not look like a modern motorized fire truck or a simple farm cart.",
+    "Category": "time",
+    "Subcategory": "Longitudinal time",
+    "prompt_id": 497
+  },
+  {
+    "Prompt": "The room-sized computer used by governments and universities before personal computers became common.",
+    "Explanation": "This refers to a mainframe computer. The image should show a room-scale computing setup with tall cabinet-like units, operator consoles, control panels, and often tape drives or blinking indicator lights, emphasizing centralized institutional machinery rather than a personal desktop device. It should not look like a single PC workstation or a modern server rack room.",
+    "Category": "time",
+    "Subcategory": "Longitudinal time",
+    "prompt_id": 498
+  },
+  {
+    "Prompt": "The home-and-office computer whose separate monitor and twin floppy drives became a symbol of personal computing at the start of the 1980s.",
+    "Explanation": "This refers to an IBM PC 5150-style early personal computer. The image should show a beige system unit with two full-height floppy drives on the front, a separate CRT monitor, and a detached keyboard. It should not look like an all-in-one home microcomputer or a later laptop.",
+    "Category": "time",
+    "Subcategory": "Longitudinal time",
+    "prompt_id": 499
+  },
+  {
+    "Prompt": "The stiff pleated neckwear that framed the faces of many European elites in the late sixteenth century.",
+    "Explanation": "This refers to a ruff collar. The image should show a stiff collar made of tightly pleated white fabric, radiating outward from the neck in a circular or semicircular fan-like form that frames the face. It should not look like a loose scarf, a hood, or an ordinary modern shirt collar.",
+    "Category": "time",
+    "Subcategory": "Longitudinal time",
+    "prompt_id": 500
+  },
+  {
+    "Prompt": "The reed pen used to write on papyrus in ancient Egypt.",
+    "Explanation": "This refers to a reed pen. The image should show a slender cut reed with a pale natural stem, a sharpened writing end, and often a split nib suitable for dipping into ink and writing on papyrus. It should not look like a metal fountain pen, a feather quill, or a brush.",
+    "Category": "time",
+    "Subcategory": "Longitudinal time",
+    "prompt_id": 501
+  },
+  {
+    "Prompt": "The flat writing slate children practiced on in classrooms before notebooks became universal.",
+    "Explanation": "This refers to a classroom slate. The image should show a small flat dark writing board, usually rectangular, hand-sized, and often framed in wood for chalk practice by students. It should not look like a paper notebook, a tablet computer, or a large wall-mounted blackboard.",
+    "Category": "time",
+    "Subcategory": "Longitudinal time",
+    "prompt_id": 502
+  },
+  {
+    "Prompt": "The stage instrument with a contoured double-cutaway body that became a postwar rock icon in the 1950s.",
+    "Explanation": "This refers to a Stratocaster-style electric guitar. The image should show a solid-body electric guitar with two deep cutaways, a long neck, magnetic pickups, a pickguard, and a cable-ready stage design. It should not look like an acoustic guitar or a hollow jazz guitar.",
+    "Category": "time",
+    "Subcategory": "Longitudinal time",
+    "prompt_id": 503
+  },
+  {
+    "Prompt": "The kitchen device used to keep food cold before electric refrigerators became common.",
+    "Explanation": "This refers to an icebox. The image should show a cabinet-like kitchen cooler with insulated compartments, doors or lids, and a section meant to hold large blocks of ice above or beside the food storage area. It should not look like an electrically powered refrigerator with modern vents and appliances.",
+    "Category": "time",
+    "Subcategory": "Longitudinal time",
+    "prompt_id": 504
+  },
+  {
+    "Prompt": "The spidery spacecraft that carried astronauts to the lunar surface in 1969.",
+    "Explanation": "This refers to the Apollo Lunar Module. The image should show an angular landing craft with spindly landing legs, a boxy ascent stage, and foil-covered surfaces designed for descent to the Moon. It should not look like a rocket, airplane, or modern shuttle.",
+    "Category": "time",
+    "Subcategory": "Longitudinal time",
+    "prompt_id": 505
+  },
+  {
+    "Prompt": "The navigation instrument sailors used to measure the height of stars before GPS.",
+    "Explanation": "This refers to a sextant. The image should show a handheld navigational instrument with a curved graduated arc, an index arm, and a small telescope or sighting mechanism for measuring the angle of celestial bodies. It should not look like a compass or clock.",
+    "Category": "time",
+    "Subcategory": "Longitudinal time",
+    "prompt_id": 506
+  },
+  {
+    "Prompt": "The flared tournament helmet with a tiny viewing slit used by late medieval jousters.",
+    "Explanation": "This refers to a frog-mouth helm. The image should show a heavy jousting helmet with a wedge-like projecting front, a very small horizontal viewing slit, and a massive enclosed steel form built for tournament impact. It should not look like an open-faced battlefield helmet or a simple medieval great helm.",
+    "Category": "time",
+    "Subcategory": "Longitudinal time",
+    "prompt_id": 507
+  },
+  {
+    "Prompt": "The close-fitting headwear that became a defining fashion silhouette for urban women in the 1920s.",
+    "Explanation": "This refers to a cloche hat. The image should show a snug bell-shaped hat that sits low over the forehead and closely follows the head, typical of 1920s women's fashion. It should not look like a wide-brimmed hat, a headband, or a loose modern beanie.",
+    "Category": "time",
+    "Subcategory": "Longitudinal time",
+    "prompt_id": 508
+  },
+  {
+    "Prompt": "The instrument used by the Italian astronomer who famously observed the moons of Jupiter in the 17th century",
+    "Explanation": "This refers to a refracting telescope. The image should show a long narrow optical tube with a lens at the front end and a viewing eyepiece at the rear, usually mounted on a simple stand or tripod. It should not look like a short modern reflector telescope.",
+    "Category": "time",
+    "Subcategory": "Longitudinal time",
+    "prompt_id": 509
+  },
+  {
+    "Prompt": "The lantern railroad workers carried at night before battery flashlights became common.",
+    "Explanation": "This refers to an oil lantern. The image should show a portable lantern with a metal frame, a glass enclosure protecting the flame, a handle on top, and a fuel reservoir at the bottom. It should not look like an electric flashlight or a bare candle lamp.",
+    "Category": "time",
+    "Subcategory": "Longitudinal time",
+    "prompt_id": 510
+  },
+  {
+    "Prompt": "The goggles-and-cap headgear worn by pilots before enclosed cockpits became standard.",
+    "Explanation": "This refers to a leather aviator helmet with goggles. The image should show a close-fitting leather flight cap with ear coverage, a chin strap, and round or oval goggles worn over the eyes or forehead. It should not look like a modern hard-shell pilot or astronaut helmet.",
+    "Category": "time",
+    "Subcategory": "Longitudinal time",
+    "prompt_id": 511
+  },
+  {
+    "Prompt": "The bolt-action rifle carried by British soldiers in World War I trenches.",
+    "Explanation": "This refers to a Lee-Enfield rifle. The image should show a long wooden-stock military rifle with a straight barrel, bolt-action mechanism, and classic early twentieth-century infantry proportions. It should not look like a modern assault rifle or a hunting shotgun.",
+    "Category": "time",
+    "Subcategory": "Longitudinal time",
+    "prompt_id": 512
+  },
+  {
+    "Prompt": "The striped ceremonial headcloth associated with Egyptian pharaohs.",
+    "Explanation": "This refers to the Nemes headdress. The image should show a striped royal headcloth fitted closely over the head, with long cloth lappets falling down along both sides of the face and shoulders, sometimes paired with a central brow ornament. It should not look like a metal crown, a wrapped turban, or an ordinary scarf.",
+    "Category": "time",
+    "Subcategory": "Longitudinal time",
+    "prompt_id": 513
+  },
+  {
+    "Prompt": "The pedal-powered two-wheeled vehicle that became practical everyday transport in the 1890s.",
+    "Explanation": "This refers to a safety bicycle. The image should show a bicycle with two similarly sized wheels, a diamond-like frame, handlebars, and a chain drive to the rear wheel. It should not look like a high-wheeler penny-farthing with one giant front wheel.",
+    "Category": "time",
+    "Subcategory": "Longitudinal time",
+    "prompt_id": 514
+  },
+  {
+    "Prompt": "The writing surface found in classrooms before whiteboards became standard.",
+    "Explanation": "This refers to a blackboard. The image should show a large matte dark writing board mounted in a classroom, usually rectangular, marked with chalk writing or chalk dust, and often with a tray running along the bottom edge. It should not look like a glossy whiteboard or a small handheld slate.",
+    "Category": "time",
+    "Subcategory": "Longitudinal time",
+    "prompt_id": 515
+  },
+  {
+    "Prompt": "The counting tool shopkeepers used before electronic calculators became cheap and common.",
+    "Explanation": "This refers to an abacus. The image should show a rectangular counting frame with multiple rods and rows of sliding beads, typically separated by a central divider bar that structures the counting layout. It should not look like a toy bead maze, jewelry, or a decorative hanging object.",
+    "Category": "time",
+    "Subcategory": "Longitudinal time",
+    "prompt_id": 516
+  },
+  {
+    "Prompt": "The machine used to project reels of film before digital video projectors became common.",
+    "Explanation": "This refers to a film projector. The image should show a projection machine with one or more reels mounted on it, a bright front projection lens, and a visible mechanism for feeding strip film through the body. It should not look like a slide projector, a magic lantern, or a modern digital projector.",
+    "Category": "time",
+    "Subcategory": "Longitudinal time",
+    "prompt_id": 517
+  },
+  {
+    "Prompt": "The storage disk people used to transfer computer files before USB drives became common.",
+    "Explanation": "This refers to a floppy disk. The image should show a square portable storage disk in a rigid shell, with a central hub area and a read window or sliding metal shutter depending on the format. It should not look like a round compact disc, a cassette tape, or a USB flash drive.",
+    "Category": "time",
+    "Subcategory": "Longitudinal time",
+    "prompt_id": 518
+  },
+  {
+    "Prompt": "The office machine that transmitted printed pages over telephone lines before email attachments.",
+    "Explanation": "This refers to a fax machine. The image should show an office machine with a paper feeder, a telephone-style keypad or control panel, and an output area for printed pages sent over phone lines. It should not look like a standalone printer, scanner, or copier with no telecom controls.",
+    "Category": "time",
+    "Subcategory": "Longitudinal time",
+    "prompt_id": 519
+  },
+  {
+    "Prompt": "The glass bulb with a glowing filament that replaced candles in many homes during the early twentieth century.",
+    "Explanation": "This refers to an incandescent light bulb. The image should show a glass bulb with a visible glowing filament inside and a metal screw base below. It should not look like a candle flame, a tube light, or a modern LED bulb with opaque housing.",
+    "Category": "time",
+    "Subcategory": "Longitudinal time",
+    "prompt_id": 520
+  },
+  {
+    "Prompt": "The currency of the country where Seoul is located",
+    "Explanation": "This refers to the South Korean won. The image should show Korean banknotes or coins used as official money, typically with Hangul text and a clean modern layout. It should look like South Korean currency rather than Japanese yen or Chinese renminbi.",
+    "Category": "Space",
+    "Subcategory": "Geographical Location",
+    "prompt_id": 521
+  },
+  {
+    "Prompt": "National flag of the country where Berlin is located",
+    "Explanation": "This refers to the national flag of Germany. The image should show three horizontal bands of black, red, and gold with no coat of arms in the center. It should look like Germany's simple tricolor rather than a starred flag or a Nordic cross.",
+    "Category": "Space",
+    "Subcategory": "Geographical Location",
+    "prompt_id": 522
+  },
+  {
+    "Prompt": "National flag of the smallest country by area in the world",
+    "Explanation": "This refers to the national flag of Vatican City. The image should show two vertical bands of yellow and white, with papal keys and tiara on the white side. It should look like the Vatican flag rather than a plain bicolor without symbols.",
+    "Category": "Space",
+    "Subcategory": "Geographical Location",
+    "prompt_id": 523
+  },
+  {
+    "Prompt": "The national animal of the country where Mexico City is located",
+    "Explanation": "This refers to the golden eagle associated with Mexico. The image should show a large eagle with a hooked beak and broad dark wings, often shown in a proud upright pose. It should look like Mexico's eagle symbol rather than a generic small bird.",
+    "Category": "Space",
+    "Subcategory": "Geographical Location",
+    "prompt_id": 524
+  },
+  {
+    "Prompt": "National flag of the country where Sydney is located",
+    "Explanation": "This refers to the national flag of Australia. The image should show a dark blue field with the Union Jack in the upper-left and white stars including the Southern Cross. It should look like Australia's blue star flag rather than New Zealand's simpler variant.",
+    "Category": "Space",
+    "Subcategory": "Geographical Location",
+    "prompt_id": 525
+  },
+  {
+    "Prompt": "The floor covering commonly used in traditional rooms in the country where Kyoto is located",
+    "Explanation": "This refers to tatami mats. The image should show rectangular woven straw mats laid edge to edge across the floor in a traditional Japanese room. It should look like Japanese tatami flooring rather than wooden planks or a carpet.",
+    "Category": "Space",
+    "Subcategory": "Geographical Location",
+    "prompt_id": 526
+  },
+  {
+    "Prompt": "The national flag of the country where Vancouver is located",
+    "Explanation": "This refers to the national flag of Canada. The image should show a white center panel between two red side bands, with a red maple leaf in the middle. It should look like Canada's maple-leaf flag rather than a plain tricolor.",
+    "Category": "Space",
+    "Subcategory": "Geographical Location",
+    "prompt_id": 527
+  },
+  {
+    "Prompt": "National flag of the country where Moscow is located",
+    "Explanation": "This refers to the national flag of Russia. The image should show three horizontal stripes of white, blue, and red. It should look like Russia's horizontal tricolor rather than a flag with a cross or emblem.",
+    "Category": "Space",
+    "Subcategory": "Geographical Location",
+    "prompt_id": 528
+  },
+  {
+    "Prompt": "National flag of the country where London is located",
+    "Explanation": "This refers to the national flag of the United Kingdom. The image should show an overlapping red-and-white cross-and-saltire design on a blue field. It should look like the Union Jack rather than a simple single-cross flag.",
+    "Category": "Space",
+    "Subcategory": "Geographical Location",
+    "prompt_id": 529
+  },
+  {
+    "Prompt": "A typical beverage produced in the country where Bordeaux is located",
+    "Explanation": "This refers to wine from France. The image should show a bottle or glass of wine, typically deep red or pale white, associated with vineyards and winemaking. It should look like wine rather than beer, soda, or coffee.",
+    "Category": "Space",
+    "Subcategory": "Geographical Location",
+    "prompt_id": 530
+  },
+  {
+    "Prompt": "A specific type of flower cultivated in the country where Amsterdam is located",
+    "Explanation": "This refers to tulips. The image should show cup-shaped flowers on upright stems, often shown in dense colorful rows. It should look like Dutch tulips rather than roses or daisies.",
+    "Category": "Space",
+    "Subcategory": "Geographical Location",
+    "prompt_id": 531
+  },
+  {
+    "Prompt": "The type of landscape common in the country where Nairobi is located",
+    "Explanation": "This refers to an East African savanna. The image should show open grassland with scattered acacia trees and long, unobstructed horizons. It should look like savanna rather than dense rainforest or snowy mountains.",
+    "Category": "Space",
+    "Subcategory": "Geographical Location",
+    "prompt_id": 532
+  },
+  {
+    "Prompt": "A traditional musical instrument from the country where Seville is located",
+    "Explanation": "This refers to a Spanish classical guitar. The image should show a wooden hollow-bodied string instrument with a rounded waist and a central sound hole. It should look like a classical guitar rather than a violin or trumpet.",
+    "Category": "Space",
+    "Subcategory": "Geographical Location",
+    "prompt_id": 533
+  },
+  {
+    "Prompt": "The traditional clothing associated with the country where Edinburgh is located",
+    "Explanation": "This refers to a kilt associated with Scotland. The image should show a pleated knee-length tartan garment worn around the waist, often paired with long socks. It should look like a Scottish kilt rather than full-length trousers or a robe.",
+    "Category": "Space",
+    "Subcategory": "Geographical Location",
+    "prompt_id": 534
+  },
+  {
+    "Prompt": "The type of trees commonly found in forests in the country where Montreal is located",
+    "Explanation": "This refers to maple trees. The image should show broadleaf trees often recognized by their palm-shaped leaves, especially in autumn color imagery. It should look like maples rather than tropical palms or conifers only.",
+    "Category": "Space",
+    "Subcategory": "Geographical Location",
+    "prompt_id": 535
+  },
+  {
+    "Prompt": "National flag of the country where Tokyo is located",
+    "Explanation": "This refers to the national flag of Japan. The image should show a plain white field with a single red circle centered on it. It should look like Japan's minimalist flag rather than a striped or starred one.",
+    "Category": "Space",
+    "Subcategory": "Geographical Location",
+    "prompt_id": 536
+  },
+  {
+    "Prompt": "The currency of the country where Beijing is located",
+    "Explanation": "This refers to the Chinese yuan or renminbi. The image should show Chinese banknotes or coins used as official money, often with Chinese characters and familiar state imagery. It should look like Chinese currency rather than Korean won or Japanese yen.",
+    "Category": "Space",
+    "Subcategory": "Geographical Location",
+    "prompt_id": 537
+  },
+  {
+    "Prompt": "The landmark of the country where Paris is located",
+    "Explanation": "This refers to the Eiffel Tower. The image should show a tall open iron lattice tower standing on four curved legs and tapering upward. It should look like the Eiffel Tower rather than a stone cathedral or triumphal arch.",
+    "Category": "Space",
+    "Subcategory": "Geographical Location",
+    "prompt_id": 538
+  },
+  {
+    "Prompt": "A typical dish from the country where Naples is located",
+    "Explanation": "This refers to pizza from Italy. The image should show a round flat baked dough with visible toppings such as tomato, cheese, or basil. It should look like pizza rather than pasta or bread alone.",
+    "Category": "Space",
+    "Subcategory": "Geographical Location",
+    "prompt_id": 539
+  },
+  {
+    "Prompt": "The typical patterns found on traditional pottery from the city where Delft is located",
+    "Explanation": "This refers to Delft blue-and-white pottery decoration. The image should show blue floral or ornamental painted motifs on a white ceramic surface. It should look like Delft-style blue-and-white decoration rather than multicolored folk pottery.",
+    "Category": "Space",
+    "Subcategory": "Geographical Location",
+    "prompt_id": 540
+  },
+  {
+    "Prompt": "The vessel commonly used for the herbal drink associated with the country where Buenos Aires is located",
+    "Explanation": "This refers to a mate gourd. The image should show a small cup or gourd-like vessel often used with a metal straw for drinking mate. It should look like a mate vessel rather than an ordinary coffee mug.",
+    "Category": "Space",
+    "Subcategory": "Geographical Location",
+    "prompt_id": 541
+  },
+  {
+    "Prompt": "The animal most closely associated with the country where Canberra is located",
+    "Explanation": "This refers to a kangaroo. The image should show a large hopping marsupial with strong hind legs, a long tail, and an upright posture. It should look like a kangaroo rather than a deer or horse.",
+    "Category": "Space",
+    "Subcategory": "Geographical Location",
+    "prompt_id": 542
+  },
+  {
+    "Prompt": "The mountain most closely associated with the country where Tokyo is located",
+    "Explanation": "This refers to Mount Fuji. The image should show a very symmetrical snow-capped volcanic cone rising in a single broad peak. It should look like Mount Fuji rather than an irregular alpine ridge.",
+    "Category": "Space",
+    "Subcategory": "Geographical Location",
+    "prompt_id": 543
+  },
+  {
+    "Prompt": "The long narrow boat used in the city where Venice is located",
+    "Explanation": "This refers to a gondola. The image should show a long slim black canal boat with raised ends, suitable for narrow waterways. It should look like a Venetian gondola rather than a rowboat or motor yacht.",
+    "Category": "Space",
+    "Subcategory": "Geographical Location",
+    "prompt_id": 544
+  },
+  {
+    "Prompt": "The stepped field landscape associated with the island where Ubud is located",
+    "Explanation": "This refers to Balinese rice terraces. The image should show green stepped paddies cut into a hillside in repeated horizontal layers. It should look like rice terraces rather than a flat grain field.",
+    "Category": "Space",
+    "Subcategory": "Geographical Location",
+    "prompt_id": 545
+  },
+  {
+    "Prompt": "The ceramic tile style associated with the country where Lisbon is located",
+    "Explanation": "This refers to azulejo tiles. The image should show decorative ceramic tiles, often blue and white, arranged in repeated wall patterns. It should look like Portuguese azulejo rather than plain modern wall tile.",
+    "Category": "Space",
+    "Subcategory": "Geographical Location",
+    "prompt_id": 546
+  },
+  {
+    "Prompt": "The hat commonly associated with the country where Hanoi is located",
+    "Explanation": "This refers to a Vietnamese conical hat. The image should show a light woven hat with a broad circular brim tapering to a point. It should look like the Vietnamese conical hat rather than a flat straw hat.",
+    "Category": "Space",
+    "Subcategory": "Geographical Location",
+    "prompt_id": 547
+  },
+  {
+    "Prompt": "The monumental white mausoleum associated with the country where Agra is located",
+    "Explanation": "This refers to the Taj Mahal. The image should show a white marble mausoleum with a large central dome and slender corner minarets. It should look like the Taj Mahal rather than an ordinary palace or mosque.",
+    "Category": "Space",
+    "Subcategory": "Geographical Location",
+    "prompt_id": 548
+  },
+  {
+    "Prompt": "The pack animal most associated with desert travel in the country where Marrakech is located",
+    "Explanation": "This refers to a camel. The image should show a large desert animal with long legs, a long neck, and a hump on its back. It should look like a camel rather than a horse or donkey.",
+    "Category": "Space",
+    "Subcategory": "Geographical Location",
+    "prompt_id": 549
+  },
+  {
+    "Prompt": "The portable round dwelling used on the grasslands of the country where Ulaanbaatar is located",
+    "Explanation": "This refers to a Mongolian ger. The image should show a round tent-like dwelling with a white felt exterior and a low cylindrical body. It should look like a Mongolian ger rather than a square cabin or a tipi.",
+    "Category": "Space",
+    "Subcategory": "Geographical Location",
+    "prompt_id": 550
+  },
+  {
+    "Prompt": "A traditional musical instrument from the country where Dublin is located",
+    "Explanation": "This refers to an Irish harp. The image should show a tall triangular frame harp with many vertical strings. It should look like an Irish harp rather than a guitar or violin.",
+    "Category": "Space",
+    "Subcategory": "Geographical Location",
+    "prompt_id": 551
+  },
+  {
+    "Prompt": "National flag of the country where Rio de Janeiro is located",
+    "Explanation": "This refers to the national flag of Brazil. The image should show a green field with a yellow diamond and a blue globe at the center. It should look like Brazil's geometric flag rather than a striped tricolor.",
+    "Category": "Space",
+    "Subcategory": "Geographical Location",
+    "prompt_id": 552
+  },
+  {
+    "Prompt": "National flag of the country where Barcelona is located",
+    "Explanation": "This refers to the national flag of Spain. The image should show red-yellow-red horizontal bands, often with a crest toward the left side of the yellow band. It should look like Spain's broad yellow-centered flag rather than a simple red-white pattern.",
+    "Category": "Space",
+    "Subcategory": "Geographical Location",
+    "prompt_id": 553
+  },
+  {
+    "Prompt": "National flag of the country where Shanghai is located",
+    "Explanation": "This refers to the national flag of China. The image should show a red field with one large yellow star and four smaller yellow stars. It should look like China's five-star red flag rather than another red flag with a different symbol.",
+    "Category": "Space",
+    "Subcategory": "Geographical Location",
+    "prompt_id": 554
+  },
+  {
+    "Prompt": "National flag of the country where Kuala Lumpur is located",
+    "Explanation": "This refers to the national flag of Malaysia. The image should show many red-and-white stripes with a blue canton bearing a yellow crescent and star. It should look like Malaysia's striped flag rather than the U.S. flag or a plain tricolor.",
+    "Category": "Space",
+    "Subcategory": "Geographical Location",
+    "prompt_id": 555
+  },
+  {
+    "Prompt": "National flag of the country where Mumbai is located",
+    "Explanation": "This refers to the national flag of India. The image should show three horizontal bands of saffron, white, and green with a blue wheel in the center. It should look like India's tricolor with the Ashoka wheel rather than a plain orange-white-green flag.",
+    "Category": "Space",
+    "Subcategory": "Geographical Location",
+    "prompt_id": 556
+  },
+  {
+    "Prompt": "National flag of the country where Cairo is located",
+    "Explanation": "This refers to the national flag of Egypt. The image should show horizontal red, white, and black bands with a central golden eagle emblem. It should look like Egypt's red-white-black flag rather than another Arab tricolor with different symbols.",
+    "Category": "Space",
+    "Subcategory": "Geographical Location",
+    "prompt_id": 557
+  },
+  {
+    "Prompt": "National flag of the country where Oslo is located",
+    "Explanation": "This refers to the national flag of Norway. The image should show a red field with a dark blue Nordic cross outlined in white. It should look like Norway's cross flag rather than Denmark's or Sweden's color arrangement.",
+    "Category": "Space",
+    "Subcategory": "Geographical Location",
+    "prompt_id": 558
+  },
+  {
+    "Prompt": "National flag of the country where Athens is located",
+    "Explanation": "This refers to the national flag of Greece. The image should show blue and white horizontal stripes with a white cross in the blue canton. It should look like Greece's striped cross flag rather than a plain Nordic cross flag.",
+    "Category": "Space",
+    "Subcategory": "Geographical Location",
+    "prompt_id": 559
+  },
+  {
+    "Prompt": "National flag of the country where Reykjavik is located",
+    "Explanation": "This refers to the national flag of Iceland. The image should show a blue field with a red Nordic cross outlined in white. It should look like Iceland's cross flag rather than Norway's red field or Finland's white field.",
+    "Category": "Space",
+    "Subcategory": "Geographical Location",
+    "prompt_id": 560
+  },
+  {
+    "Prompt": "An apple and a banana, with the red fruit on the left and the yellow fruit on the right",
+    "Explanation": "The apple should be identified as the red fruit and placed on the left, while the banana should be identified as the yellow fruit and placed on the right. Both fruits should stay fully visible so the left-right relation is easy to judge.",
+    "Category": "Space",
+    "Subcategory": "Relative Position",
+    "prompt_id": 561
+  },
+  {
+    "Prompt": "A soccer ball, a baseball, and a golf ball, with the largest ball at the top, the medium-sized one in the middle, and the smallest at the bottom",
+    "Explanation": "The soccer ball should appear at the top as the largest ball, the baseball should occupy the middle as the medium-sized one, and the golf ball should be at the bottom as the smallest. The vertical order and the size order must both be correct.",
+    "Category": "Space",
+    "Subcategory": "Relative Position",
+    "prompt_id": 562
+  },
+  {
+    "Prompt": "A tiger, a rabbit, and a turtle, with the largest animal on the left, the smallest on the right, and the remaining one between them",
+    "Explanation": "The tiger should be on the left as the largest animal, the rabbit should be in the middle, and the turtle should be on the right as the smallest. The image should make the left-to-right size ranking easy to verify.",
+    "Category": "Space",
+    "Subcategory": "Relative Position",
+    "prompt_id": 563
+  },
+  {
+    "Prompt": "A ping pong ball, a basketball, and a tennis ball, with the medium-sized ball in the center, the smallest above it, and the largest below it",
+    "Explanation": "The tennis ball should occupy the center as the medium-sized ball. The ping pong ball should be above it as the smallest, and the basketball should be below it as the largest. The three ball types should stay visually distinct so both identity and position remain judgeable.",
+    "Category": "Space",
+    "Subcategory": "Relative Position",
+    "prompt_id": 564
+  },
+  {
+    "Prompt": "A banana, a bunch of grapes, and a strawberry, with the yellow fruit on the left, the red fruit on the right, and the remaining fruit between them",
+    "Explanation": "The banana should be placed on the left as the yellow fruit, the strawberry should be on the right as the red fruit, and the grapes should sit between them. The color cues and object identities should all stay clear.",
+    "Category": "Space",
+    "Subcategory": "Relative Position",
+    "prompt_id": 565
+  },
+  {
+    "Prompt": "An elephant and a mouse, with the smaller animal on the left and the larger one on the right",
+    "Explanation": "The mouse should appear on the left as the smaller animal, and the elephant should appear on the right as the much larger one. The scene should make the size contrast obvious at a glance.",
+    "Category": "Space",
+    "Subcategory": "Relative Position",
+    "prompt_id": 566
+  },
+  {
+    "Prompt": "A giraffe, a flamingo, and a rabbit, with the tallest animal farthest back, the shortest nearest the viewer, and the remaining animal between them",
+    "Explanation": "The giraffe should be farthest back as the tallest animal, the rabbit should be nearest to the viewer as the shortest, and the flamingo should occupy the middle depth. The depth order should match the height ranking clearly.",
+    "Category": "Space",
+    "Subcategory": "Relative Position",
+    "prompt_id": 567
+  },
+  {
+    "Prompt": "A horse, a dog, and a rabbit, with the medium-sized animal between the largest and the smallest, the smallest on the left and the largest on the right",
+    "Explanation": "The rabbit should be on the left as the smallest animal, the dog should be in the middle as the medium-sized one, and the horse should be on the right as the largest. The image should make the three-animal size progression unambiguous.",
+    "Category": "Space",
+    "Subcategory": "Relative Position",
+    "prompt_id": 568
+  },
+  {
+    "Prompt": "A blueberry, an apple, and a watermelon, with the largest fruit in the center, the smallest on its left, and the remaining fruit on its right",
+    "Explanation": "The watermelon should occupy the center as the largest fruit. The blueberry should be on its left as the smallest, and the apple should be on its right as the remaining medium-sized fruit. The fruit identities and the asymmetric layout should both stay clear.",
+    "Category": "Space",
+    "Subcategory": "Relative Position",
+    "prompt_id": 569
+  },
+  {
+    "Prompt": "A bicycle, a motorcycle, and a car, arranged so the smallest vehicle is leftmost, the largest is rightmost, and the remaining one stays between them",
+    "Explanation": "The bicycle should be on the far left as the smallest vehicle, the motorcycle should be between the other two, and the car should be on the far right as the largest. The image should preserve both the vehicle identities and the increasing size order.",
+    "Category": "Space",
+    "Subcategory": "Relative Position",
+    "prompt_id": 570
+  },
+  {
+    "Prompt": "A stool, a chair, and a ladder, with the shortest object nearest the viewer, the tallest at the back, and the remaining object in between",
+    "Explanation": "The stool should be nearest to the viewer as the shortest object, the ladder should stand at the back as the tallest, and the chair should occupy the middle depth. The depth relation should clearly reflect the height ranking.",
+    "Category": "Space",
+    "Subcategory": "Relative Position",
+    "prompt_id": 571
+  },
+  {
+    "Prompt": "A sparrow, a dog, and a horse, with the smallest animal at the top, the largest at the bottom, and the remaining one centered between them",
+    "Explanation": "The sparrow should be at the top as the smallest animal, the dog should occupy the middle, and the horse should be at the bottom as the largest. The vertical order should follow the size order exactly.",
+    "Category": "Space",
+    "Subcategory": "Relative Position",
+    "prompt_id": 572
+  },
+  {
+    "Prompt": "A bus, a car, and a bicycle, with the largest vehicle on the left, the smallest on the right, and the remaining one between them",
+    "Explanation": "The bus should be on the left as the largest vehicle, the car should be in the middle, and the bicycle should be on the right as the smallest. The image should make the decreasing size order obvious.",
+    "Category": "Space",
+    "Subcategory": "Relative Position",
+    "prompt_id": 573
+  },
+  {
+    "Prompt": "A whale, a dolphin, and a goldfish, with the smallest animal closest to the viewer, the largest farthest away, and the remaining one in the middle depth",
+    "Explanation": "The goldfish should be nearest to the viewer as the smallest animal, the dolphin should occupy the middle depth, and the whale should be farthest back as the largest. The front-to-back order should match the size ranking clearly.",
+    "Category": "Space",
+    "Subcategory": "Relative Position",
+    "prompt_id": 574
+  },
+  {
+    "Prompt": "A backpack, a duffel bag, and a suitcase, with the smallest travel item on the right, the largest on the left, and the remaining one between them",
+    "Explanation": "The suitcase should be on the left as the largest travel item, the duffel bag should sit in the middle, and the backpack should be on the right as the smallest. The three travel items should remain visually distinct so the reversed size order is easy to check.",
+    "Category": "Space",
+    "Subcategory": "Relative Position",
+    "prompt_id": 575
+  },
+  {
+    "Prompt": "A cactus, a sunflower, and a palm tree, with the shortest plant on the left, the tallest on the right, and the medium-height plant between them",
+    "Explanation": "The cactus should be on the left as the shortest plant, the sunflower should be in the middle as the medium-height one, and the palm tree should be on the right as the tallest. The image should make the height ordering easy to judge without relying on unusual perspective.",
+    "Category": "Space",
+    "Subcategory": "Relative Position",
+    "prompt_id": 576
+  },
+  {
+    "Prompt": "A chick, a duck, and a swan, with the smallest bird on the left, the largest on the right, and the remaining bird between them",
+    "Explanation": "The chick should be on the left as the smallest bird, the duck should be in the middle, and the swan should be on the right as the largest. The bird identities and size ranking should both remain clear.",
+    "Category": "Space",
+    "Subcategory": "Relative Position",
+    "prompt_id": 577
+  },
+  {
+    "Prompt": "A blueberry, an apple, and a pumpkin, with the smallest fruit nearest the viewer, the largest farthest away, and the remaining one between them",
+    "Explanation": "The blueberry should be nearest to the viewer as the smallest fruit, the apple should occupy the middle depth, and the pumpkin should be farthest back as the largest. The depth relation should clearly reflect the size ranking.",
+    "Category": "Space",
+    "Subcategory": "Relative Position",
+    "prompt_id": 578
+  },
+  {
+    "Prompt": "A scooter, a bicycle, and a bus, with the smallest vehicle nearest the viewer, the largest at the back, and the remaining one in the middle depth",
+    "Explanation": "The scooter should be nearest to the viewer as the smallest vehicle, the bicycle should occupy the middle depth, and the bus should be farthest back as the largest. The image should preserve both the vehicle identities and the front-to-back size order.",
+    "Category": "Space",
+    "Subcategory": "Relative Position",
+    "prompt_id": 579
+  },
+  {
+    "Prompt": "A rabbit, a cat, and a tiger, with the smallest animal on the left, the largest on the right, and the remaining one between them",
+    "Explanation": "The rabbit should be on the left as the smallest animal, the cat should be in the middle, and the tiger should be on the right as the largest. The image should preserve both species identity and size order.",
+    "Category": "Space",
+    "Subcategory": "Relative Position",
+    "prompt_id": 580
+  },
+  {
+    "Prompt": "A goldfish, a penguin, and a whale, with the smallest animal at the top, the largest at the bottom, and the remaining one in the middle",
+    "Explanation": "The goldfish should appear at the top as the smallest animal, the penguin should occupy the middle, and the whale should be at the bottom as the largest. The vertical order and size order must align clearly.",
+    "Category": "Space",
+    "Subcategory": "Relative Position",
+    "prompt_id": 581
+  },
+  {
+    "Prompt": "A strawberry, a lime, and a blueberry, with the red fruit on the left, the blue fruit on the right, and the remaining fruit between them",
+    "Explanation": "The strawberry should be on the left as the red fruit, the blueberry should be on the right as the blue fruit, and the lime should sit between them as the green fruit. The color mapping and left-to-right order should both stay clear.",
+    "Category": "Space",
+    "Subcategory": "Relative Position",
+    "prompt_id": 582
+  },
+  {
+    "Prompt": "A candle, a table lamp, and a streetlamp, with the shortest light source on the left, the tallest on the right, and the remaining one between them",
+    "Explanation": "The candle should be on the left as the shortest light source, the table lamp should be in the middle, and the streetlamp should be on the right as the tallest. The increasing height order should be straightforward to judge.",
+    "Category": "Space",
+    "Subcategory": "Relative Position",
+    "prompt_id": 583
+  },
+  {
+    "Prompt": "A ping pong ball, a tennis ball, and a basketball, with the smallest ball on the left, the largest on the right, and the remaining ball between them",
+    "Explanation": "The ping pong ball should be on the left as the smallest ball, the tennis ball should be in the middle, and the basketball should be on the right as the largest. The order should remain obvious even if the balls are rendered with different textures.",
+    "Category": "Space",
+    "Subcategory": "Relative Position",
+    "prompt_id": 584
+  },
+  {
+    "Prompt": "A sparrow, a parrot, and a swan, with the smallest bird on the left, the largest bird on the right, and the remaining bird between them",
+    "Explanation": "The sparrow should be on the left as the smallest bird, the parrot should be in the middle, and the swan should be on the right as the largest. The image should make the three bird identities and size ranking easy to verify.",
+    "Category": "Space",
+    "Subcategory": "Relative Position",
+    "prompt_id": 585
+  },
+  {
+    "Prompt": "A mouse, a cat, and a cow, with the smallest animal closest to the viewer, the largest farthest away, and the remaining one in the middle depth",
+    "Explanation": "The mouse should be nearest to the viewer as the smallest animal, the cat should occupy the middle depth, and the cow should be farthest away as the largest. The front-to-back order should make the size progression easy to judge.",
+    "Category": "Space",
+    "Subcategory": "Relative Position",
+    "prompt_id": 586
+  },
+  {
+    "Prompt": "A pencil, a marker, and a baseball bat, with the shortest object on the left, the longest on the right, and the remaining one between them",
+    "Explanation": "The pencil should be on the left as the shortest object, the marker should be in the middle, and the baseball bat should be on the right as the longest. The length ordering should be visually obvious.",
+    "Category": "Space",
+    "Subcategory": "Relative Position",
+    "prompt_id": 587
+  },
+  {
+    "Prompt": "A rabbit, a fox, and a bear, with the smallest animal on the left, the largest on the right, and the remaining one between them",
+    "Explanation": "The rabbit should be on the left as the smallest animal, the fox should be in the middle, and the bear should be on the right as the largest. The image should preserve both species identity and size order clearly.",
+    "Category": "Space",
+    "Subcategory": "Relative Position",
+    "prompt_id": 588
+  },
+  {
+    "Prompt": "A bicycle, a car, and a train, arranged so the smallest vehicle stays on the left, the largest on the right, and the remaining one in the center",
+    "Explanation": "The bicycle should be on the left as the smallest vehicle, the car should be in the center, and the train should be on the right as the largest. The image should make the vehicle-size progression straightforward to verify.",
+    "Category": "Space",
+    "Subcategory": "Relative Position",
+    "prompt_id": 589
+  },
+  {
+    "Prompt": "An owl and a chick, with the larger bird on the right and the smaller one on the left",
+    "Explanation": "The owl should appear on the right as the larger bird, and the chick should appear on the left as the smaller one. The image should avoid making the chick disproportionately large.",
+    "Category": "Space",
+    "Subcategory": "Relative Position",
+    "prompt_id": 590
+  },
+  {
+    "Prompt": "A cucumber, a blueberry, a strawberry, and a banana, with the red item first, the yellow item immediately to its right, the green item next, and the blue item at the far right",
+    "Explanation": "The strawberry should occupy the far-left position as the red item, the banana should be immediately to its right as the yellow item, the cucumber should come next as the green item, and the blueberry should sit at the far right as the blue item. All four objects should remain distinct enough for the color order to be checked in one glance.",
+    "Category": "Space",
+    "Subcategory": "Relative Position",
+    "prompt_id": 591
+  },
+  {
+    "Prompt": "A horse, a mouse, a dog, and a rabbit, placed so the smallest animal is on the far left, the largest is on the far right, and the two middle-sized animals stay between them in size order",
+    "Explanation": "The mouse should be on the far left as the smallest animal, followed by the rabbit, then the dog, with the horse on the far right as the largest. The four-animal size progression should remain unambiguous.",
+    "Category": "Space",
+    "Subcategory": "Relative Position",
+    "prompt_id": 592
+  },
+  {
+    "Prompt": "A tennis ball, a golf ball, a basketball, and a baseball, stacked from top to bottom from smallest to largest",
+    "Explanation": "The golf ball should be at the top as the smallest, followed by the baseball, then the tennis ball, with the basketball at the bottom as the largest. The top-to-bottom order should match the known size ranking of the four balls.",
+    "Category": "Space",
+    "Subcategory": "Relative Position",
+    "prompt_id": 593
+  },
+  {
+    "Prompt": "An ostrich, a sparrow, a goose, and a duck, with the shortest bird nearest the viewer, the tallest farthest away, and the two middle birds kept between them in increasing height",
+    "Explanation": "The sparrow should be nearest to the viewer as the shortest bird, the ostrich should be farthest back as the tallest, and the duck and goose should occupy the middle depths in that order. The front-to-back layout should reflect the increasing height of the four birds.",
+    "Category": "Space",
+    "Subcategory": "Relative Position",
+    "prompt_id": 594
+  },
+  {
+    "Prompt": "A baseball bat, a key, a rolling pin, and a spoon, placed from left to right from shortest to longest",
+    "Explanation": "The key should be on the far left as the shortest object, followed by the spoon, then the rolling pin, with the baseball bat on the far right as the longest. The length ordering should be easy to judge from the silhouettes.",
+    "Category": "Space",
+    "Subcategory": "Relative Position",
+    "prompt_id": 595
+  },
+  {
+    "Prompt": "A watermelon, a cherry tomato, a pumpkin, and an apple, with the smallest fruit on the far left, the largest on the far right, and the two middle-sized fruits kept in order between them",
+    "Explanation": "The cherry tomato should be on the far left as the smallest fruit, the watermelon should be on the far right as the largest, and the apple and pumpkin should sit between them in increasing size. The four fruit types should stay easy to tell apart so the full size ordering can be checked.",
+    "Category": "Space",
+    "Subcategory": "Relative Position",
+    "prompt_id": 596
+  },
+  {
+    "Prompt": "A streetlamp, a candle, a floor lamp, and a table lamp, arranged from left to right from shortest to tallest",
+    "Explanation": "The candle should be on the far left as the shortest light source, followed by the table lamp, then the floor lamp, with the streetlamp on the far right as the tallest. The height progression should be visually straightforward.",
+    "Category": "Space",
+    "Subcategory": "Relative Position",
+    "prompt_id": 597
+  },
+  {
+    "Prompt": "A bus, a scooter, a motorcycle, and a bicycle, with the smallest vehicle nearest the viewer, the largest farthest away, and the two middle vehicles between them in increasing size",
+    "Explanation": "The scooter should be nearest to the viewer as the smallest vehicle, the bus should be farthest away as the largest, and the bicycle and motorcycle should occupy the middle depths in increasing size. The front-to-back order should clearly communicate the vehicle-size progression.",
+    "Category": "Space",
+    "Subcategory": "Relative Position",
+    "prompt_id": 598
+  },
+  {
+    "Prompt": "A kettle, a teacup, a teapot, and a mug, with the smallest vessel on the left, the largest on the right, and the two middle-sized vessels between them in increasing order",
+    "Explanation": "The teacup should be on the far left as the smallest vessel, the kettle should be on the far right as the largest, and the mug and teapot should sit between them in increasing size. The container identities and size progression should both remain clear.",
+    "Category": "Space",
+    "Subcategory": "Relative Position",
+    "prompt_id": 599
+  },
+  {
+    "Prompt": "A rabbit, a fox, and a deer, with the smallest animal nearest the viewer, the largest at the back, and the remaining one in the middle depth",
+    "Explanation": "The rabbit should be nearest to the viewer as the smallest animal, the fox should occupy the middle depth, and the deer should be farthest back as the largest. The front-to-back order should clearly follow the animal size ranking.",
+    "Category": "Space",
+    "Subcategory": "Relative Position",
+    "prompt_id": 600
+  },
+  {
+    "Prompt": "A small bedroom seen from the doorway, with a centered window on the far wall, a bed along the left wall, and a desk along the right wall",
+    "Explanation": "The image should read as a doorway view into the room rather than a floorplan. The far wall should hold the centered window, the bed should appear along the viewer's left wall, and the desk should remain along the right wall, with normal interior perspective.",
+    "Category": "Space",
+    "Subcategory": "Viewpoint and Scale",
+    "prompt_id": 601
+  },
+  {
+    "Prompt": "A living room viewed from the hallway through a partly open door, with a TV stand on the far wall, a coffee table in the middle, and an armchair to the left of the coffee table",
+    "Explanation": "The partly open door should crop part of the frame and make the hallway viewpoint obvious. Inside the room, the TV stand must stay against the far wall, the coffee table in the middle, and the armchair to the table's left rather than being rearranged by the camera shift.",
+    "Category": "Space",
+    "Subcategory": "Viewpoint and Scale",
+    "prompt_id": 602
+  },
+  {
+    "Prompt": "A small office seen from a doorway on the right wall, with a desk on the far wall, a chair in front of it, and a tall plant in the back-left corner",
+    "Explanation": "The office should be shown from an oblique doorway angle, not from the center of the room. The desk should stay on the far wall, the chair should remain in front of it, and the tall plant should still occupy the far-left back corner.",
+    "Category": "Space",
+    "Subcategory": "Viewpoint and Scale",
+    "prompt_id": 603
+  },
+  {
+    "Prompt": "A kitchen seen from inside an open refrigerator, with a person reaching toward a bottle on the middle shelf",
+    "Explanation": "The refrigerator interior should frame the scene with shelves and cool white surfaces close to the viewer. The bottle on the middle shelf should appear inside that foreground space, while the person and kitchen remain outside the fridge opening, making the inside-looking-out viewpoint unmistakable.",
+    "Category": "Space",
+    "Subcategory": "Viewpoint and Scale",
+    "prompt_id": 604
+  },
+  {
+    "Prompt": "The inside of a residential mailbox as a mail carrier slides an envelope through the slot",
+    "Explanation": "The mailbox walls and slot opening should create a tight enclosing frame around the image. The envelope should be entering from outside toward the viewer, while the mail carrier and exterior background remain beyond the slot, so the viewpoint clearly feels like it is inside the box.",
+    "Category": "Space",
+    "Subcategory": "Viewpoint and Scale",
+    "prompt_id": 605
+  },
+  {
+    "Prompt": "A piano keyboard viewed from the pianist's seat, with sheet music on the stand and a bright window beyond",
+    "Explanation": "The keyboard should stretch away from the viewer in playing position rather than being shown from the side of the piano. The sheet music should stand ahead above the keys, with the window farther beyond, so the scene reads as the player's own viewpoint at the instrument.",
+    "Category": "Space",
+    "Subcategory": "Viewpoint and Scale",
+    "prompt_id": 606
+  },
+  {
+    "Prompt": "A transparent umbrella seen from directly underneath, with raindrops scattered across the canopy and blurred city lights beyond",
+    "Explanation": "The underside of the umbrella should dominate the image, with ribs radiating overhead and the handle descending toward the viewer. Raindrops should remain on the canopy above, and the city lights should appear beyond the translucent plastic rather than beside a normal side view of the umbrella.",
+    "Category": "Space",
+    "Subcategory": "Viewpoint and Scale",
+    "prompt_id": 607
+  },
+  {
+    "Prompt": "A spiral staircase seen from the bottom looking upward, with the handrail circling around a central pole",
+    "Explanation": "The steps should spiral upward around the central pole, with the underside and inner curve of the staircase visible from below. The handrail should wrap upward in the same direction, so the result reads as an upward view from the base rather than a side view of the staircase.",
+    "Category": "Space",
+    "Subcategory": "Viewpoint and Scale",
+    "prompt_id": 608
+  },
+  {
+    "Prompt": "A shopping cart seen from inside the basket as a shopper places a loaf of bread into it",
+    "Explanation": "The wire basket should frame the foreground from the inside, making the viewer feel placed within the cart. The loaf of bread should be entering toward the camera, while the shopper and supermarket aisle remain beyond the basket, clearly establishing the inside-cart viewpoint.",
+    "Category": "Space",
+    "Subcategory": "Viewpoint and Scale",
+    "prompt_id": 609
+  },
+  {
+    "Prompt": "A washing machine drum seen from inside as a person loads a pile of clothes through the open door",
+    "Explanation": "The circular metal drum with perforations should surround the frame from the inside. The clothes should be entering through the open round door toward the viewer, while the person remains outside the machine, making the inside-the-drum viewpoint obvious.",
+    "Category": "Space",
+    "Subcategory": "Viewpoint and Scale",
+    "prompt_id": 610
+  },
+  {
+    "Prompt": "A wooden chair seen from directly below through a glass floor",
+    "Explanation": "The underside of the chair should be visible: the seat bottom, braces, and the legs extending away above the viewer. The image should read as a true under-view through glass rather than as a normal side view of a chair.",
+    "Category": "Space",
+    "Subcategory": "Viewpoint and Scale",
+    "prompt_id": 611
+  },
+  {
+    "Prompt": "The underside of a glass ceiling panel, with three stickers that are star, heart, and moon when viewed from above",
+    "Explanation": "Because the stickers are attached to the underside and the viewer is now below the glass, the apparent left-right order should reverse. The underside of the glass should be obvious, and the stickers should look attached to that lower surface rather than floating in space.",
+    "Category": "Space",
+    "Subcategory": "Viewpoint and Scale",
+    "prompt_id": 612
+  },
+  {
+    "Prompt": "A stack viewed from near the floor: a large cardboard box at the bottom, a smaller wooden crate centered on top, and a tiny metal tin above that",
+    "Explanation": "The low camera angle should exaggerate the vertical stack and make the bottom box feel closest and largest in the frame. The wooden crate and metal tin should remain centered on top, clearly forming one upright stack rather than three separate objects.",
+    "Category": "Space",
+    "Subcategory": "Viewpoint and Scale",
+    "prompt_id": 613
+  },
+  {
+    "Prompt": "A hanging mobile seen from directly underneath, with a red star nearest, a green circle behind it, and a blue square farthest away",
+    "Explanation": "Only the undersides of the hanging shapes should be visible. The red star should be the nearest element and should partly block the green circle and the blue square behind it, making the depth order judgeable.",
+    "Category": "Space",
+    "Subcategory": "Viewpoint and Scale",
+    "prompt_id": 614
+  },
+  {
+    "Prompt": "A clear glass table seen from below, with a ceramic cup, a metal key, and a folded napkin resting on top from left to right",
+    "Explanation": "The objects should be seen through the glass from underneath, with slight distortion and reflection from the tabletop. Their left-to-right order must remain cup, key, napkin even though the viewpoint has moved below the table.",
+    "Category": "Space",
+    "Subcategory": "Viewpoint and Scale",
+    "prompt_id": 615
+  },
+  {
+    "Prompt": "A row of three sculptures seen from a dramatic low angle: a short cube, a medium sphere, and a tall obelisk",
+    "Explanation": "The low viewpoint should make the obelisk feel especially tall while preserving the left-to-right order of cube, sphere, obelisk. The scene should emphasize upward perspective rather than flattening the sculptures into a diagram.",
+    "Category": "Space",
+    "Subcategory": "Viewpoint and Scale",
+    "prompt_id": 616
+  },
+  {
+    "Prompt": "A small library room viewed from near the floor, with tall bookshelves on both sides, a hanging ceiling lamp, and a patterned rug",
+    "Explanation": "The camera should feel almost at floor level, so the rug becomes foreshortened while the shelves and ceiling lamp loom higher. The result should clearly read as an upward-looking room view, not as a flat front-facing room diagram.",
+    "Category": "Space",
+    "Subcategory": "Viewpoint and Scale",
+    "prompt_id": 617
+  },
+  {
+    "Prompt": "A desk-height low-angle view of three desktop objects: a potted cactus nearest the viewer, a closed laptop behind it, and a desk lamp farthest back",
+    "Explanation": "The cactus should dominate the near foreground and partially block the laptop behind it. The desk lamp should sit farthest back, so the image shows both occlusion and perspective scaling created by the low desk-level viewpoint.",
+    "Category": "Space",
+    "Subcategory": "Viewpoint and Scale",
+    "prompt_id": 618
+  },
+  {
+    "Prompt": "A swimming pool scene seen from underwater, with a swimmer above and bright midday sky beyond the rippling surface",
+    "Explanation": "The camera should clearly be underwater looking up. The swimmer should be seen through the rippling surface with refraction, and the bright sky should remain beyond the water rather than being rendered like a flat backdrop.",
+    "Category": "Space",
+    "Subcategory": "Viewpoint and Scale",
+    "prompt_id": 619
+  },
+  {
+    "Prompt": "A reading nook seen through a round peephole, with an armchair in the middle, a floor lamp on the left, and a small side table on the right",
+    "Explanation": "The image should have a circular peephole crop with dark edges around it. Inside that distorted round view, the armchair should remain centered, the floor lamp should stay on the left, and the side table should stay on the right.",
+    "Category": "Space",
+    "Subcategory": "Viewpoint and Scale",
+    "prompt_id": 620
+  },
+  {
+    "Prompt": "An indoor hallway seen through a door peephole, with a doormat near the bottom, a potted plant on the left, and a coat rack on the right",
+    "Explanation": "The peephole should create a circular frame and noticeable wide-angle distortion. The doormat should sit low in the frame, while the plant and coat rack remain on their respective left and right sides inside the warped hallway view.",
+    "Category": "Space",
+    "Subcategory": "Viewpoint and Scale",
+    "prompt_id": 621
+  },
+  {
+    "Prompt": "A narrow apartment hallway seen through a peephole, with a door at the far end, a small rug centered on the floor, and a coat rack on the right wall",
+    "Explanation": "The whole hallway should be compressed into a circular peephole view with fisheye distortion. The far door should remain centered, the rug should stay centered on the floor, and the coat rack should still read as attached to the right wall.",
+    "Category": "Space",
+    "Subcategory": "Viewpoint and Scale",
+    "prompt_id": 622
+  },
+  {
+    "Prompt": "A person holding a bouquet, seen through a door peephole from inside an apartment",
+    "Explanation": "The person should remain centered within a circular peephole frame, with strong lens distortion toward the edges. The bouquet should be clearly visible in the person's hands, and the surrounding hallway should curve outward near the border of the image.",
+    "Category": "Space",
+    "Subcategory": "Viewpoint and Scale",
+    "prompt_id": 623
+  },
+  {
+    "Prompt": "A bathroom scene seen only in a mirror, where a person holds a red hairbrush in the right hand and a blue towel hangs on the wall to the person's left",
+    "Explanation": "The mirror view should reverse left and right. The red hairbrush from the person's right hand should appear on the reflected left side, and the blue towel that is physically on the person's left should appear on the reflected right, while the scene still clearly reads as one mirror reflection.",
+    "Category": "Space",
+    "Subcategory": "Viewpoint and Scale",
+    "prompt_id": 624
+  },
+  {
+    "Prompt": "A person sitting at a desk facing a computer monitor, with a desk lamp to the person's left and a coffee cup to the person's right, shown from behind the person",
+    "Explanation": "The back of the seated person should occupy the near foreground, with the monitor straight ahead. The desk lamp should remain on the left side of the desk and the coffee cup on the right, so the scene reads as a rear over-the-shoulder view rather than a front-facing desk shot.",
+    "Category": "Space",
+    "Subcategory": "Viewpoint and Scale",
+    "prompt_id": 625
+  },
+  {
+    "Prompt": "A bathroom vanity scene seen in a mirror, with a green toothbrush to the left of a red toothpaste tube on the counter and a blue cup to the right of the toothpaste in the real scene",
+    "Explanation": "Because the image shows the mirror reflection, the green toothbrush should appear on the reflected right, the blue cup on the reflected left, and the red toothpaste should remain between them. The arrangement should behave like a mirror reversal rather than a shuffled countertop.",
+    "Category": "Space",
+    "Subcategory": "Viewpoint and Scale",
+    "prompt_id": 626
+  },
+  {
+    "Prompt": "A toy train arranged in a line as locomotive, boxcar, then tanker car, shown from a low eye-level angle from the front-left so the locomotive appears closest",
+    "Explanation": "The locomotive should dominate the near foreground because the camera is low and near its front-left side. The boxcar and tanker car should recede behind it in the same physical order rather than appearing as a flat side-on diagram of the train.",
+    "Category": "Space",
+    "Subcategory": "Viewpoint and Scale",
+    "prompt_id": 627
+  },
+  {
+    "Prompt": "A park bench with a large tree directly behind it, shown from the opposite side so the viewer looks toward the back of the bench",
+    "Explanation": "The bench should be seen from its rear side, with the backrest facing the viewer rather than the seat opening toward them. The large tree should still remain directly behind the bench, showing that only the viewpoint changed and not the park layout.",
+    "Category": "Space",
+    "Subcategory": "Viewpoint and Scale",
+    "prompt_id": 628
+  },
+  {
+    "Prompt": "A person facing a mirror, wearing a jacket with a red patch on the left shoulder and holding a blue cup in the right hand, shown only through the mirror reflection",
+    "Explanation": "The reflected image should reverse the person's left and right appearance. The red shoulder patch should appear on the reflected right shoulder, and the blue cup from the right hand should appear on the reflected left side, while still clearly reading as a mirror view of one person.",
+    "Category": "Space",
+    "Subcategory": "Viewpoint and Scale",
+    "prompt_id": 629
+  },
+  {
+    "Prompt": "A vanity table seen in a mirror, with a perfume bottle on the left, a hairbrush in the center, and a lipstick on the right in the real scene",
+    "Explanation": "Because the image is the mirror view, the perfume bottle should appear on the reflected right, the lipstick on the reflected left, and the hairbrush should remain centered. The result should clearly behave like a left-right reversal rather than a rearranged tabletop.",
+    "Category": "Space",
+    "Subcategory": "Viewpoint and Scale",
+    "prompt_id": 630
+  },
+  {
+    "Prompt": "A car interior with a rear-view mirror reflecting the back seat, where a blue backpack is on the left side of the back seat and a red jacket is on the right side",
+    "Explanation": "Inside the rear-view mirror, the back seat should appear left-right reversed. The blue backpack that is physically on the back seat's left should appear on the reflected right, and the red jacket should appear on the reflected left, while the rest of the car interior can stay secondary.",
+    "Category": "Space",
+    "Subcategory": "Viewpoint and Scale",
+    "prompt_id": 631
+  },
+  {
+    "Prompt": "A city bus interior seen from the very back row looking forward, with the aisle centered, a yellow handrail on the left, and the driver's area far ahead",
+    "Explanation": "The image should clearly feel shot from the back of the bus looking toward the front windshield. The aisle should run forward through the center, the yellow handrail should stay on the left side, and the driver's area should appear far ahead rather than beside the viewer.",
+    "Category": "Space",
+    "Subcategory": "Viewpoint and Scale",
+    "prompt_id": 632
+  },
+  {
+    "Prompt": "A campsite seen from inside a tent, with the unzipped opening framing a lake and pine trees outside",
+    "Explanation": "The tent fabric and opening should create a clear foreground frame from the inside. The lake and pine trees should lie beyond that opening, so the image reads unmistakably as a view from within the tent rather than an exterior camping scene with a tent nearby.",
+    "Category": "Space",
+    "Subcategory": "Viewpoint and Scale",
+    "prompt_id": 633
+  },
+  {
+    "Prompt": "A skateboard passing directly over the camera as a skater jumps above it",
+    "Explanation": "The underside of the skateboard should dominate the image, with the deck bottom, trucks, and wheels clearly visible overhead. The skater's shoes may appear above or around the board, and the result should read as a true below-the-jump viewpoint rather than a side view of skateboarding.",
+    "Category": "Space",
+    "Subcategory": "Viewpoint and Scale",
+    "prompt_id": 634
+  },
+  {
+    "Prompt": "A children's room viewed from a low angle near the floor, with a toy chest in front of a tall bookshelf and a floor lamp to the right",
+    "Explanation": "The toy chest should feel large in the near foreground because of the low camera position, partly blocking the bookshelf behind it. The tall bookshelf should still rise behind the chest, with the floor lamp remaining on the right, so the upward-looking room perspective is clear.",
+    "Category": "Space",
+    "Subcategory": "Viewpoint and Scale",
+    "prompt_id": 635
+  },
+  {
+    "Prompt": "Three translucent acrylic cubes stacked vertically, viewed from a very low angle near the floor so the top cube appears slightly foreshortened",
+    "Explanation": "The stack should remain perfectly vertical and countable as three cubes, but the low viewpoint should make the bottom cube feel dominant and the top cube appear slightly compressed by perspective. It should read as one tall stack rather than three cubes spread apart.",
+    "Category": "Space",
+    "Subcategory": "Viewpoint and Scale",
+    "prompt_id": 636
+  },
+  {
+    "Prompt": "A modern glass-and-steel pedestrian bridge viewed directly from underneath so the underside structure and a slice of sky are visible",
+    "Explanation": "The camera should point straight up from beneath the bridge. The underside beams and structural grid should dominate the frame, while the sky appears only through openings or glass panels rather than as a normal side view of the bridge.",
+    "Category": "Space",
+    "Subcategory": "Viewpoint and Scale",
+    "prompt_id": 637
+  },
+  {
+    "Prompt": "A bronze statue on a pedestal in a city plaza, viewed from near the base looking upward with surrounding buildings framing the sky",
+    "Explanation": "The statue should loom upward from a near-ground viewpoint, with the pedestal rising sharply from the bottom of the frame. The surrounding buildings should tilt inward slightly due to perspective, reinforcing the dramatic low-angle view.",
+    "Category": "Space",
+    "Subcategory": "Viewpoint and Scale",
+    "prompt_id": 638
+  },
+  {
+    "Prompt": "A swimmer floating near the surface of a clear tropical lagoon, viewed from underwater looking up",
+    "Explanation": "The camera should clearly be below the water surface, looking up through ripples and refraction. The swimmer should appear above, distorted slightly by the moving surface, with bright daylight filtering through the water rather than a flat sky backdrop.",
+    "Category": "Space",
+    "Subcategory": "Viewpoint and Scale",
+    "prompt_id": 639
+  },
+  {
+    "Prompt": "An apartment hallway seen through a door peephole from inside, with a delivery person centered, a potted plant on the left, and a wall lamp on the right",
+    "Explanation": "The scene should be framed by a circular peephole with strong fisheye distortion near the edges. The delivery person should remain centered, while the plant and wall lamp stay on their respective left and right sides inside the warped hallway view.",
+    "Category": "Space",
+    "Subcategory": "Viewpoint and Scale",
+    "prompt_id": 640
+  }
+]
