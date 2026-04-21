@@ -7,7 +7,7 @@ This repository is the official implementation of [WISE](https://arxiv.org/abs/2
 <img src="WISE_legacy/assets/intro.png" alt="WISE overview" style="zoom:80%;" />
 
 ## 💡 News
-
+- 2026/04/21: Add Uniwolrd-V1 results.
 - 2026/04/19: We release **WISE_Verified**, a maintenance update for easier and lower-cost evaluation. It uses a vLLM-served **Qwen3.5-35B-A3B** judge, refreshes about 200 prompts, changes WiScore into a binary 0/1 score focused on world-knowledge consistency and realism, and updates the leaderboard with 21 models, including NanoBanana-Pro, GPT-Image-1.5, QwenImage, FLUX.2, BAGEL, and HunyuanImage.
 - 2025/06/03: We updated the original code to provide clearer, simpler, and easier evaluation.
 - 2025/05/24: We collected feedback and updated the original code. If you have any questions or comments, feel free to email us at [niuyuwei04@gmail.com](mailto:niuyuwei04@gmail.com).
@@ -117,7 +117,7 @@ The full WISE_Verified leaderboard is available in [leadboard.md](leadboard.md).
 | 7 | Z-Image | 0.4530 | 0.5475 | 0.4667 | 0.5083 | 0.3250 | 0.4750 | 0.1750 |
 | 8 | FLUX.2-klein-9B | 0.4400 | 0.4900 | 0.3917 | 0.5500 | 0.3833 | 0.4833 | 0.2250 |
 | 9 | HunyuanImage-3.0 | 0.4350 | 0.5250 | 0.3917 | 0.4833 | 0.3083 | 0.4500 | 0.2417 |
-| 10 | FLUX.1-dev | 0.4160 | 0.5225 | 0.4000 | 0.5333 | 0.1750 | 0.3750 | 0.2417 |
+| 10 | Uniworld_V1 | 0.4260 | 0.5150 | 0.4917 | 0.5500 | 0.2250 | 0.4000 | 0.1667 | 1000 | yes |
 
 ## Original WISE
 
