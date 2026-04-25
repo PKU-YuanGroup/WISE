@@ -7,6 +7,7 @@ This repository is the official implementation of [WISE](https://arxiv.org/abs/2
 <img src="WISE_legacy/assets/intro.png" alt="WISE overview" style="zoom:80%;" />
 
 ## 💡 News
+- 2026/04/25: Add DeepGen 1.0 results.
 - 2026/04/21: Add Uniwolrd-V1 results.
 - 2026/04/19: We release **WISE_Verified**, a maintenance update for easier and lower-cost evaluation. It uses a vLLM-served **Qwen3.5-35B-A3B** judge, refreshes about 200 prompts, changes WiScore into a binary 0/1 score focused on world-knowledge consistency and realism, and updates the leaderboard with 21 models, including NanoBanana-Pro, GPT-Image-1.5, QwenImage, FLUX.2, BAGEL, and HunyuanImage.
 - 2025/06/03: We updated the original code to provide clearer, simpler, and easier evaluation.
@@ -29,7 +30,7 @@ WISE_Verified keeps the original goal of measuring world-knowledge consistency, 
 1. **Open-source judge:** We use **Qwen3.5-35B-A3B** through a vLLM OpenAI-compatible endpoint for evaluation.
 2. **Verified prompts:** About 200 WISE prompts were updated. Some original prompts were too easy, while others could trigger closed-source model policy restrictions during generation.
 3. **Binary WiScore:** WISE_Verified changes WiScore into a binary 0/1 score. We no longer separately score realism or aesthetic quality; each image is judged by whether it correctly realizes the prompt's world-knowledge meaning and is realistic and visually usable for evaluation.
-4. **Updated leaderboard:** We evaluated 21 models, including NanoBanana-Pro, GPT-Image-1.5, QwenImage, FLUX.2, BAGEL, and HunyuanImage. Some closed-source models or compute-heavy models are still missing because they do not provide usable APIs or exceed our current compute budget. We welcome model authors and users to contact us if they can provide results.
+4. **Updated leaderboard:** We evaluated 23 models, including NanoBanana-Pro, GPT-Image-1.5, DeepGen 1.0, QwenImage, FLUX.2, BAGEL, and HunyuanImage. Some closed-source models or compute-heavy models are still missing because they do not provide usable APIs or exceed our current compute budget. We welcome model authors and users to contact us if they can provide results.
 
 ## Repository Layout
 
@@ -111,13 +112,13 @@ The full WISE_Verified leaderboard is available in [leadboard.md](leadboard.md).
 | 1 | NanoBanana-Pro | 0.8760 | 0.8975 | 0.8167 | 0.9333 | 0.8167 | 0.8667 | 0.8750 |
 | 2 | GPT-Image-1.5 | 0.8250 | 0.8900 | 0.6917 | 0.8833 | 0.8000 | 0.7583 | 0.7750 |
 | 3 | BAGEL (w/ CoT) | 0.6280 | 0.7800 | 0.6333 | 0.5667 | 0.3750 | 0.5500 | 0.5083 |
-| 4 | FLUX.2-dev | 0.5650 | 0.6650 | 0.5667 | 0.6583 | 0.3667 | 0.5250 | 0.3750 |
-| 5 | QwenImage | 0.5100 | 0.6275 | 0.5250 | 0.5583 | 0.3417 | 0.4833 | 0.2500 |
-| 6 | Qwen-Image-2512 | 0.4990 | 0.5950 | 0.4750 | 0.6000 | 0.3500 | 0.4917 | 0.2583 |
-| 7 | Z-Image | 0.4530 | 0.5475 | 0.4667 | 0.5083 | 0.3250 | 0.4750 | 0.1750 |
-| 8 | FLUX.2-klein-9B | 0.4400 | 0.4900 | 0.3917 | 0.5500 | 0.3833 | 0.4833 | 0.2250 |
-| 9 | HunyuanImage-3.0 | 0.4350 | 0.5250 | 0.3917 | 0.4833 | 0.3083 | 0.4500 | 0.2417 |
-| 10 | Uniworld_V1 | 0.4260 | 0.5150 | 0.4917 | 0.5500 | 0.2250 | 0.4000 | 0.1667 | 1000 | yes |
+| 4 | DeepGen 1.0 | 0.5700 | 0.6500 | 0.4100 | 0.7200 | 0.3900 | 0.5900 | 0.4500 |
+| 5 | FLUX.2-dev | 0.5650 | 0.6650 | 0.5667 | 0.6583 | 0.3667 | 0.5250 | 0.3750 |
+| 6 | QwenImage | 0.5100 | 0.6275 | 0.5250 | 0.5583 | 0.3417 | 0.4833 | 0.2500 |
+| 7 | Qwen-Image-2512 | 0.4990 | 0.5950 | 0.4750 | 0.6000 | 0.3500 | 0.4917 | 0.2583 |
+| 8 | Z-Image | 0.4530 | 0.5475 | 0.4667 | 0.5083 | 0.3250 | 0.4750 | 0.1750 |
+| 9 | FLUX.2-klein-9B | 0.4400 | 0.4900 | 0.3917 | 0.5500 | 0.3833 | 0.4833 | 0.2250 |
+| 10 | HunyuanImage-3.0 | 0.4350 | 0.5250 | 0.3917 | 0.4833 | 0.3083 | 0.4500 | 0.2417 |
 
 ## Original WISE
 
