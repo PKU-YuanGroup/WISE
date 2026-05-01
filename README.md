@@ -7,6 +7,7 @@ This repository is the official implementation of [WISE](https://arxiv.org/abs/2
 <img src="WISE_legacy/assets/intro.png" alt="WISE overview" style="zoom:80%;" />
 
 ## 💡 News
+- 2026/05/01: WISE is accepted to ICML 2026 🎉!
 - 2026/04/25: Add DeepGen 1.0 results.
 - 2026/04/21: Add Uniwolrd-V1 results.
 - 2026/04/19: We release **WISE_Verified**, a maintenance update for easier and lower-cost evaluation. It uses a vLLM-served **Qwen3.5-35B-A3B** judge, refreshes about 200 prompts, changes WiScore into a binary 0/1 score focused on world-knowledge consistency and realism, and updates the leaderboard with 21 models, including NanoBanana-Pro, GPT-Image-1.5, QwenImage, FLUX.2, BAGEL, and HunyuanImage.
