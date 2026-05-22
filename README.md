@@ -7,6 +7,7 @@ This repository is the official implementation of [WISE](https://arxiv.org/abs/2
 <img src="WISE_legacy/assets/intro.png" alt="WISE overview" style="zoom:80%;" />
 
 ## 💡 News
+- 2026/05/22: Add SenseNova-U1 results (8B and A3B variants, w/ and w/o CoT).
 - 2026/05/01: WISE is accepted to ICML 2026 🎉!
 - 2026/04/25: Add DeepGen 1.0 results.
 - 2026/04/21: Add Uniwolrd-V1 results.
@@ -62,6 +63,16 @@ vllm serve /path/to/Qwen3.5-35B-A3B \
     --port 8000
 ```
 
+If you see `No available memory for the cache blocks` (e.g. on an 80 GB GPU where model weights leave little room for KV cache), use tensor parallelism across multiple GPUs:
+
+```bash
+vllm serve /path/to/Qwen3.5-35B-A3B \
+    --served-model-name Qwen3.5-35B-A3B \
+    --host 0.0.0.0 \
+    --port 8000 \
+    --tensor-parallel-size 2
+```
+
 Then run the evaluation:
 
 ```bash
@@ -111,15 +122,15 @@ The full WISE_Verified leaderboard is available in [leadboard.md](leadboard.md).
 | Rank | Model | Overall | CULTURE | TIME | SPACE | BIOLOGY | PHYSICS | CHEMISTRY |
 | ---: | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
 | 1 | NanoBanana-Pro | 0.8760 | 0.8975 | 0.8167 | 0.9333 | 0.8167 | 0.8667 | 0.8750 |
-| 2 | GPT-Image-1.5 | 0.8250 | 0.8900 | 0.6917 | 0.8833 | 0.8000 | 0.7583 | 0.7750 |
-| 3 | BAGEL (w/ CoT) | 0.6280 | 0.7800 | 0.6333 | 0.5667 | 0.3750 | 0.5500 | 0.5083 |
-| 4 | DeepGen 1.0 | 0.5700 | 0.6500 | 0.4100 | 0.7200 | 0.3900 | 0.5900 | 0.4500 |
-| 5 | FLUX.2-dev | 0.5650 | 0.6650 | 0.5667 | 0.6583 | 0.3667 | 0.5250 | 0.3750 |
-| 6 | QwenImage | 0.5100 | 0.6275 | 0.5250 | 0.5583 | 0.3417 | 0.4833 | 0.2500 |
-| 7 | Qwen-Image-2512 | 0.4990 | 0.5950 | 0.4750 | 0.6000 | 0.3500 | 0.4917 | 0.2583 |
-| 8 | Z-Image | 0.4530 | 0.5475 | 0.4667 | 0.5083 | 0.3250 | 0.4750 | 0.1750 |
-| 9 | FLUX.2-klein-9B | 0.4400 | 0.4900 | 0.3917 | 0.5500 | 0.3833 | 0.4833 | 0.2250 |
-| 10 | HunyuanImage-3.0 | 0.4350 | 0.5250 | 0.3917 | 0.4833 | 0.3083 | 0.4500 | 0.2417 |
+| 2 | SenseNova-U1-A3B-MoT (w/ CoT) | 0.8340 | 0.8325 | 0.7750 | 0.9167 | 0.8417 | 0.8000 | 0.8417 |
+| 3 | GPT-Image-1.5 | 0.8250 | 0.8900 | 0.6917 | 0.8833 | 0.8000 | 0.7583 | 0.7750 |
+| 4 | SenseNova-U1-8B-MoT (w/ CoT) | 0.7910 | 0.7975 | 0.7417 | 0.8583 | 0.7583 | 0.7750 | 0.8000 |
+| 5 | SenseNova-U1-A3B-MoT | 0.7180 | 0.7500 | 0.6250 | 0.7417 | 0.6750 | 0.7667 | 0.6750 |
+| 6 | SenseNova-U1-8B-MoT | 0.6820 | 0.6900 | 0.6000 | 0.7417 | 0.6333 | 0.7167 | 0.6917 |
+| 7 | BAGEL (w/ CoT) | 0.6280 | 0.7800 | 0.6333 | 0.5667 | 0.3750 | 0.5500 | 0.5083 |
+| 8 | DeepGen 1.0 | 0.5700 | 0.6500 | 0.4100 | 0.7200 | 0.3900 | 0.5900 | 0.4500 |
+| 9 | FLUX.2-dev | 0.5650 | 0.6650 | 0.5667 | 0.6583 | 0.3667 | 0.5250 | 0.3750 |
+| 10 | QwenImage | 0.5100 | 0.6275 | 0.5250 | 0.5583 | 0.3417 | 0.4833 | 0.2500 |
 
 ## Original WISE
 
