@@ -30,7 +30,7 @@ WISE is a benchmark for **World Knowledge-Informed Semantic Evaluation**. It mov
 WISE_Verified keeps the original goal of measuring world-knowledge consistency, but changes the default evaluation protocol:
 
 1. **Open-source judge:** We use **Qwen3.5-35B-A3B** through a vLLM OpenAI-compatible endpoint for evaluation.
-2. **Verified prompts:** About 200 WISE prompts were updated. Some original prompts were too easy, while others could trigger closed-source model policy restrictions during generation.
+2. **Verified prompts:** Hundreds of WISE prompts were updated. Some original prompts were too easy, while others could trigger closed-source model policy restrictions during generation.
 3. **Binary WiScore:** WISE_Verified changes WiScore into a binary 0/1 score. We no longer separately score realism or aesthetic quality; each image is judged by whether it correctly realizes the prompt's world-knowledge meaning and is realistic and visually usable for evaluation.
 4. **Updated leaderboard:** We evaluated 23 models, including NanoBanana-Pro, GPT-Image-1.5, DeepGen 1.0, QwenImage, FLUX.2, BAGEL, and HunyuanImage. Some closed-source models or compute-heavy models are still missing because they do not provide usable APIs or exceed our current compute budget. We welcome model authors and users to contact us if they can provide results.
 
