@@ -7,11 +7,12 @@ This repository is the official implementation of [WISE](https://arxiv.org/abs/2
 <img src="WISE_legacy/assets/intro.png" alt="WISE overview" style="zoom:80%;" />
 
 ## 💡 News
+- 2026/06/26: Add Qwen-Image-Agent and Qwen-Image-2.0 results.
 - 2026/05/22: Add SenseNova-U1 results (8B and A3B variants, w/ and w/o CoT).
 - 2026/05/01: WISE is accepted to ICML 2026 🎉!
 - 2026/04/25: Add DeepGen 1.0 results.
 - 2026/04/21: Add Uniwolrd-V1 results.
-- 2026/04/19: We release **WISE_Verified**, a maintenance update for easier and lower-cost evaluation. It uses a vLLM-served **Qwen3.5-35B-A3B** judge, refreshes about 200 prompts, changes WiScore into a binary 0/1 score focused on world-knowledge consistency and realism, and updates the leaderboard with 21 models, including NanoBanana-Pro, GPT-Image-1.5, QwenImage, FLUX.2, BAGEL, and HunyuanImage.
+- 2026/04/19: We release **WISE_Verified**, a maintenance update for easier and lower-cost evaluation. It uses a vLLM-served **Qwen3.5-35B-A3B** judge, refreshes about 200 prompts, changes WiScore into a binary 0/1 score focused on world-knowledge consistency and realism, and updates the leaderboard with 21 models, including NanoBanana-Pro, GPT-Image-1.5, Qwen-Image, FLUX.2, BAGEL, and HunyuanImage.
 - 2025/06/03: We updated the original code to provide clearer, simpler, and easier evaluation.
 - 2025/05/24: We collected feedback and updated the original code. If you have any questions or comments, feel free to email us at [niuyuwei04@gmail.com](mailto:niuyuwei04@gmail.com).
 - 2025/03/11: We released our paper at [https://arxiv.org/abs/2503.07265](https://arxiv.org/abs/2503.07265).
@@ -32,7 +33,7 @@ WISE_Verified keeps the original goal of measuring world-knowledge consistency, 
 1. **Open-source judge:** We use **Qwen3.5-35B-A3B** through a vLLM OpenAI-compatible endpoint for evaluation.
 2. **Verified prompts:** Hundreds of WISE prompts were updated. Some original prompts were too easy, while others could trigger closed-source model policy restrictions during generation.
 3. **Binary WiScore:** WISE_Verified changes WiScore into a binary 0/1 score. We no longer separately score realism or aesthetic quality; each image is judged by whether it correctly realizes the prompt's world-knowledge meaning and is realistic and visually usable for evaluation.
-4. **Updated leaderboard:** We evaluated 23 models, including NanoBanana-Pro, GPT-Image-1.5, DeepGen 1.0, QwenImage, FLUX.2, BAGEL, and HunyuanImage. Some closed-source models or compute-heavy models are still missing because they do not provide usable APIs or exceed our current compute budget. We welcome model authors and users to contact us if they can provide results.
+4. **Updated leaderboard:** We evaluated 29 models, including Qwen-Image-Agent, Qwen-Image-2.0, NanoBanana-Pro, GPT-Image-1.5, DeepGen 1.0, Qwen-Image, FLUX.2, BAGEL, and HunyuanImage. Some closed-source models or compute-heavy models are still missing because they do not provide usable APIs or exceed our current compute budget. We welcome model authors and users to contact us if they can provide results.
 
 ## Repository Layout
 
@@ -121,16 +122,16 @@ The full WISE_Verified leaderboard is available in [leadboard.md](leadboard.md).
 
 | Rank | Model | Overall | CULTURE | TIME | SPACE | BIOLOGY | PHYSICS | CHEMISTRY |
 | ---: | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| 1 | NanoBanana-Pro | 0.8760 | 0.8975 | 0.8167 | 0.9333 | 0.8167 | 0.8667 | 0.8750 |
-| 2 | SenseNova-U1-A3B-MoT (w/ CoT) | 0.8340 | 0.8325 | 0.7750 | 0.9167 | 0.8417 | 0.8000 | 0.8417 |
-| 3 | GPT-Image-1.5 | 0.8250 | 0.8900 | 0.6917 | 0.8833 | 0.8000 | 0.7583 | 0.7750 |
-| 4 | SenseNova-U1-8B-MoT (w/ CoT) | 0.7910 | 0.7975 | 0.7417 | 0.8583 | 0.7583 | 0.7750 | 0.8000 |
-| 5 | SenseNova-U1-A3B-MoT | 0.7180 | 0.7500 | 0.6250 | 0.7417 | 0.6750 | 0.7667 | 0.6750 |
-| 6 | SenseNova-U1-8B-MoT | 0.6820 | 0.6900 | 0.6000 | 0.7417 | 0.6333 | 0.7167 | 0.6917 |
-| 7 | BAGEL (w/ CoT) | 0.6280 | 0.7800 | 0.6333 | 0.5667 | 0.3750 | 0.5500 | 0.5083 |
-| 8 | DeepGen 1.0 | 0.5700 | 0.6500 | 0.4100 | 0.7200 | 0.3900 | 0.5900 | 0.4500 |
-| 9 | FLUX.2-dev | 0.5650 | 0.6650 | 0.5667 | 0.6583 | 0.3667 | 0.5250 | 0.3750 |
-| 10 | QwenImage | 0.5100 | 0.6275 | 0.5250 | 0.5583 | 0.3417 | 0.4833 | 0.2500 |
+| 1 | Qwen-Image-Agent | 0.9020 | 0.9200 | 0.9167 | 0.9333 | 0.8333 | 0.8667 | 0.9000 |
+| 2 | NanoBanana-Pro | 0.8760 | 0.8975 | 0.8167 | 0.9333 | 0.8167 | 0.8667 | 0.8750 |
+| 3 | SenseNova-U1-A3B-MoT (w/ CoT) | 0.8340 | 0.8325 | 0.7750 | 0.9167 | 0.8417 | 0.8000 | 0.8417 |
+| 4 | GPT-Image-1.5 | 0.8250 | 0.8900 | 0.6917 | 0.8833 | 0.8000 | 0.7583 | 0.7750 |
+| 5 | Qwen-Image-2.0 | 0.7954 | 0.8219 | 0.6500 | 0.8992 | 0.7917 | 0.8000 | 0.7479 |
+| 6 | SenseNova-U1-8B-MoT (w/ CoT) | 0.7910 | 0.7975 | 0.7417 | 0.8583 | 0.7583 | 0.7750 | 0.8000 |
+| 7 | SenseNova-U1-A3B-MoT | 0.7180 | 0.7500 | 0.6250 | 0.7417 | 0.6750 | 0.7667 | 0.6750 |
+| 8 | SenseNova-U1-8B-MoT | 0.6820 | 0.6900 | 0.6000 | 0.7417 | 0.6333 | 0.7167 | 0.6917 |
+| 9 | BAGEL (w/ CoT) | 0.6280 | 0.7800 | 0.6333 | 0.5667 | 0.3750 | 0.5500 | 0.5083 |
+| 10 | DeepGen 1.0 | 0.5700 | 0.6500 | 0.4100 | 0.7200 | 0.3900 | 0.5900 | 0.4500 |
 
 ## Original WISE
 
