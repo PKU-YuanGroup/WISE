@@ -142,11 +142,12 @@ Use the legacy version if you need to reproduce the original paper setting or co
 ## Citation
 
 ```bibtex
-@article{niu2025wise,
-  title={WISE: A World Knowledge-Informed Semantic Evaluation for Text-to-Image Generation},
-  author={Niu, Yuwei and Ning, Munan and Zheng, Mengren and Jin, Weiyang and Lin, Bin and Jin, Peng and Liao, Jiaqi and Ning, Kunpeng and Feng, Chaoran and Zhu, Bin and Yuan, Li},
-  journal={arXiv preprint arXiv:2503.07265},
-  year={2025}
+@inproceedings{
+niu2026wise,
+title={{WISE}: World Knowledge-Informed Semantic Evaluation for Text-to-Image Generation},
+author={Yuwei Niu and Munan Ning and Mengren Zheng and Weiyang Jin and Bin Lin and Peng Jin and Jiaqi Liao and Chaoran Feng and Fanqing Meng and Kun-Peng Ning and Bin Zhu and Li Yuan},
+booktitle={Forty-third International Conference on Machine Learning},
+year={2026},
 }
 ```
 
